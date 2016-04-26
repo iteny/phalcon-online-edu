@@ -1,0 +1,415 @@
+[Tue, 19 Apr 16 17:58:27 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 17:58:27 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 17:58:27 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:39:12 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:39:12 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:39:12 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:39:54 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:39:54 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:39:54 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:40:13 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:40:13 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:40:13 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:40:57 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:40:57 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:40:57 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:41:26 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:41:26 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:41:26 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:41:46 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:41:46 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:41:46 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:43:07 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:43:07 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:43:07 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:43:23 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:43:23 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:43:23 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:44:50 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:44:50 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:44:50 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:48:48 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:48:48 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:48:48 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:48:52 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:48:52 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:48:52 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:48:52 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:48:53 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:48:53 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:48:53 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:48:53 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:48:56 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:48:56 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:48:59 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:48:59 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:48:59 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:49:00 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:00 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:00 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:00 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:00 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:00 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:01 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:01 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:01 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:01 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:14 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:14 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:14 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:49:15 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:15 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:17 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:17 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:17 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:17 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:18 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:18 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:18 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:18 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:18 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:18 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:19 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:19 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:19 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:19 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:32 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:32 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:32 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:49:46 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:46 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:46 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:49:48 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:48 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:56 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:56 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:57 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:57 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:57 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:49:57 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:57 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:57 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:57 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:58 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:59 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:59 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:59 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:59 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:49:59 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:49:59 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:14 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:14 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:14 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:50:15 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:15 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:15 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:15 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:15 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:15 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:16 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:16 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:21 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:21 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:22 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:22 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:22 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:22 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:32 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:32 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:32 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:50:33 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:33 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:50:33 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:50:33 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:51:40 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:51:40 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:51:40 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:52:12 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:52:12 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:52:12 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:54:48 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:54:48 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:54:48 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 18:54:54 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:54:54 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:54:58 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 18:54:58 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 18:54:58 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:00:10 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:00:10 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:00:10 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:00:16 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:00:16 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:00:28 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:00:28 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:00:28 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:00:33 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:00:33 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:01:33 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:01:33 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:01:33 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:02:36 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:02:36 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:02:36 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:02:46 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:02:46 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:02:46 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:02:46 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:02:46 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:02:56 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:02:56 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:03:12 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:03:12 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:03:12 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:03:13 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:03:13 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:07:46 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:07:46 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:07:46 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:07:56 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:07:56 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:07:56 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:09:09 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:09:09 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:09:09 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:09:44 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:09:44 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:09:44 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:09:44 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:09:44 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:16 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:16 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:16 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:10:17 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:17 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:21 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:21 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:22 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:22 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:22 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:22 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:34 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:34 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:34 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:35 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:10:36 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:10:36 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:00 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:00 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:00 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:11:01 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:01 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:01 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:01 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:01 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:01 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:02 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:11:04 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:11:04 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:12:17 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:12:17 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:12:17 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:12:18 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:12:18 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:12:29 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:12:29 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:12:29 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:12:30 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:12:30 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:12:30 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:12:30 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:12:30 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:12:30 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:12:30 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:12:30 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:12:31 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:12:31 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:13:17 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:13:17 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:13:17 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:15:11 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:15:11 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:15:11 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:15:42 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:15:42 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:15:42 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:15:45 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:15:45 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:15:57 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:15:57 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:15:57 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:17:08 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:17:08 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:17:08 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:17:20 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:17:20 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:17:20 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:17:31 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:17:31 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:17:31 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 19:18:35 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 19:18:35 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 19:18:35 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:06:39 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:06:39 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:06:39 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:15:03 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:15:03 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:15:03 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:15:36 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:15:36 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:15:36 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:15:37 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:15:37 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:15:38 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:15:38 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:15:38 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:15:38 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:15:47 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:15:47 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:15:47 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:15:48 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:15:48 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:03 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:03 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:03 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:17:03 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:03 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:04 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:04 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:04 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:04 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:10 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:10 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:10 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:10 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:10 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:10 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:11 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:11 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:52 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:17:52 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:17:52 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:18:28 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:18:28 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:18:28 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:23:20 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:23:20 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:23:20 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:23:36 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:23:36 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:23:36 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:25:09 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:25:09 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:25:09 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:41:26 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:41:26 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:41:26 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:41:27 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:41:27 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:41:28 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:41:28 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:43:56 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:43:56 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:43:56 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:45:26 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:45:26 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:45:26 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:54:57 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:54:57 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:54:57 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:55:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:55:02 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:55:03 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:55:03 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:55:11 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:55:11 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:55:11 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:55:25 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:55:25 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:55:25 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:55:41 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:55:41 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:55:41 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:55:42 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:55:42 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:55:46 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:55:46 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:55:55 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:55:55 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:55:55 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 20:57:03 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 20:57:03 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 20:57:03 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 21:28:11 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 21:28:11 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 21:28:11 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 21:35:23 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 21:35:23 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 21:35:23 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 21:46:04 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 21:46:04 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 21:46:04 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 21:46:27 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 21:46:27 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 21:46:27 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 21:47:21 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 21:47:21 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 21:47:21 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 21:48:30 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 21:48:30 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 21:48:30 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 21:51:31 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 21:51:31 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 21:51:31 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 22:03:26 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 22:03:26 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 22:03:26 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 22:04:36 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 22:04:36 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 22:04:36 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 22:06:16 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 22:06:16 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 22:06:16 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 22:06:57 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 22:06:57 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 22:06:57 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 22:07:37 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 22:07:37 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 22:07:37 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 22:08:09 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 22:08:09 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 22:08:09 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 22:08:30 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 22:08:30 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 22:08:30 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0
+[Tue, 19 Apr 16 22:10:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 19 Apr 16 22:10:02 +0800][INFO] DESCRIBE `user`
+[Tue, 19 Apr 16 22:10:02 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password LIMIT :APL0

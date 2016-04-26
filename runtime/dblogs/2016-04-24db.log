@@ -1,0 +1,15 @@
+[Sun, 24 Apr 16 17:03:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Sun, 24 Apr 16 17:03:02 +0800][INFO] DESCRIBE `user`
+[Sun, 24 Apr 16 17:03:02 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password
+[Sun, 24 Apr 16 17:03:32 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Sun, 24 Apr 16 17:03:32 +0800][INFO] DESCRIBE `user`
+[Sun, 24 Apr 16 17:03:32 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password
+[Sun, 24 Apr 16 17:03:49 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Sun, 24 Apr 16 17:03:49 +0800][INFO] DESCRIBE `user`
+[Sun, 24 Apr 16 17:03:49 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password
+[Sun, 24 Apr 16 18:00:34 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Sun, 24 Apr 16 18:00:34 +0800][INFO] DESCRIBE `user`
+[Sun, 24 Apr 16 18:00:34 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password
+[Sun, 24 Apr 16 18:00:56 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'user' AND `TABLE_SCHEMA` = DATABASE()
+[Sun, 24 Apr 16 18:00:56 +0800][INFO] DESCRIBE `user`
+[Sun, 24 Apr 16 18:00:56 +0800][INFO] SELECT `user`.`id`, `user`.`username`, `user`.`password` FROM `user` WHERE `user`.`username` = :username AND `user`.`password` = :password
