@@ -157,6 +157,7 @@ class Module implements ModuleDefinitionInterface
             );
             return $cache;
         };
+        $di['p'] = function( $param ){return $param; };
         /**
          * dispather调度器
          */

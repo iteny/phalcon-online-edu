@@ -6,10 +6,12 @@
  */
 namespace Hemacms\Admin\Controllers;
 use Phalcon\Mvc\Controller;
+use Hemalib\Verify;
 //use Hemacms\Admin\Models;
 class LoginController extends Controller
 {
     public function indexAction(){
+        $this->p('asdfasd');
         $this->assets->addCss('static/admin/css/login.css')
 //            ->addCss('css/bootstrap/dashboard.css')
 //            ->addCss('css/codemirror/codemirror.css')
@@ -26,9 +28,44 @@ class LoginController extends Controller
 //            ->setTargetUri('static/admin/css/login.mini.css')
 //            ->join(true)
 //            ->addFilter(new \Phalcon\Assets\Filters\Cssmin());
+        $this->view->disable();
 
     }
     public function doLoginAction(){
-        echo '111';
+        $this->view->disable();
+//        $this->checkVerify();
+        if ($this->request->isPost()) {
+            $key = $this->request->getPost( 'key', 'trim' );
+            $token = $this->request->getPost( 'token', 'trim' );
+            if ($this->security->checkToken($key,$token)) {
+                // The token is OK
+                $code = $this->request->getPost( 'verify', 'trim' );
+                if($this->checkVerify($code))
+                {
+                    echo '111';
+                }
+                else{
+                    echo '222';
+                }
+            }else{
+                echo '333';
+            }
+        }
+    }
+    //输出验证码
+    public function verifyAction()
+    {
+        $Verify = new Verify();
+        $Verify->fontttf = '5.ttf'; //字体
+        $Verify->fontSize = 30; //验证码字体大小
+        $Verify->length   = 4; //验证码位数
+        $Verify->useNoise = true; //关闭验证码杂点
+        $Verify->entry();
+        $this->view->disable();
+    }
+    //验证验证码
+    function checkVerify($code, $id = '')
+    {  	$verify = new Verify();
+        return $verify->check($code, $id);
     }
 }

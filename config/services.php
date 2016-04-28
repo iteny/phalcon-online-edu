@@ -28,6 +28,7 @@ use Phalcon\Http\Response as ReturnResponse;
 use Phalcon\Http\Response\Cookies;
 use Phalcon\Crypt;
 use Phalcon\Session\Adapter\Files as Session;
+use Phalcon\Security;
 /**
  * The FactoryDefault Dependency Injector automatically registers the right services to provide a full stack framework
  */
@@ -229,6 +230,12 @@ $di->setShared('session', function () {
     $session = new Session();
     $session->start();
     return $session;
+});
+$di->setShared('security', function () {
+    $security = new Security();
+    // Set the password hashing factor to 12 rounds
+    $security->setWorkFactor(12);
+    return $security;
 });
 $di->setShared('config', function () use($config){
     return $config;

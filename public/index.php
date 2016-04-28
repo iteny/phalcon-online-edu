@@ -15,7 +15,7 @@ try {
      * We're a registering a set of directories taken from the configuration file
      */
     $loader->registerNamespaces( array(
-        'mylib' 	=> APP_PATH . '/libraries/',
+        'Hemalib' 	=> APP_PATH . '/hemalib/',
 //        'vos'		=> APP_PATH . 'vos/',
 //        'enums'		=> APP_PATH . 'enums/',
 //        'listeners'	=> APP_PATH . 'listeners/',
