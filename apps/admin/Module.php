@@ -14,6 +14,8 @@ use Phalcon\Cache\Backend\File as ViewCacheFile;
 use Phalcon\Cache\Frontend\Data as FrontendData;
 use Phalcon\Cache\Backend\Redis as BackendRedis;
 
+use Hemalib\Functions;
+
 
 class Module implements ModuleDefinitionInterface
 {
@@ -157,7 +159,9 @@ class Module implements ModuleDefinitionInterface
             );
             return $cache;
         };
-        $di['p'] = function( $param ){return $param; };
+        $di['function'] = function () {
+            return new Functions();
+        };
         /**
          * dispather调度器
          */

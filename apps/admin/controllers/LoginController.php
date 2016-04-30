@@ -7,11 +7,13 @@
 namespace Hemacms\Admin\Controllers;
 use Phalcon\Mvc\Controller;
 use Hemalib\Verify;
-//use Hemacms\Admin\Models;
+use enums\SystemEnums;
+use Hemacms\Admin\Models\User;
 class LoginController extends Controller
 {
     public function indexAction(){
-        $this->p('asdfasd');
+//        $this->function->p(array('sdf'=>123,'asdfasd'=>12312));
+
         $this->assets->addCss('static/admin/css/login.css')
 //            ->addCss('css/bootstrap/dashboard.css')
 //            ->addCss('css/codemirror/codemirror.css')
@@ -24,11 +26,12 @@ class LoginController extends Controller
                      ->addJs('static/common/js/layer/layer.js')
                      ->addJs('static/admin/js/admin.common.js')
             ->collection('js');
+
 //            ->setTargetPath('static/admin/css/login.mini.css')
 //            ->setTargetUri('static/admin/css/login.mini.css')
 //            ->join(true)
 //            ->addFilter(new \Phalcon\Assets\Filters\Cssmin());
-        $this->view->disable();
+//        $this->view->disable();
 
     }
     public function doLoginAction(){
@@ -38,17 +41,61 @@ class LoginController extends Controller
             $key = $this->request->getPost( 'key', 'trim' );
             $token = $this->request->getPost( 'token', 'trim' );
             if ($this->security->checkToken($key,$token)) {
-                // The token is OK
                 $code = $this->request->getPost( 'verify', 'trim' );
                 if($this->checkVerify($code))
                 {
-                    echo '111';
+                    $username = $this->request->getPost( 'username', 'trim' );
+                    $password = sha1(md5($this->request->getPost( 'password', 'trim' )));
+//                    echo '111';
+//                    $error = $this->safeCache->get('error_' . $username); //判断是否锁定
+//                    if( isset( $error[ 'status' ] ) && SystemEnums::USER_STATE_LOCK == $error[ 'status' ] )
+//                    {
+//                        $ret[ 'status' ] = 1;
+//                        $ret[ 'msg' ] = '密码已经锁定，请两个小时后再登录';
+//                        $ret[ 'key' ] = $this->security->getTokenKey();
+//                        $ret[ 'token' ] = $this->security->getToken();
+//                        echo json_encode( $ret );
+//                        return false;
+//                    }
+//                    echo $password;die;
+
+                    $conditions = "username = :username: AND password = :password:";
+                    $parameters = array(
+                        'username' => $username,
+                        'password' => $password
+                    );
+                    $where = array(
+                        $conditions,
+                        'bind' => $parameters,
+                        'columns' => 'id,username,nickname'
+                    );
+                    $user = User::findFirst( $where );
+
+                    var_dump($user);
+                    if($user){
+                        echo '111';
+                    }else{
+                        $msg['status'] = 7;
+                        $msg['info'] = '帐号密码错误';
+                        $msg[ 'key' ] = $this->security->getTokenKey();
+                        $msg[ 'token' ] = $this->security->getToken();
+                        exit(json_encode($msg));
+                    }
                 }
                 else{
-                    echo '222';
+                    $msg['status'] = 8;
+                    $msg['info'] = '验证码错误';
+                    $msg[ 'key' ] = $this->security->getTokenKey();
+                    $msg[ 'token' ] = $this->security->getToken();
+                    exit(json_encode($msg));
                 }
             }else{
-                echo '333';
+                $msg['status'] = 9;
+                $msg['info'] = '表单令牌出错，请刷新页面！';
+                $msg[ 'key' ] = $this->security->getTokenKey();
+                $msg[ 'token' ] = $this->security->getToken();
+                echo json_encode($msg);
+
             }
         }
     }

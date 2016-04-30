@@ -8,6 +8,7 @@ return new \Phalcon\Config(array(
         'password' => 'iteny',
         'dbname'   => 'hemacms',
         'charset'  => 'utf8',
+        'prefix'   => 'fcms_'
     ),
     'application' => array(
         'controllersDir' => __DIR__ . '/../controllers/',

@@ -68,56 +68,83 @@
             else
             {
                 e.preventDefault();
-//                if(formLogin.attr("disabledSubmit")){
-//                    admin.error('请勿重复登录','#loginsubmit');
-//                    return false;
-//                }
-//                formLogin.attr("disabledSubmit",true);
-                $.post(formLogin.attr('action'),{'username':username,'password':password,'verify':verify,'key':key,'token':token},function(data){
-                    if(data==0)
-                    {
-                        admin.error('验证码错误','#verifycode');
-                        $("#verifycode").val('');
-                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
-                        $('#loginsubmit').attr("disabledSubmit",'');
-                    }
-                    else if(data==6)
-                    {
-                        admin.error('帐号或密码格式错误','#loginsubmit');
-                        $("#verifycode").val('');
-                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
-                        $('#loginsubmit').attr("disabledSubmit",'');
-                    }
-                    else if(data==4)
-                    {
-                        admin.error('帐号或密码错误','#loginsubmit');
-                        $("#verifycode").val('');
-                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
-                        $('#loginsubmit').attr("disabledSubmit",'');
-                    }
-                    else if(data==5)
-                    {
-                        admin.error('该账户已被封禁','#username');
-                        $("#verifycode").val('');
-                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
-                        $('#loginsubmit').attr("disabledSubmit",'');
-                    }else if(data==7)
-                    {
-                        admin.error('该账户不存在','#username');
-                        $("#verifycode").val('');
-                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
-                        $('#loginsubmit').attr("disabledSubmit",'');
-                    }else if(data==1){
-                        admin.success('登录成功3秒后为你跳转！','#loginsubmit');
-                        setTimeout(function(){window.location.href=redirect}, 3000);
-                    }else{
-                        admin.error('未知错误请联系管理员','#loginsubmit');
-                        $("#verifycode").val('');
-                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
-                        $('#loginsubmit').attr("disabledSubmit",'');
-                    }
-
+                if(formLogin.attr("disabledSubmit")){
+                    admin.error('请勿重复登录','#loginsubmit');
+                    return false;
+                }
+                formLogin.attr("disabledSubmit",true);
+                $.ajax({
+                    type: 'post',
+                    url: formLogin.attr('action'),
+                    data : {'username':username,'password':password,'verify':verify,'key':key,'token':token},
+                    dataType:"json",
+                    beforeSend: function(){
+//                        layer.load(1);
+                    },
+                    success: function(msg){
+                        if(msg.status === 9){
+                            admin.error(msg.info,'#loginsubmit');
+                            formLogin.attr("disabledSubmit",'');
+                        }else if(msg.status === 8){
+                            admin.error(msg.info,'#loginsubmit');
+                            formLogin.attr("disabledSubmit",'');
+                        }else if(msg.status ===7){
+                            admin.error(msg.info,'#loginsubmit');
+                            formLogin.attr("disabledSubmit",'');
+                        }else{
+                            alert('111');
+                        }
+                        key = msg.key;
+                        token = msg.token;
+                    },
+//                    error: function(XMLHttpRequest, textStatus, errorThrown){
+//                        admin.error('网络连接异常！','#loginsubmit');
+//                        return false;
+//                    }
                 });
+//                $.post(,,function(msg){
+//                        alert(msg.info);
+//                    if(data.status=='9')
+//                    {
+//                        alert(data.info);
+//                    }
+//                    else if(data==6)
+//                    {
+//                        admin.error('帐号或密码格式错误','#loginsubmit');
+//                        $("#verifycode").val('');
+//                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
+//                        $('#loginsubmit').attr("disabledSubmit",'');
+//                    }
+//                    else if(data==4)
+//                    {
+//                        admin.error('帐号或密码错误','#loginsubmit');
+//                        $("#verifycode").val('');
+//                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
+//                        $('#loginsubmit').attr("disabledSubmit",'');
+//                    }
+//                    else if(data==5)
+//                    {
+//                        admin.error('该账户已被封禁','#username');
+//                        $("#verifycode").val('');
+//                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
+//                        $('#loginsubmit').attr("disabledSubmit",'');
+//                    }else if(data==7)
+//                    {
+//                        admin.error('该账户不存在','#username');
+//                        $("#verifycode").val('');
+//                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
+//                        $('#loginsubmit').attr("disabledSubmit",'');
+//                    }else if(data==1){
+//                        admin.success('登录成功3秒后为你跳转！','#loginsubmit');
+//                        setTimeout(function(){window.location.href=redirect}, 3000);
+//                    }else{
+//                        admin.error('未知错误请联系管理员','#loginsubmit');
+//                        $("#verifycode").val('');
+//                        document.getElementById('code_img').src=verifycode+'?time='+Math.random();void(0);
+//                        $('#loginsubmit').attr("disabledSubmit",'');
+//                    }
+
+//                });
             }
         });
 
@@ -127,6 +154,7 @@
     .layui-layer-tips .layui-layer-content{
         font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
         padding: 20px 10px;
+        line-height: 24px;
         font-size: 24px;
         font-weight:bold;
     }
