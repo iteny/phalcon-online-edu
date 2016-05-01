@@ -17,7 +17,7 @@ try {
     $loader->registerNamespaces( array(
         'Hemalib' 	=> APP_PATH . '/hemalib/',
 //        'vos'		=> APP_PATH . '/vos/',
-        'enums'		=> APP_PATH . 'enums/',
+        'enums'		=> APP_PATH . '/enums/',
 //        'listeners'	=> APP_PATH . 'listeners/',
         'vendor' => APP_PATH . '/vendor/'
     ));

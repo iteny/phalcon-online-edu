@@ -1,0 +1,7 @@
+[Sun, 01 May 16 21:48:37 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Sun, 01 May 16 21:48:37 +0800][INFO] DESCRIBE `hm_login_log`
+[Sun, 01 May 16 21:48:37 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Sun, 01 May 16 21:48:55 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Sun, 01 May 16 21:48:55 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Sun, 01 May 16 21:48:55 +0800][INFO] DESCRIBE `hm_login_log`
+[Sun, 01 May 16 21:48:55 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)

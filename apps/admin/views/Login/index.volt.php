@@ -85,12 +85,23 @@
                         if(msg.status === 9){
                             admin.error(msg.info,'#loginsubmit');
                             formLogin.attr("disabledSubmit",'');
+                            refreshs();
                         }else if(msg.status === 8){
                             admin.error(msg.info,'#loginsubmit');
                             formLogin.attr("disabledSubmit",'');
-                        }else if(msg.status ===7){
+                            refreshs();
+                        }else if(msg.status === 7){
                             admin.error(msg.info,'#loginsubmit');
                             formLogin.attr("disabledSubmit",'');
+                            refreshs();
+                        }else if(msg.status === 4){
+                            admin.error(msg.info,'#loginsubmit');
+                            formLogin.attr("disabledSubmit",'');
+                            refreshs();
+                        }else if(msg.status === 5){
+                            admin.error(msg.info,'#loginsubmit');
+                            formLogin.attr("disabledSubmit",'');
+                            refreshs();
                         }else{
                             alert('111');
                         }
