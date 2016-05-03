@@ -1,0 +1,113 @@
+[Tue, 03 May 16 20:57:10 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 20:57:41 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 20:57:42 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 20:57:42 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 20:57:42 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 20:58:43 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 20:58:43 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 20:58:43 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 20:58:43 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:00:08 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:00:08 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:00:08 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:00:08 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:03:58 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:03:58 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:03:58 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:03:58 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:04:57 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:04:57 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:04:57 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:04:57 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:05:59 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:05:59 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:05:59 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:08:48 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:08:48 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:08:48 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:10:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:10:02 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:10:02 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:10:54 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:10:54 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:10:54 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:11:30 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:11:30 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:11:30 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:12:36 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:12:36 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:12:36 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:13:34 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:13:34 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:13:34 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:14:41 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:14:41 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:14:41 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:14:44 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:14:44 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:14:44 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:14:45 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:14:45 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:14:45 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:14:46 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:14:46 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:14:46 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:14:48 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:14:48 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:14:48 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:14:49 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:14:49 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:14:49 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:14:50 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:14:50 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:14:50 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:14:58 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:14:58 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:14:58 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:14:58 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:15:17 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:15:17 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:15:17 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:15:27 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:15:27 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:15:27 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:15:27 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:15:48 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:15:48 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:15:48 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:15:48 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:20:13 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:20:13 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:20:13 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:20:21 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:20:21 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:20:21 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:20:21 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:27:50 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:27:50 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:27:50 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:27:50 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:33:41 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:33:41 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:33:41 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:33:41 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:33:56 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:33:56 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:33:56 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:34:02 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:34:02 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:34:02 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:34:02 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:36:03 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:36:03 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:36:03 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:36:10 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:36:10 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:36:10 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:37:49 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:37:49 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:37:49 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+[Tue, 03 May 16 21:37:52 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Tue, 03 May 16 21:37:52 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Tue, 03 May 16 21:37:52 +0800][INFO] DESCRIBE `hm_login_log`
+[Tue, 03 May 16 21:37:52 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)

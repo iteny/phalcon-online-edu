@@ -15,31 +15,24 @@ use Hemacms\Admin\Models\LoginLog;
 class LoginController extends Controller
 {
     public function indexAction(){
-//        $this->function->p(array('sdf'=>123,'asdfasd'=>12312));
-
         $this->assets->addCss('static/admin/css/login.css')
-//            ->addCss('css/bootstrap/dashboard.css')
-//            ->addCss('css/codemirror/codemirror.css')
-            ->collection('css');
-//            ->setTargetPath('static/admin/css/login.mini.css')
-//            ->setTargetUri('static/admin/css/login.mini.css')
-//            ->join(true)
-//            ->addFilter(new \Phalcon\Assets\Filters\Cssmin());
+                ->collection('css')
+                ->setTargetPath('static/admin/css/login.mini.css')
+                ->setTargetUri('static/admin/css/login.mini.css')
+                ->join(true)
+                ->addFilter(new \Phalcon\Assets\Filters\Cssmin());
         $this->assets->addJs('static/common/js/jquery/jquery-1.12.3.min.js')
-                     ->addJs('static/common/js/layer/layer.js')
-                     ->addJs('static/admin/js/admin.common.js')
-            ->collection('js');
-
-//            ->setTargetPath('static/admin/css/login.mini.css')
-//            ->setTargetUri('static/admin/css/login.mini.css')
-//            ->join(true)
-//            ->addFilter(new \Phalcon\Assets\Filters\Cssmin());
-//        $this->view->disable();
-
+                ->addJs('static/common/js/layer/layer.js')
+                ->addJs('static/admin/js/admin.common.js')
+                ->addJs('static/admin/js/admin.login.js')
+                ->collection('js')
+                ->setTargetPath('static/admin/js/login.mini.js')
+                ->setTargetUri('static/admin/js/login.mini.js')
+                ->join(true)
+                ->addFilter(new \Phalcon\Assets\Filters\Jsmin());
     }
     public function doLoginAction(){
         $this->view->disable();
-//        $this->checkVerify();
         if ($this->request->isPost()) {
             $key = $this->request->getPost( 'key', 'trim' );
             $token = $this->request->getPost( 'token', 'trim' );
@@ -49,9 +42,7 @@ class LoginController extends Controller
                 {
                     $username = $this->request->getPost( 'username', 'trim' );
                     $password = sha1(md5($this->request->getPost( 'password', 'trim' )));
-
                     $error = $this->safeCache->get('error_' . $username); //判断是否锁定
-
                     if( isset( $error[ 'status' ] ) && SystemEnums::USER_STATE_LOCK == $error[ 'status' ] )
                     {
                         $this->recordLogin(0,'帐号已锁定');
@@ -74,11 +65,21 @@ class LoginController extends Controller
                     );
                     $user = User::findFirst($where);
                     $enableCnt = 6;
-//                    var_dump($user);
                     if($user){
                         $user = $user->toArray();
                         if($user['status']){
-
+                            $this->recordLogin(1,'密码保密');
+                            $this->logout();
+                            $strVerfiy = trim(trim(trim($_SERVER['HTTP_USER_AGENT'])) . trim(md5($_SERVER['SERVER_ADDR'])));
+                            $userInfo['session_verfiy'] = $strVerfiy;
+                            $userInfo['admin_login_time'] = $_SERVER['REQUEST_TIME'];
+                            $userInfo['admin_uid'] = $user['id'];
+                            $userInfo['admin_username'] = $user['username'];
+                            $userInfo['admin_nickname'] = $user['nickname'];
+                            $this->session->set('userInfo',$userInfo);
+                            $msg['status'] = 1;
+                            $msg['info'] = '登录成功，3秒后为你跳转';
+                            exit(json_encode($msg));
                         }else{
                             $this->recordLogin(0,'帐号暂停使用');
                             $msg['status'] = 5;
@@ -131,16 +132,6 @@ class LoginController extends Controller
      function recordLogin($status = '0',$message = '未知'){
         $Ip = new IpLocation('UTFWry.dat'); // 实例化类 参数表示IP地址库文件
         $area = $Ip->getlocation(); // 获取某个IP地址所在的位置
-//        $data = [
-//            "username" => $this->request->getPost( 'username', 'trim' ),
-//            "status" => $status,
-//            "info" => $message,
-//            "logintime" => $_SERVER['REQUEST_TIME'],
-//            "loginip" => $area['ip'],
-//            "area" => $area['area'] == '' ? '对方在服务器本地登录' : $area['area'],
-//            "country" => $area['country'],
-//            "useragent" => $_SERVER['HTTP_USER_AGENT']
-//        ];
         $loginlog = new LoginLog();
         $loginlog->username = $this->request->getPost( 'username', 'trim' );
         $loginlog->status = $status;
@@ -167,5 +158,9 @@ class LoginController extends Controller
     function checkVerify($code, $id = '')
     {  	$verify = new Verify();
         return $verify->check($code, $id);
+    }
+    function logout()
+    {
+        $this->session->remove('userInfo');
     }
 }
