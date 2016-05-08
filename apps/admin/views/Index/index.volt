@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>后台管理</title>
-    <?php echo $this->assets->outputCss('css'); ?>
+    {{ assets.outputCss('css') }}
 </head>
 <body>
 <div id="hmFrame">

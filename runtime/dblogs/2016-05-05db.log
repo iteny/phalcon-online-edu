@@ -1,0 +1,4 @@
+[Thu, 05 May 16 16:34:03 +0800][INFO] SELECT `hm_user`.`id` AS `id`, `hm_user`.`username` AS `username`, `hm_user`.`nickname` AS `nickname`, `hm_user`.`status` AS `status` FROM `hm_user` WHERE `hm_user`.`username` = :username AND `hm_user`.`password` = :password LIMIT :APL0
+[Thu, 05 May 16 16:34:03 +0800][INFO] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME` = 'hm_login_log' AND `TABLE_SCHEMA` = DATABASE()
+[Thu, 05 May 16 16:34:03 +0800][INFO] DESCRIBE `hm_login_log`
+[Thu, 05 May 16 16:34:03 +0800][INFO] INSERT INTO `hm_login_log` (`username`, `logintime`, `loginip`, `status`, `info`, `area`, `country`, `useragent`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
