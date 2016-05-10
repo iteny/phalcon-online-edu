@@ -9,6 +9,7 @@ class IndexController extends Controller
     public function indexAction()
     {
         $this->assets->addCss('static/admin/css/index-index.css')
+            ->addCss('static/common/js/poshytip/src/tip-darkgray/tip-darkgray.css')
             ->collection('css');
 //            ->setTargetPath('static/admin/css/login.mini.css')
 //            ->setTargetUri('static/admin/css/login.mini.css')
