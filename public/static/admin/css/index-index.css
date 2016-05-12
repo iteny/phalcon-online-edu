@@ -175,3 +175,29 @@ list-style-type: none;
     /*text-indent: -2000em;*/
 
 }
+.iteny{
+    color:white;
+    z-index:100000;
+}
+.iteny .content{
+    float: left;
+    border: 1px solid #37424f;
+    height:38px;
+    line-height: 38px;
+    padding: 0 15px;
+    background: #37424f;
+    /*position: relative;*/
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+.jiantou {
+    float: left;
+    border: 10px solid transparent;
+    border-right: 10px solid #37424f;
+    width: 0;
+    height: 0px;
+    position: relative;
+    top: 8px;
+    left: 0px;
+}
