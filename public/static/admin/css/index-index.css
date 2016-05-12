@@ -141,6 +141,7 @@ list-style-type: none;
     padding: 0;
     font-size: 14px;
     background: #22282e;
+    cursor: pointer;
 
 }
 #menu h2.open .iconfont{}

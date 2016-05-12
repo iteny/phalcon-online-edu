@@ -61,26 +61,23 @@
 
 </body>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
-<script src="/static/common/js/layer/layer.js"></script>
-<script src="/static/common/js/collapse/json2.js"></script>
-<script src="/static/common/js/collapse/jquery.collapse.js"></script>
-<script src="/static/common/js/collapse/jquery.collapse_storage.js"></script>
-<script src="/static/common/js/collapse/jquery.collapse_cookie_storage.js"></script>
 <script src="/static/common/js/poshytip/src/jquery.poshytip.min.js"></script>
 
 <script>
     var getLeftMenu = '/admin/index/getLeftMenu';
     $(function(){
         $('#left-menu').on("click",'h2.open',function(event){
-            alert('11');
-            $(this).find('i.tou').html('asdfasd');
-            $(this).find('ul').attr('style','display:none;');
-//            if($(this).attr('aria-expanded') == 'true'){
-//                $(this).find('i.tou').html('&#xe603;');
-//            }
-//            if($(this).attr('aria-expanded') == 'false'){
-//                $(this).find('i.tou').html('&#xe604;');
-//            }
+            if($(this).hasClass("active")){
+                $(this).removeClass("active");
+                $(this).find('i.tou').html('&#xe603;');
+                $(this).next('ul').hide();
+                $(this).next('ul').animate({opacity:0},1000);
+            }else{
+                $(this).addClass("active");
+                $(this).find('i.tou').html('&#xe604;');
+                $(this).next('ul').show();
+                $(this).next('ul').animate({opacity:1},1000);
+            }
         });
         $('#hmLeft').attr('style','height:'+($(window).height()-$('#hmHead').height())+'px;');
         $('#hmRight').attr('style','height:'+($(window).height()-$('#hmHead').height())+'px;');
@@ -103,14 +100,6 @@
                 $('.max').attr('style','height:'+($(window).height()-$('#hmHead').height())+'px;display:block;width:180px;')
                 $('#hmRight').attr('style','height:'+($(window).height()-$('#hmHead').height())+'px;margin-left: 181px');
             }
-        });
-        $('.west').poshytip({
-            className: 'tip-darkgray',
-            alignTo: 'target',
-            alignX: 'right',
-            alignY: 'center',
-            offsetX: 10,
-            showTimeout: 100
         });
         $('.bsn').poshytip({
             className: 'tip-darkgray',
@@ -168,15 +157,11 @@
 
         //获取左侧菜单
         $(".top-nav").click(function(e) {
-//             alert('111');
-//            ITENY.iframe_height();
             if($(this).parent('li').attr("class") == "action"){
                 return false;
             }
             $('#access li').removeClass('action');
             $(this).parent('li').addClass('action');
-//            alert($(this).attr("data-id"));
-//            return false;
             $.ajax({
                 type: 'POST',
                 url: getLeftMenu,
@@ -186,34 +171,31 @@
                     $('#left-menu').html('<h2 style="position: relative;" class="open west" title="菜单加载中...!"><i class="tou iconfont" style="color:#FFD700;font-size: 16px;">&#xe60b;</i><em style="color:#FFD700;">菜单加载中...!</em></h2>');
                 },
                 success: function(data){
+                    if(data == false){
+                        $('#left-menu').html('<h2 style="position: relative;" class="open west" title="菜单加载中...!"><i class="tou iconfont" style="color:#FFD700;font-size: 16px;">&#xe60b;</i><em style="color:#FFD700;">此分类无菜单...!</em></h2>');
+                        return false;
+                    }
                     $('#left-menu').html('');
+                    var str = '';
                     var count = data.length;
-                    $('#left-menu').append('<div data-collapse>');
                     for(var i=0; i<count; i++)
                     {
-                        $('#left-menu').append('<h2 style="position: relative;" class="open west" data-name="'+data[i]['name']+'"><i class="tou iconfont" style="color:white;font-size: 18px;">&#xe604;</i><em style="color:white;">'+data[i]['name']+'</em><i class="iconfont" style="color:white;font-size: 12px;position: relative;right: -55px;">&#xe605;</i></h2>');
-                        $('#left-menu').append('<ul>');
-//                        $('#left-menu').append("<dt><span data-id='7Admin'><i class='icon "+data[i]['icon']+"'></i>"+data[i]['text']+"</span></dt><dd style='display: block;' class="+data[i]['id']+"><ul></ul></dd>");
+                        str += '<h2 style="position: relative;" class="open west active" data-name="'+data[i]['name']+'"><i class="tou iconfont" style="color:white;font-size: 18px;">&#xe604;</i><em style="color:white;">'+data[i]['name']+'</em><i class="iconfont" style="color:white;font-size: 12px;position: relative;right: -55px;">&#xe605;</i></h2>';
+                        str += '<ul>';
                         var icount = data[i]['children'].length;
-
                         for(var s=0; s<icount; s++)
                         {
                             var thdizhi = '/admin/'+data[i]['children'][s]['controller']+'/'+data[i]['children'][s]['action'];
-                            $('#left-menu').append('<li><a class="west" href="'+thdizhi+'" target="rightFrame" data-name="'+data[i]['children'][s]['name']+'"><i class="iconfont" style="color:white;font-size: 16px;">&#xe600;</i><em>'+data[i]['children'][s]['name']+'</em></a></li>');
-//                            $('#B_menubar dd.'+data[i]['id']+' ul').append("<li><a href='"+data[i]['children'][s]['url']+"' data-top-id="+topid+" data-id='"+data[i]['children'][s]['id']+"'><i class='icon "+data[i]['children'][s]['icon']+"'></i>"+data[i]['children'][s]['text']+"</a></li>");
-                            // alert(data[i]['children'][s]['text']);
+                            str += '<li><a class="west" href="'+thdizhi+'" target="rightFrame" data-name="'+data[i]['children'][s]['name']+'"><i class="iconfont" style="color:white;font-size: 16px;">&#xe600;</i><em>'+data[i]['children'][s]['name']+'</em></a></li>';
                         }
-
+                        str += '</ul>';
                     }
-                    $('#left-menu').append('</ul>');
-                    $('#left-menu').append('</div>');
+                    $('#left-menu').html(str);
                 },
                 error: function(){
                     $('#left-menu').html('<h2 style="position: relative;" class="open west" title="菜单加载失败...!"><i class="tou iconfont" style="color:red;font-size: 16px;">&#xe60b;</i><em style="color:red;">菜单加载失败...!</em></h2>');
                 }
             });
-
-
         });
         $('.top-nav').eq(0).click();
     });
