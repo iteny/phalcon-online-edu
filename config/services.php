@@ -174,40 +174,40 @@ $di->set('safeCache', function () use($config) {
 */
 $di->setShared('dispatcher', function() use ($di) {
     $dispatcher = new Phalcon\Mvc\Dispatcher();
-    $dispatcher->setDefaultNamespace('Hemacms\Home\Controllers');
+    $dispatcher->setDefaultNamespace('Hemacms\Admin\Controllers');
 //    return $dispatcher;
     // 创建一个事件管理
-    $eventsManager = new EventsManager();
-    // 附上一个侦听者
-    $eventsManager->attach("dispatch:beforeException", function ($event, $dispatcher, $exception) {
-
-        // 处理404异常
-        if ($exception instanceof DispatchException) {
-            $dispatcher->forward(
-                array(
-                    'controller' => 'index',
-                    'action'     => 'show'
-                )
-            );
-
-            return false;
-        }
-        // 代替控制器或者动作不存在时的路径
-        switch ($exception->getCode()) {
-            case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
-            case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
-                $dispatcher->forward(
-                    array(
-                        'controller' => 'index',
-                        'action'     => 'show404'
-                    )
-                );
-
-                return false;
-        }
-    });
+//    $eventsManager = new EventsManager();
+//    // 附上一个侦听者
+//    $eventsManager->attach("dispatch:beforeException", function ($event, $dispatcher, $exception) {
+//
+//        // 处理404异常
+//        if ($exception instanceof DispatchException) {
+//            $dispatcher->forward(
+//                array(
+//                    'controller' => 'index',
+//                    'action'     => 'show'
+//                )
+//            );
+//
+//            return false;
+//        }
+//        // 代替控制器或者动作不存在时的路径
+//        switch ($exception->getCode()) {
+//            case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+//            case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
+//                $dispatcher->forward(
+//                    array(
+//                        'controller' => 'index',
+//                        'action'     => 'show404'
+//                    )
+//                );
+//
+//                return false;
+//        }
+//    });
     // 将EventsManager绑定到调度器
-    $dispatcher->setEventsManager($eventsManager);
+//    $dispatcher->setEventsManager($eventsManager);
     return $dispatcher;
 });
 $di->setShared('response',function(){

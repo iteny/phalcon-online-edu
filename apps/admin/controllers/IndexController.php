@@ -2,6 +2,7 @@
 
 namespace Hemacms\Admin\Controllers;
 use Phalcon\Mvc\Controller;
+use Hemacms\Admin\Models\AclResource;
 
 class IndexController extends Controller
 {
@@ -24,10 +25,75 @@ class IndexController extends Controller
 //            ->setTargetUri('static/admin/js/login.mini.js')
 //            ->join(true)
 //            ->addFilter(new \Phalcon\Assets\Filters\Jsmin());
-    }
-    public function loginAction()
-    {
+        $conditions = "pid = :pid: AND isshow = :isshow:";
+        $parameters = array(
+            'pid' => 0,
+            'isshow' => 1
+        );
+        $where = array(
+            $conditions,
+            'bind' => $parameters,
+            'columns' => 'id,name',
+            'order' => 'sort',
+            'cache' => ['lifetime' => 10, 'key' => "admin-oneresource"],
+        );
+        $oneResource = AclResource::find($where);
+        $this->view->topNav = $oneResource;
+//        var_dump($oneResource->toArray());
+//        $this->view->disable();
 
+    }
+    public function getLeftMenuAction()
+    {
+        if ($this->request->isPost()) {
+            $twopid = $this->request->getPost('pid', 'int');
+            $twobind = array(
+                'pid' => $twopid,
+                'isshow' => 1
+            );
+//        $where = array(
+//            $conditions,
+//            'bind' => $parameters,
+//            'columns' => 'id,name',
+//            'order' => 'sort',
+//            'cache' => ['lifetime' => 10, 'key' => "admin-oneresource"],
+//        );
+//            $oneResource = AclResource::find($where);
+            $twoResource = AclResource::find(
+                array(
+                    "pid = :pid: AND isshow = :isshow:",
+                    "bind" => $twobind,
+                    "columns" => 'id,name,controller,action,sort,icon',
+                    'order' => 'sort',
+                    'cache' => ['lifetime' => 10, 'key' => "admin-tworesource".$twopid],
+                )
+            );
+            $twoResource = $twoResource->toArray();
+//            exit(json_encode($twoResource->toArray()));
+            foreach ($twoResource as $k => $v)
+            {
+                $threebind = array(
+                    'pid' => $v['id'],
+                    'isshow' => 1
+                );
+                $threeResource = AclResource::find(
+                    array(
+                        "pid = :pid: AND isshow = :isshow:",
+                        "bind" => $threebind,
+                        "columns" => 'id,name,controller,action,sort,icon',
+                        'order' => 'sort',
+                        'cache' => ['lifetime' => 10, 'key' => "admin-threeresource".$v['id']],
+                    )
+                );
+                $threeResource = $threeResource->toArray();
+                $twoResource[$k]['children'] = $threeResource;
+            }
+            exit(json_encode($twoResource));
+        }
+
+
+//        $this->view->topNav = $oneResource;
+        $this->view->disable();
     }
 
 }
