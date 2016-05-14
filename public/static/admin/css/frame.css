@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Microsoft Yahei, \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, Arial, Verdana, sans-serif;
+    text-decoration: none;
+}
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+body{
+    background: white;
+}
+#frame-top{
+    text-indent: 10px;
+    height: 30px;
+    line-height:30px;
+    background: #F5F5F5;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+#frame-toolbar{
+    height: 60px;
+    line-height: 60px;
+    /*background: red;*/
+    /*text-align:center;*/
+    border-bottom: 1px solid #ededed;
+}
+#frame-toolbar ul{
+    padding-left: 15px;
+}
+#frame-toolbar ul li{
+    float: left;
+    padding-right: 10px;
+}
+#frame-toolbar ul li a{
+    height: 40px;
+    line-height: 40px;
+    /*display: block;*/
+    padding: 6px 12px;
+    border: 1px solid #09c;
+    border-radius: 3px;
+    background: #09c;
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+}
+#frame-toolbar ul li a.active{
+    background: #337ab7;
+    border-color: #2e6da4;
+}
+#frame-toolbar ul li a:hover{
+    background: #337ab7;
+    border-color: #2e6da4;
+}
+form{
+    display: block;
+}
+#frame-content{
+    padding:15px 15px 70px 15px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+tr {
+    border-left: 1px solid #e5e3e3;
+}
+td {
+    border-right: 1px solid #e5e3e3;
+    margin: 0;
+    padding: 0;
+    display: table-cell;
+    vertical-align: inherit;
+}
+td, th, div {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.frame-table-list td {
+    padding: 7px 10px 9px;
+    color: #666;
+    font-size: 14px;
+}
+.frame-table-list td {
+    background: #fafafa url(../img/hr.png) 0 bottom repeat-x;
+}
+.frame-table-list{
+    border-top: 1px solid #ebebeb;
+    margin-bottom: 10px;
+    background: #09C;
+    border: 1px solid #25333c;
+    border-radius: 3px;
+    padding: 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+.frame-table-list thead tr td {
+    padding: 10px 9px;
+    background:#d6dadf;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ffffff;
+    color: #666;
+    font-size: 14px;
+    font-weight: bold;
+
+}
+.frame-table-list tbody input{
+    height: 18px;
+    padding: 4px 8px;
+    font-size: 100%;
+    line-height: 18px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #f0f0f0 inset;
+    /* border-radius: 1px; */
+    vertical-align: middle;
+    margin: 0;
+    font-family: inherit;
+}
+.input:focus,textarea:focus{
+    outline:2px solid #99d8f5;
+    border-color:#7bbff2;
+    background-color:#fffbde;
+}
+.frame-table-list a{
+    color: #4169E1;
+    font-weight: bold;
+}
+.frame-table-list a:hover{
+    text-decoration: underline;
+}
+.frame-table-list tbody tr:hover td
+{
+    color:white;
+    /*background-color:#f9f9f9;*/
+    background: #4d7690;
+}
+.frame-table-list tbody tr:hover td a{
+    color: white;
+}
+.frame-table-list tbody tr:hover td span{
+    color: white;
+}
+.frame-table-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    padding: 6px 20px 6px;
+    background: #F5F5F5;
+    border-top: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+}
+a.btn{
+    height: 40px;
+    line-height: 40px;
+    /*display: block;*/
+    padding: 6px 12px;
+    border: 1px solid #09c;
+    border-radius: 3px;
+    background: #09c;
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+a.btn:hover{
+    background: #337ab7;
+    border-color: #2e6da4;
+}

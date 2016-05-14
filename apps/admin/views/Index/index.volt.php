@@ -55,7 +55,7 @@
         </div>
         <iframe name="rightFrame" id="iframe_default" src="/admin/login/index" style="height: 100%; width: 100%;display:block;" data-id="default" frameborder="0" scrolling="auto"></iframe>
     </div>
-    <div id="hmFooter"></div>
+    <!--<div id="hmFooter"></div>-->
 </div>
 
 
@@ -71,12 +71,12 @@
                 $(this).removeClass("active");
                 $(this).find('i.tou').html('&#xe603;');
                 $(this).next('ul').hide();
-                $(this).next('ul').animate({opacity:0},1000);
+                $(this).next('ul').animate({opacity:0},'slow');
             }else{
                 $(this).addClass("active");
                 $(this).find('i.tou').html('&#xe604;');
                 $(this).next('ul').show();
-                $(this).next('ul').animate({opacity:1},1000);
+                $(this).next('ul').animate({opacity:1},'slow');
             }
         });
         $('#hmLeft').attr('style','height:'+($(window).height()-$('#hmHead').height())+'px;');
@@ -146,12 +146,12 @@
             if($(this).hasClass("active")){
                 $(this).removeClass("active");
                 $("#hmRight").attr('style','height:100%;width:100%;position: fixed;top:0;left:0;margin-left:0;');
-                $('.options').attr('style','top:15px;');
+                $('.options').attr('style','top:2px;');
             }else{
                 var hmhei = $('#hmLeft').width()+1;
                 $(this).addClass("active");
                 $("#hmRight").attr('style','margin-left:'+hmhei+'px;height:'+($(window).height()-$('#hmHead').height())+'px;');
-                $('.options').attr('style','top:55px;');
+                $('.options').attr('style','top:42px;');
             }
         });
 
