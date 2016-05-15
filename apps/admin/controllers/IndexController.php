@@ -51,14 +51,6 @@ class IndexController extends Controller
                 'pid' => $twopid,
                 'isshow' => 1
             );
-//        $where = array(
-//            $conditions,
-//            'bind' => $parameters,
-//            'columns' => 'id,name',
-//            'order' => 'sort',
-//            'cache' => ['lifetime' => 10, 'key' => "admin-oneresource"],
-//        );
-//            $oneResource = AclResource::find($where);
             $twoResource = AclResource::find(
                 array(
                     "pid = :pid: AND isshow = :isshow:",
@@ -69,7 +61,6 @@ class IndexController extends Controller
                 )
             );
             $twoResource = $twoResource->toArray();
-//            exit(json_encode($twoResource->toArray()));
             foreach ($twoResource as $k => $v)
             {
                 $threebind = array(
@@ -90,9 +81,6 @@ class IndexController extends Controller
             }
             exit(json_encode($twoResource));
         }
-
-
-//        $this->view->topNav = $oneResource;
         $this->view->disable();
     }
 

@@ -6,11 +6,25 @@
  */
 namespace Hemacms\Admin\Controllers;
 use Phalcon\Mvc\Controller;
+use Hemacms\Admin\Models\AclResource;
 class SiteController extends Controller
 {
     public function indexAction()
     {
-        echo '111';
+        $adminMenu = AclResource::find(
+            array(
+//                "columns" => 'id,name,controller,action,sort,icon',
+                'order' => 'sort',
+                'cache' => ['lifetime' => $this->config->admincache->adminmenu, 'key' => 'admin-menu'],
+            )
+        );
+//        var_dump($this->function->recursive($adminMenu->toArray()));
+        $this->view->adminMenu = $this->function->recursive($adminMenu->toArray());
+//        $this->view->disable();
+    }
+    public function addMenuAction()
+    {
+        echo $this->request->getQuery('pid');
 //        $this->view->disable();
     }
 }

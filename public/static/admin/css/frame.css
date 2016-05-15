@@ -72,6 +72,60 @@ form{
 #frame-content{
     padding:15px 15px 70px 15px;
 }
+#frame-content .input-title{
+    padding: 10px 9px;
+    border-top: 1px solid #ddd;
+    /* border-bottom: 1px solid #ffffff; */
+    color: #666 !important;
+    font-weight: bold;
+    background: #d6dadf;
+    font-size: 14px;
+    font-family: "Microsoft Yahei",Tahoma;
+
+    /* border: 1px solid #4b5e6b; */
+    border-bottom: 1px solid #ccc;
+    margin-bottom: -2px;
+    position: relative;
+    z-index: 5;
+}
+.input, textarea, select {
+    padding: 4px 4px;
+    font-size: 100%;
+    line-height: 18px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #f0f0f0 inset;
+    /* border-radius: 1px; */
+    vertical-align: middle;
+    margin: 0;
+    font-family: inherit;
+}
+/*
+===================
+输入框文本框长度
+===================
+*/
+.length_0{
+    width:20px;
+}
+.length_1{
+    width:50px;
+}
+.length_2{
+    width:110px;
+}
+.length_3{
+    width:170px;
+}
+.length_4{
+    width:230px;
+}
+.length_5{
+    width:290px;
+}
+.length_6{
+    width:350px;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;

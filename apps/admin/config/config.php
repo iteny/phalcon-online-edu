@@ -39,4 +39,7 @@ return new \Phalcon\Config(array(
         'auth' => 'iteny',
         'persistent' => false,
     ),
+    'admincache' => array(
+        'adminmenu' => 100,
+    ),
 ));

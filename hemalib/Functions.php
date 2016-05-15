@@ -37,5 +37,25 @@ class Functions{
         }
         return $msg;
     }
+    /**
+     * 递归重新排序无限极分类数组
+     */
+    public function recursive($array,$pid=0,$level=0)
+    {
+        $arr = array();
+        foreach($array as $v)
+        {
+            if($v['pid'] == $pid)
+            {
+                if($level < 5){
+                    $v['level'] = $level;
+                    $v['html'] = str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',$level);
+                    $arr[] = $v;
+                    $arr = array_merge($arr,$this->recursive($array,$v['id'],$level+1));
+                }
+            }
+        }
+        return $arr;
+    }
 
 }
