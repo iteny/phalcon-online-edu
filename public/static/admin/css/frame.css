@@ -214,6 +214,9 @@ td, th, div {
 .frame-table-list tbody tr:hover td span{
     color: white;
 }
+.frame-table-list tbody tr:hover .icon{
+    color:white;
+}
 .frame-table-btn {
     position: fixed;
     bottom: 0;
@@ -225,6 +228,7 @@ td, th, div {
     border-top: 1px solid #ededed;
     border-right: 1px solid #ededed;
 }
+.icon{color:#666;font-size: 12px;padding-right: 5px;}
 a.btn{
     height: 40px;
     line-height: 40px;

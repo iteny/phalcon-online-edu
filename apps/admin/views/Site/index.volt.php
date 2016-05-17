@@ -44,7 +44,7 @@
                 <tr>
                     <td align="center"><input style="text-align: center" name="sort[<?php echo $this->escaper->escapeHtml($menu['id']); ?>]" type="text" size="3" value="<?php echo $this->escaper->escapeHtml($menu['sort']); ?>" class="input"></td>
                     <td align="center"><?php echo $this->escaper->escapeHtml($menu['id']); ?></td>
-                    <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?><?php echo $menu['html']; ?><i class="iconfont" style="color:#666;font-size: 12px;padding-right: 5px;">&#xe60f;</i><?php echo $this->escaper->escapeHtml($menu['name']); ?></td>
+                    <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?><?php echo $menu['html']; ?><i class="iconfont icon" style="">&#xe60f;</i><?php echo $this->escaper->escapeHtml($menu['name']); ?></td>
                     <td align="center"><?php echo $this->escaper->escapeHtml($menu['controller']); ?></td>
                     <td align="center"><?php echo $this->escaper->escapeHtml($menu['action']); ?></td>
                     <!-- <td></td>
@@ -65,5 +65,6 @@
 </div>
 </body>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
+<script src="/static/common/js/layer/layer.js"></script>
 <script src="/static/admin/js/common.ajax.js"></script>
 </html>

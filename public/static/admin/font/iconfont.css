@@ -15,6 +15,10 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+.iconfont:hover{
+  display: block;
+  color:red;
+}
 .icon-shezhi:before { content: "\e605"; }
 .icon-shuaxin:before { content: "\e608"; }
 .icon-jiantou:before { content: "\e60d"; }

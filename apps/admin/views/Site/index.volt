@@ -44,7 +44,7 @@
                 <tr>
                     <td align="center"><input style="text-align: center" name="sort[{{menu['id']|e}}]" type="text" size="3" value="{{menu['sort']|e}}" class="input"></td>
                     <td align="center">{{menu['id']|e}}</td>
-                    <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?>{{menu['html']}}<i class="iconfont" style="color:#666;font-size: 12px;padding-right: 5px;">&#xe60f;</i>{{menu['name']|e}}</td>
+                    <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?>{{menu['html']}}<i class="iconfont icon" style="">&#xe60f;</i>{{menu['name']|e}}</td>
                     <td align="center">{{menu['controller']|e}}</td>
                     <td align="center">{{menu['action']|e}}</td>
                     <!-- <td></td>
@@ -65,5 +65,6 @@
 </div>
 </body>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
+<script src="/static/common/js/layer/layer.js"></script>
 <script src="/static/admin/js/common.ajax.js"></script>
 </html>

@@ -57,5 +57,23 @@ class Functions{
         }
         return $arr;
     }
+    /**
+     * 递归重新排序无限极分类数组
+     */
+    public function recursiveTwo($arr,$pid=0,$level=0)
+    {
+        $array = array();
+        foreach($arr as $v)
+        {
+            if($v['pid'] == $pid)
+            {
+                $v['level'] = $level;
+                $v['html'] = str_repeat(' ',$level);
+                $array[] = $v;
+                $array = array_merge($array,$this->recursiveTwo($arr,$v['id'],$level+1));
+            }
+        }
+        return $array;
+    }
 
 }

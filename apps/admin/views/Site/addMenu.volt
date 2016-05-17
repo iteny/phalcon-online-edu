@@ -25,40 +25,37 @@
                 <tbody>
                 <tr>
                     <td width="140">上级菜单:</td>
-                    <td><select name="pid">
-                        <option value="0" selected="">顶级菜单</option>
-                        <option value="1">用户中心</option><option value="4">&nbsp;&nbsp;&nbsp;&nbsp;├─ 用户操作</option><option value="6">&nbsp;&nbsp;&nbsp;&nbsp;├─ 内容管理</option><option value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  内容管理</option><option value="2">设置</option><option value="8">&nbsp;&nbsp;&nbsp;&nbsp;├─ 站长设置</option><option value="9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  系统配置</option><option value="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   更新配置</option><option value="71">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   生成前台配置</option><option value="72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   生成后台配置</option><option value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  菜单设置</option><option value="32">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   添加菜单</option><option value="33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   修改菜单</option><option value="34">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   删除菜单</option><option value="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   菜单排序</option><option value="36">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   导出菜单</option><option value="37">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   导入菜单</option><option value="45">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  后台首页管理</option><option value="48">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   添加版块</option><option value="49">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   修改版块</option><option value="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   删除版块</option><option value="51">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   版块排序</option><option value="46">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  文件备份</option><option value="59">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   开始文件备份</option><option value="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   发送文件备份</option><option value="61">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   删除文件备份</option><option value="69">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  数据备份</option><option value="11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   查看数据备份</option><option value="47">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   查看数据表</option><option value="52">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   优化数据表</option><option value="53">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   修复数据表</option><option value="54">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   开始数据备份</option><option value="55">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   清除执行任务</option><option value="56">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   还原数据备份</option><option value="57">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   发送数据备份</option><option value="58">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   删除数据备份</option><option value="12">&nbsp;&nbsp;&nbsp;&nbsp;├─ 用户设置</option><option value="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  用户管理</option><option value="27">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   添加用户</option><option value="28">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   修改用户</option><option value="29">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   删除单个用户</option><option value="30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   批量删除用户</option><option value="31">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   查看权限</option><option value="14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  角色管理</option><option value="38">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   添加角色</option><option value="39">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   修改角色</option><option value="40">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   删除角色</option><option value="41">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   角色排序</option><option value="42">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   角色配置权限</option><option value="15">&nbsp;&nbsp;&nbsp;&nbsp;├─ 日志设置</option><option value="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  登录日志管理</option><option value="43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   删除上月登录日志</option><option value="17">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  操作日志管理</option><option value="44">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─   删除上月操作日志</option><option value="3">内容管理</option><option value="25">&nbsp;&nbsp;&nbsp;&nbsp;├─ 商品管理</option><option value="26">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  商品分类</option><option value="63">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  商城广告</option><option value="64">农业信息</option><option value="65">&nbsp;&nbsp;&nbsp;&nbsp;├─ 农业信息管理</option><option value="66">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  农业栏目管理</option><option value="67">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  农业信息广告</option><option value="68">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─  农业文章管理</option>	                </select></td>
+                    <td>
+                        <select name="pid" class="length_3">
+                        <option value="0" {% if pid == 0 %}selected{% endif %}>顶级菜单</option>
+                        {% for menu in adminSelect %}
+                        <option value="{{menu['id']}}" {% if menu['id'] == pid %}selected{% endif %}><?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$menu['level']); ?><if condition='$vo["level"] gt 0'>├─</if>{{menu['html']}}{{menu['name']}}</option>
+                        {% endfor %}
+                    </td>
                 </tr>
                 <tr>
                     <td>菜单名称:</td>
-                    <td><input type="text" class="input length_5" name="title" value="" id="title"></td>
+                    <td><input type="text" class="input length_5" name="name" value="" id="name"></td>
                 </tr>
                 <tr>
-                    <td>菜单规则:</td>
-                    <td><input type="text" class="input length_5" name="name" id="name" value=""></td>
+                    <td>控制器:</td>
+                    <td><input type="text" class="input length_5" name="controller" id="controller" value=""></td>
+                </tr>
+                <tr>
+                    <td>方法:</td>
+                    <td><input type="text" class="input length_5" name="action" id="action" value=""></td>
                 </tr>
                 <tr>
                     <td>菜单排序:</td>
                     <td><input type="text" class="input length_5" name="sort" id="sort" value=""></td>
                 </tr>
                 <tr>
-                    <td>菜单条件:</td>
-                    <td><input type="text" class="input length_5" name="condition" id="condition" value=""></td>
-                </tr>
-                <tr>
                     <td>菜单图标：</td>
                     <td>
                         <input id="System_Menu_icons_input" name="icon" type="hidden" value="icons-other-cog">
                         <strong id="System_Menu_icons" style="margin-right: 10px;"><span class="tree-icon tree-file icons-other-cog"></span></strong>
-                        <a class="tubiao" onclick="Show_System_Menu_icons()">选择图标</a>
+                        <a class="btn" onclick="Show_System_Menu_icons()">选择图标</a>
                     </td>
-                </tr>
-                <tr>
-                    <td>状态:</td>
-                    <td><select name="status">
-                        <option value="1">显示</option>
-                        <option value="0">不显示</option>
-                    </select>&nbsp;&nbsp;&nbsp;需要明显不确定的操作时建议设置为不显示，例如：删除，修改等</td>
                 </tr>
                 <tr>
                     <td>是否显示:</td>
@@ -67,14 +64,7 @@
                         <option value="0">不显示</option>
                     </select>&nbsp;&nbsp;&nbsp;是否显示菜单在后台管理页面上</td>
                 </tr>
-                <tr>
-                    <td>类型:</td>
-                    <td><select name="type">
-                        <option value="1" selected="">权限认证+菜单</option>
-                        <option value="0">只作为菜单</option>
-                    </select>
-                        &nbsp;&nbsp;&nbsp;注意：“权限认证+菜单”表示加入后台权限管理，纯粹是菜单项请不要选择此项。</td>
-                </tr>
+
                 </tbody>
             </table>
         </div>
@@ -85,4 +75,149 @@
 </div>
 
 </body>
+<script>
+    var iconPach = '/admin/site/iconsCls';
+</script>
+<script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
+<script src="/static/common/js/layer/layer.js"></script>
+
+<script>
+    function Select_System_Menu_icons(icon){
+        $("#System_Menu_icons").html('<i class="iconfont">'+icon+'</i>');
+        $("#System_Menu_icons_input").val(icon);
+        layer.closeAll();
+    }
+    function Show_System_Menu_icons(){
+        layer.open({
+            type: 1,
+            title: '请选择菜单图标',
+            shadeClose: true,
+            shade: 0.8,
+            offset: '100px',
+            area: ['480px', '500px'],
+            content: '正在加载图标中...' //iframe的url
+        });
+        $.post(iconPach,"",function(data){
+            if(typeof data == 'object'){
+                var content = [];
+                for(x in data){
+                    content[x] = "<a style='color: #666;font-size: 16px;' class='iconfont' onclick=\"Select_System_Menu_icons('"+data[x]+"')\" style='cursor:pointer;'>"+data[x]+"</a>";
+                }
+                var ss = '<div style="padding:10px">';
+                ss += content;
+                ss += '</div>';
+                $('.layui-layer-content').html("<div style='padding:10px;'>"+content.join(" ")+"</div>");
+            } else {
+                $('.layui-layer-content').html("<div style='padding:10px;color: #FFD700;'>图标加载失败，请联系管理员！</div>");
+            }
+        },'json').error(function(){
+            $('.layui-layer-content').html("<div style='padding:10px;color: #FFD700;'>图标加载失败，请联系管理员！3秒后自动关闭...</div>");
+        });
+
+    }
+    $(function(){
+        jQuery.validator.addMethod("chinaese", function(value, element) {
+            var chinaese = /^[\u4e00-\u9fa5]+$/;
+            return this.optional(element) || (chinaese.test(value));
+        }, "只能输入中文");
+        $('form[name=addMenu]').validate({
+            errorElement : 'span',
+            validClass: "success",	//非常重要
+            success : function (label) {
+                label.addClass('success');
+            },
+            rules : {
+                title : {
+                    required : true,
+                    chinaese : true,
+                    remote : {
+                        url : checkAddMTit,
+                        type : 'post',
+                        dataType : 'json',
+                        data : {
+                            title : function(){
+                                return $('#title').val();
+                            }
+                        }
+                    }
+                },
+                name : {
+                    required : true,
+                    remote : {
+                        url : checkAddMenu,
+                        type : 'post',
+                        dataType : 'json',
+                        data : {
+                            name : function(){
+                                return $('#name').val();
+                            }
+                        }
+                    }
+                },
+            },
+            messages : {
+                title : {
+                    required : "请输入菜单名称",
+                    remote : '菜单名称已存在'
+                },
+                name : {
+                    required : "请输入菜单规则",
+                    remote : '菜单规则已存在'
+                },
+            },
+            submitHandler: function(form)
+            {
+                if($('.J_ajax_submit_btn').attr("disabledSubmit")){
+                    $('.J_ajax_submit_btn').text('请勿重复提交...').prop('disabled', true).addClass('disabled');
+                    return false;
+                }
+                $('.J_ajax_submit_btn').attr("disabledSubmit",true);
+                var param = $('form[name=addMenu]').serialize();
+                $.ajax({
+                    url: $('form[name=addMenu]').attr('action'),
+                    dataType:'json',
+                    type:'POST',
+                    data:param,
+                    success: function(data) {
+                        if (data=='-20') {
+                            ITENY.alert('提示','添加菜单成功,3秒后为你跳转!',1,'3000');
+                            setTimeout(function(){
+                                window.location.href=menudizhi;
+                            },3000);
+                        }else if(data=='-1')
+                        {
+                            ITENY.alert('提示','菜单名称不能为空',1,'3000');
+                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
+                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');						}
+                        else if(data=='-2')
+                        {
+                            ITENY.alert('提示','菜单规则不能为空',1,'3000');
+                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
+                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');
+                        }
+                        else if(data=='-3')
+                        {
+                            ITENY.alert('提示','菜单名称已存在',1,'3000');
+                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
+                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');
+                        }
+                        else if(data=='-4')
+                        {
+                            ITENY.alert('提示','菜单规则已存在',1,'3000');
+                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
+                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');
+                        }
+                        else {
+                            ITENY.alert('提示','未知错误，请联系管理员！',1,'3000');
+                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
+                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');
+                        }
+                    }
+                });
+
+            }
+
+        });
+    });
+</script>
 </html>
