@@ -11,7 +11,7 @@
 </div>
 <div id="frame-toolbar">
     <ul>
-        <li><a class="active" href="/admin/site/index">菜单设置</a></li>
+        <li><a class="active" href="/admin/site/menu">菜单设置</a></li>
         <li><a href="/admin/site/addMenu">添加菜单</a></li>
     </ul>
 </div>

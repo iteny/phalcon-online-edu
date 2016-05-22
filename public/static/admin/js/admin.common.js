@@ -23,5 +23,17 @@ $(function(){
                 time: 3000,
             });
         },
+        alert: function(title,msg,icon,timeout,showType){//右下角提示框
+            layer.alert(msg, {
+                icon: icon,
+                title: title,
+                time: timeout,
+                // offset: 'rb',
+                offset: '0px',
+                shift: 2,
+                shade: 0,
+                btn: ['我明白了']
+            });
+        }
     }
 });

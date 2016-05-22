@@ -11,12 +11,12 @@
 </div>
 <div id="frame-toolbar">
     <ul>
-        <li><a href="/admin/site/index">菜单设置</a></li>
+        <li><a href="/admin/site/menu">菜单设置</a></li>
         <li><a class="active" href="/admin/site/addMenu">添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
-    <form name="addMenu" method="post" class="J_ajaxForm" action="/Intendant/Site/addMenu" novalidate="novalidate">
+    <form name="addMenu" method="post" class="J_ajaxForm" action="/admin/site/addMenu" novalidate="novalidate">
         <input type="hidden" name="addMenu" value="addMenu">
 
         <div class="frame-table-list">
@@ -52,8 +52,8 @@
                 <tr>
                     <td>菜单图标：</td>
                     <td>
-                        <input id="System_Menu_icons_input" name="icon" type="hidden" value="icons-other-cog">
-                        <strong id="System_Menu_icons" style="margin-right: 10px;"><span class="tree-icon tree-file icons-other-cog"></span></strong>
+                        <input id="System_Menu_icons_input" name="icon" type="hidden" value="&#xe605;">
+                        <strong id="System_Menu_icons" style="margin-right: 10px;"><i style='color: #666;font-size: 16px;' class='iconfont'>&#xe605;</i></span></strong>
                         <a class="btn" onclick="Show_System_Menu_icons()">选择图标</a>
                     </td>
                 </tr>
@@ -69,17 +69,21 @@
             </table>
         </div>
         <div class="frame-table-btn">
-            <a class="btn ajax-add" type="submit">添加</a>
+            <button class="btn ajax-add" type="submit">添加</button>
         </div>
     </form>
 </div>
 
 </body>
 <script>
+    var menumanage = '/admin/site/menu';
     var iconPach = '/admin/site/iconsCls';
+    var checkAddMname = '/admin/SiteCom/checkAddMname';
 </script>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
+<script src="/static/common/js/jquery.validate.min.js"></script>
 <script src="/static/common/js/layer/layer.js"></script>
+<script src="/static/admin/js/admin.common.js"></script>
 
 <script>
     function Select_System_Menu_icons(icon){
@@ -101,7 +105,7 @@
             if(typeof data == 'object'){
                 var content = [];
                 for(x in data){
-                    content[x] = "<a style='color: #666;font-size: 16px;' class='iconfont' onclick=\"Select_System_Menu_icons('"+data[x]+"')\" style='cursor:pointer;'>"+data[x]+"</a>";
+                    content[x] = "<a style='color: #666;font-size: 16px;cursor: pointer' class='iconfont' onclick=\"Select_System_Menu_icons('"+data[x]+"')\" style='cursor:pointer;'>"+data[x]+"</a>";
                 }
                 var ss = '<div style="padding:10px">';
                 ss += content;
@@ -127,24 +131,11 @@
                 label.addClass('success');
             },
             rules : {
-                title : {
+                name : {
                     required : true,
                     chinaese : true,
                     remote : {
-                        url : checkAddMTit,
-                        type : 'post',
-                        dataType : 'json',
-                        data : {
-                            title : function(){
-                                return $('#title').val();
-                            }
-                        }
-                    }
-                },
-                name : {
-                    required : true,
-                    remote : {
-                        url : checkAddMenu,
+                        url : checkAddMname,
                         type : 'post',
                         dataType : 'json',
                         data : {
@@ -156,22 +147,18 @@
                 },
             },
             messages : {
-                title : {
+                name : {
                     required : "请输入菜单名称",
                     remote : '菜单名称已存在'
-                },
-                name : {
-                    required : "请输入菜单规则",
-                    remote : '菜单规则已存在'
                 },
             },
             submitHandler: function(form)
             {
-                if($('.J_ajax_submit_btn').attr("disabledSubmit")){
-                    $('.J_ajax_submit_btn').text('请勿重复提交...').prop('disabled', true).addClass('disabled');
+                if($('button.ajax-add').attr("disabledSubmit")){
+                    $('button.ajax-add').text('请勿重复提交...').prop('disabled', true).addClass('disabled');
                     return false;
                 }
-                $('.J_ajax_submit_btn').attr("disabledSubmit",true);
+                $('button.ajax-add').attr("disabledSubmit",true);
                 var param = $('form[name=addMenu]').serialize();
                 $.ajax({
                     url: $('form[name=addMenu]').attr('action'),
@@ -179,10 +166,10 @@
                     type:'POST',
                     data:param,
                     success: function(data) {
-                        if (data=='-20') {
-                            ITENY.alert('提示','添加菜单成功,3秒后为你跳转!',1,'3000');
+                        if (data=='1') {
+                            admin.alert('提示','添加菜单成功,3秒后为你跳转!',1,'3000');
                             setTimeout(function(){
-                                window.location.href=menudizhi;
+                                window.location.href=menumanage;
                             },3000);
                         }else if(data=='-1')
                         {

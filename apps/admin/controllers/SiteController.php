@@ -6,10 +6,12 @@
  */
 namespace Hemacms\Admin\Controllers;
 use Phalcon\Mvc\Controller;
+use Phalcon\Validation;
+use Phalcon\Validation\Validator\PresenceOf;
 use Hemacms\Admin\Models\AclResource;
 class SiteController extends Controller
 {
-    public function indexAction()
+    public function menuAction()
     {
         $adminMenu = AclResource::find(
             array(
@@ -21,36 +23,54 @@ class SiteController extends Controller
     }
     public function addMenuAction()
     {
-
-        $pid = $this->request->getQuery('pid','int');
-        $pid = $pid != '' ? $pid : 0;
-        $adminSelect = AclResource::find(
-            array(
-                'order' => 'sort',
-                'cache' => ['lifetime' => $this->config->admincache->adminmenu, 'key' => 'admin-menu'],
-            )
-        );
-        $this->view->pid = $pid;
-        $this->view->adminSelect = $this->function->recursiveTwo($adminSelect->toArray());
         if($this->request->isPost() && $this->request->getPost('addMenu')){
-//            $rules = array(
-//                array('title','require',-1), //菜单名称不能为空
-//                array('name','require',-2), //菜单规则不能为空
-//                array('title','',-3,0,'unique',1), //菜单名称唯一性
-//                array('name','',-4,0,'unique',1), //菜单规则唯一性
-//            );
-//            $table_AuthRule = M("AuthRule");
-//            if($table_AuthRule->validate($rules)->create()){
-//                if($id = $table_AuthRule->add())
-//                {
-//                    $this->ajaxReturn(-20);
-//                }
-//            }
-//            else
-//            {
-//                $this->ajaxReturn($table_AuthRule->getError());
-//            }
+            $this->view->disable();
+//            var_dump($this->request->getPost());die;
+            $validation = new Validation();
+            $validation->add(
+                'name',
+                new PresenceOf(
+                    array(
+                        'message' => '菜单名称不能为空'
+                    )
+                )
+            );
+            $messages = $validation->validate($this->request->getPost());
+            if (count($messages)) {
+                foreach ($messages as $message) {
+                    echo $message, '<br>';
+                }
+                return false;
+            }else{
+                $menu       = new AclResource();
+                $menu->name = $this->request->getPost('name','string');
+                $menu->controller = $this->request->getPost('controller','string');
+                $menu->action = $this->request->getPost('action','string');
+                $menu->isshow = $this->request->getPost('isshow','int');
+                $menu->pid = $this->request->getPost('pid','int');
+                $menu->sort = $this->request->getPost('sort','int');
+                $menu->icon = $this->request->getPost('icon','string');
 
+                if ($menu->save() == false) {
+                    echo "Umh, We can't store robots right now: \n";
+                    foreach ($robot->getMessages() as $message) {
+                        echo $message, "\n";
+                    }
+                } else {
+                    echo '1';
+                }
+            }
+        }else{
+            $pid = $this->request->getQuery('pid','int');
+            $pid = $pid != '' ? $pid : 0;
+            $adminSelect = AclResource::find(
+                array(
+                    'order' => 'sort',
+                    'cache' => ['lifetime' => $this->config->admincache->adminmenu, 'key' => 'admin-menu'],
+                )
+            );
+            $this->view->pid = $pid;
+            $this->view->adminSelect = $this->function->recursiveTwo($adminSelect->toArray());
         }
     }
     public function iconsClsAction()

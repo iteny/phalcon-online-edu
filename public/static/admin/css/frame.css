@@ -246,3 +246,57 @@ a.btn:hover{
     background: #337ab7;
     border-color: #2e6da4;
 }
+button.btn{
+    height: 33px;
+    line-height: 33px;
+    padding: 0px 12px;
+    margin: 4px 0px;
+    border: 1px solid #09c;
+    border-radius: 3px;
+    background: #09c;
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+button.btn:hover{
+    background: #337ab7;
+    border-color: #2e6da4;
+}
+/*jquery vlidate错误信息样式*/
+input.error
+{
+    border: 1px solid red;
+
+}
+input.valid
+{
+    border: 1px solid #1d95f6;
+}
+span.error
+{
+    background: url(../img/error.png) no-repeat 0 0;
+    background-size: 16px 16px;
+    /*width: 18px ;height: 18px;*/
+    padding-left: 20px;
+    margin-left: 12px;
+    /*padding-right: 32px;*/
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #e2574c;
+}
+span.success
+{
+    background: url(../img/success.png) no-repeat 0 0;
+    background-size: 16px 16px;
+    /*width: 18px ;height: 18px;*/
+    padding-left: 20px;
+    margin-left: 12px;
+    /*padding-right: 32px;*/
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #3db39e;
+    content: '输入正确';
+}
