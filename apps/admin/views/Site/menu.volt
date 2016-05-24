@@ -12,7 +12,7 @@
 <div id="frame-toolbar">
     <ul>
         <li><a class="active" href="/admin/site/menu">菜单设置</a></li>
-        <li><a href="/admin/site/addMenu">添加菜单</a></li>
+        <li><a href="/admin/site/addEditMenu">添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
@@ -44,13 +44,13 @@
                 <tr>
                     <td align="center"><input style="text-align: center" name="sort[{{menu['id']|e}}]" type="text" size="3" value="{{menu['sort']|e}}" class="input"></td>
                     <td align="center">{{menu['id']|e}}</td>
-                    <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?>{{menu['html']}}<i class="iconfont icon" style="">&#xe60f;</i>{{menu['name']|e}}</td>
+                    <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?>{{menu['html']}}<i class="iconfont icon" style="">{{menu['icon']|e}}</i>{{menu['name']|e}}</td>
                     <td align="center">{{menu['controller']|e}}</td>
                     <td align="center">{{menu['action']|e}}</td>
                     <!-- <td></td>
                     <td align="center"><span class="greens">显示</span></td> -->
                     <td align="center"><span class="greens">{% if menu['isshow'] == 1 %}显示{% else %}不显示{% endif %}</span></td>
-                    <td align="center"><a class="ajax-add" href="/admin/site/addMenu/?pid={{menu['id']|e}}" data="0">添加子菜单</a> | <a class="ajax-edit" href="/admin/site/editMenu/?id={{menu['id']|e}}">修改</a> | <a class="ajax-del" datatitle="用户中心" href="/admin/site/delMenu" data-id="{{menu['id']|e}}">删除</a> </td>
+                    <td align="center"><a class="ajax-add" href="/admin/site/addEditMenu/?pid={{menu['id']|e}}" data-level="{{menu['level']|e}}">添加子菜单</a> | <a class="ajax-edit" href="/admin/site/addEditMenu/?id={{menu['id']|e}}">修改</a> | <a class="ajax-del" datatitle="用户中心" href="/admin/site/delMenu" data-id="{{menu['id']|e}}">删除</a> </td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -66,5 +66,14 @@
 </body>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
 <script src="/static/common/js/layer/layer.js"></script>
+<script src="/static/admin/js/admin.common.js"></script>
 <script src="/static/admin/js/common.ajax.js"></script>
+<script>
+    $(function(){
+        $('.ajax-add').on('click', function (e) {
+            var data = $(this).attr('data-level');
+            if(data >= 3){e.preventDefault();admin.alert('提示信息','对不起，菜单最多4级！',2,'3000');}
+        });
+    });
+</script>
 </html>

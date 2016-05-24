@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>添加菜单</title>
     <link href="/static/admin/css/frame.css" rel="stylesheet">
 </head>
 <body>
@@ -12,12 +12,12 @@
 <div id="frame-toolbar">
     <ul>
         <li><a href="/admin/site/menu">菜单设置</a></li>
-        <li><a class="active" href="/admin/site/addMenu">添加菜单</a></li>
+        <li><a class="active" href="/admin/site/addEditMenu">添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
-    <form name="addMenu" method="post" class="J_ajaxForm" action="/admin/site/addMenu" novalidate="novalidate">
-        <input type="hidden" name="addMenu" value="addMenu">
+    <form name="addMenu" method="post" class="J_ajaxForm" action="/admin/site/addEditMenu" novalidate="novalidate">
+        <input type="hidden" name="addEditMenu" value="addEditMenu">
 
         <div class="frame-table-list">
             <div class="input-title">菜单信息</div>
@@ -26,7 +26,7 @@
                 <tr>
                     <td width="140">上级菜单:</td>
                     <td>
-                        <select name="pid" class="length_3">
+                        <select name="pid" class="length_4">
                         <option value="0" {% if pid == 0 %}selected{% endif %}>顶级菜单</option>
                         {% for menu in adminSelect %}
                         <option value="{{menu['id']}}" {% if menu['id'] == pid %}selected{% endif %}><?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$menu['level']); ?><if condition='$vo["level"] gt 0'>├─</if>{{menu['html']}}{{menu['name']}}</option>
@@ -47,7 +47,7 @@
                 </tr>
                 <tr>
                     <td>菜单排序:</td>
-                    <td><input type="text" class="input length_5" name="sort" id="sort" value=""></td>
+                    <td><input type="text" class="input length_5" name="sort" id="sort" value="1"></td>
                 </tr>
                 <tr>
                     <td>菜单图标：</td>
@@ -123,7 +123,11 @@
         jQuery.validator.addMethod("chinaese", function(value, element) {
             var chinaese = /^[\u4e00-\u9fa5]+$/;
             return this.optional(element) || (chinaese.test(value));
-        }, "只能输入中文");
+        }, "请输入中文");
+        jQuery.validator.addMethod("english", function(value, element) {
+            var english = /^[A-Za-z]+$/;
+            return this.optional(element) || (english.test(value));
+        }, "请输入英文字符串");
         $('form[name=addMenu]').validate({
             errorElement : 'span',
             validClass: "success",	//非常重要
@@ -145,20 +149,50 @@
                         }
                     }
                 },
+                controller : {
+                    required : true,
+                    english : true
+                },
+                action : {
+                    required : true,
+                    english : true
+                },
+                pid : {
+                    required : true,
+                    digits : true
+                },
+                sort : {
+                    required : true,
+                    digits : true
+                }
             },
             messages : {
                 name : {
                     required : "请输入菜单名称",
                     remote : '菜单名称已存在'
                 },
+                controller : {
+                    required : "请输入控制器名称"
+                },
+                action : {
+                    required : "请输入方法名称"
+                },
+                pid : {
+                    required : "请输入父ID",
+                    digits : '请输入整数'
+                },
+                sort : {
+                    required : "请输入排序号",
+                    digits : '请输入整数'
+                }
             },
             submitHandler: function(form)
             {
-                if($('button.ajax-add').attr("disabledSubmit")){
-                    $('button.ajax-add').text('请勿重复提交...').prop('disabled', true).addClass('disabled');
+                if($('button.btn').attr("disabledSubmit")){
+                    $('button.btn').text('请勿重复提交...').prop('disabled', true).addClass('disabled');
                     return false;
                 }
-                $('button.ajax-add').attr("disabledSubmit",true);
+                $('button.btn').attr("disabledSubmit",true);
                 var param = $('form[name=addMenu]').serialize();
                 $.ajax({
                     url: $('form[name=addMenu]').attr('action'),
@@ -167,44 +201,20 @@
                     data:param,
                     success: function(data) {
                         if (data=='1') {
-                            admin.alert('提示','添加菜单成功,3秒后为你跳转!',1,'3000');
-                            setTimeout(function(){
-                                window.location.href=menumanage;
-                            },3000);
-                        }else if(data=='-1')
-                        {
-                            ITENY.alert('提示','菜单名称不能为空',1,'3000');
-                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
-                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');						}
-                        else if(data=='-2')
-                        {
-                            ITENY.alert('提示','菜单规则不能为空',1,'3000');
-                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
-                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');
-                        }
-                        else if(data=='-3')
-                        {
-                            ITENY.alert('提示','菜单名称已存在',1,'3000');
-                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
-                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');
-                        }
-                        else if(data=='-4')
-                        {
-                            ITENY.alert('提示','菜单规则已存在',1,'3000');
-                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
-                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');
-                        }
-                        else {
-                            ITENY.alert('提示','未知错误，请联系管理员！',1,'3000');
-                            $('.J_ajax_submit_btn').text('添加').removeProp('disabled').removeClass('disabled');
-                            $('.J_ajax_submit_btn').attr("disabledSubmit",'');
+                            admin.alert('操作提示', '添加菜单成功,3秒后为你跳转!', 1, '3000');
+                            setTimeout(function () {
+                                window.location.href = menumanage;
+                            }, 3000);
+                        }else{
+                            admin.alert('操作提示',''+data.info,2,'8000');
+                            $('button.btn').text('添加').removeProp('disabled').removeClass('disabled');
+                            $('button.btn').attr("disabledSubmit",'');
                         }
                     }
                 });
-
             }
-
         });
     });
+
 </script>
 </html>

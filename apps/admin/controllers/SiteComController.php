@@ -31,4 +31,27 @@ class SiteComController extends Controller
             exit;
         }
     }
+    //修改菜单时验证菜单规则名称
+    public function checkEditMnameAction()
+    {
+        $this->view->disable();
+        if($this->request->isPost() && $this->request->getPost('name')){
+            $namebind = array(
+                'name' => $this->request->getPost('name'),
+                'id' => $this->request->getQuery('id')
+            );
+            $count = AclResource::find(
+                array(
+                    "name = :name: AND id != :id:",
+                    "bind" => $namebind,
+                )
+            );
+            if(!$count->count()){
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+            exit;
+        }
+    }
 }

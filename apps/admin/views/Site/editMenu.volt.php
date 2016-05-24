@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>添加菜单</title>
+    <title>修改菜单</title>
     <link href="/static/admin/css/frame.css" rel="stylesheet">
 </head>
 <body>
@@ -12,13 +12,13 @@
 <div id="frame-toolbar">
     <ul>
         <li><a href="/admin/site/menu">菜单设置</a></li>
-        <li><a class="active" href="/admin/site/addEditMenu">添加菜单</a></li>
+        <li><a href="/admin/site/addEditMenu">添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
-    <form name="addMenu" method="post" class="J_ajaxForm" action="/admin/site/addEditMenu" novalidate="novalidate">
+    <form name="editMenu" method="post" class="J_ajaxForm" action="/admin/site/addEditMenu" novalidate="novalidate">
         <input type="hidden" name="addEditMenu" value="addEditMenu">
-
+        <input type="hidden" name="id" value="<?php echo $thismenu['id']; ?>">
         <div class="frame-table-list">
             <div class="input-title">菜单信息</div>
             <table cellpadding="0" cellspacing="0" class="table_form" width="100%">
@@ -27,41 +27,41 @@
                     <td width="140">上级菜单:</td>
                     <td>
                         <select name="pid" class="length_4">
-                        <option value="0" <?php if ($pid == 0) { ?>selected<?php } ?>>顶级菜单</option>
-                        <?php foreach ($adminSelect as $menu) { ?>
-                        <option value="<?php echo $menu['id']; ?>" <?php if ($menu['id'] == $pid) { ?>selected<?php } ?>><?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$menu['level']); ?><if condition='$vo["level"] gt 0'>├─</if><?php echo $menu['html']; ?><?php echo $menu['name']; ?></option>
-                        <?php } ?>
+                            <option value="0" <?php if ($thismenu['pid'] == 0) { ?>selected<?php } ?>>顶级菜单</option>
+                            <?php foreach ($adminSelect as $menu) { ?>
+                            <option value="<?php echo $menu['id']; ?>" <?php if ($menu['id'] == $thismenu['pid']) { ?>selected<?php } ?>><?php echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;',$menu['level']); ?><if condition='$vo["level"] gt 0'>├─</if><?php echo $menu['html']; ?><?php echo $menu['name']; ?></option>
+                            <?php } ?>
                     </td>
                 </tr>
                 <tr>
                     <td>菜单名称:</td>
-                    <td><input type="text" class="input length_5" name="name" value="" id="name"></td>
+                    <td><input type="text" class="input length_5" name="name" value="<?php echo $thismenu['name']; ?>" id="name"></td>
                 </tr>
                 <tr>
                     <td>控制器:</td>
-                    <td><input type="text" class="input length_5" name="controller" id="controller" value=""></td>
+                    <td><input type="text" class="input length_5" name="controller" id="controller" value="<?php echo $thismenu['controller']; ?>"></td>
                 </tr>
                 <tr>
                     <td>方法:</td>
-                    <td><input type="text" class="input length_5" name="action" id="action" value=""></td>
+                    <td><input type="text" class="input length_5" name="action" id="action" value="<?php echo $thismenu['action']; ?>"></td>
                 </tr>
                 <tr>
                     <td>菜单排序:</td>
-                    <td><input type="text" class="input length_5" name="sort" id="sort" value="1"></td>
+                    <td><input type="text" class="input length_5" name="sort" id="sort" value="<?php echo $thismenu['sort']; ?>"></td>
                 </tr>
                 <tr>
                     <td>菜单图标：</td>
                     <td>
-                        <input id="System_Menu_icons_input" name="icon" type="hidden" value="&#xe605;">
-                        <strong id="System_Menu_icons" style="margin-right: 10px;"><i style='color: #666;font-size: 16px;' class='iconfont'>&#xe605;</i></span></strong>
+                        <input id="System_Menu_icons_input" name="icon" type="hidden" value="<?php echo $thismenu['icon']; ?>">
+                        <strong id="System_Menu_icons" style="margin-right: 10px;"><i style='color: #666;font-size: 16px;' class='iconfont'><?php echo $thismenu['icon']; ?></i></span></strong>
                         <a class="btn" onclick="Show_System_Menu_icons()">选择图标</a>
                     </td>
                 </tr>
                 <tr>
                     <td>是否显示:</td>
                     <td><select name="isshow">
-                        <option value="1">显示</option>
-                        <option value="0">不显示</option>
+                        <option value="1" <?php if ($thismenu['isshow'] == 1) { ?>selected<?php } ?>>显示</option>
+                        <option value="0" <?php if ($thismenu['isshow'] == 0) { ?>selected<?php } ?>>不显示</option>
                     </select>&nbsp;&nbsp;&nbsp;是否显示菜单在后台管理页面上</td>
                 </tr>
 
@@ -69,7 +69,7 @@
             </table>
         </div>
         <div class="frame-table-btn">
-            <button class="btn ajax-add" type="submit">添加</button>
+            <button class="btn ajax-add" type="submit">修改</button>
         </div>
     </form>
 </div>
@@ -78,7 +78,7 @@
 <script>
     var menumanage = '/admin/site/menu';
     var iconPach = '/admin/site/iconsCls';
-    var checkAddMname = '/admin/SiteCom/checkAddMname';
+    var checkEditMname = '/admin/SiteCom/checkEditMname/?id='+<?php echo $thismenu['id']; ?>;
 </script>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
 <script src="/static/common/js/jquery.validate.min.js"></script>
@@ -128,7 +128,7 @@
             var english = /^[A-Za-z]+$/;
             return this.optional(element) || (english.test(value));
         }, "请输入英文字符串");
-        $('form[name=addMenu]').validate({
+        $('form[name=editMenu]').validate({
             errorElement : 'span',
             validClass: "success",	//非常重要
             success : function (label) {
@@ -139,7 +139,7 @@
                     required : true,
                     chinaese : true,
                     remote : {
-                        url : checkAddMname,
+                        url : checkEditMname,
                         type : 'post',
                         dataType : 'json',
                         data : {
@@ -193,21 +193,21 @@
                     return false;
                 }
                 $('button.btn').attr("disabledSubmit",true);
-                var param = $('form[name=addMenu]').serialize();
+                var param = $('form[name=editMenu]').serialize();
                 $.ajax({
-                    url: $('form[name=addMenu]').attr('action'),
+                    url: $('form[name=editMenu]').attr('action'),
                     dataType:'json',
                     type:'POST',
                     data:param,
                     success: function(data) {
                         if (data=='1') {
-                            admin.alert('操作提示', '添加菜单成功,3秒后为你跳转!', 1, '3000');
+                            admin.alert('操作提示', '修改菜单成功,3秒后为你跳转!', 1, '3000');
                             setTimeout(function () {
                                 window.location.href = menumanage;
                             }, 3000);
                         }else{
                             admin.alert('操作提示',''+data.info,2,'8000');
-                            $('button.btn').text('添加').removeProp('disabled').removeClass('disabled');
+                            $('button.btn').text('修改').removeProp('disabled').removeClass('disabled');
                             $('button.btn').attr("disabledSubmit",'');
                         }
                     }

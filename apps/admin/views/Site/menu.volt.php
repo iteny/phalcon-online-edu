@@ -12,7 +12,7 @@
 <div id="frame-toolbar">
     <ul>
         <li><a class="active" href="/admin/site/menu">菜单设置</a></li>
-        <li><a href="/admin/site/addMenu">添加菜单</a></li>
+        <li><a href="/admin/site/addEditMenu">添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
@@ -44,13 +44,13 @@
                 <tr>
                     <td align="center"><input style="text-align: center" name="sort[<?php echo $this->escaper->escapeHtml($menu['id']); ?>]" type="text" size="3" value="<?php echo $this->escaper->escapeHtml($menu['sort']); ?>" class="input"></td>
                     <td align="center"><?php echo $this->escaper->escapeHtml($menu['id']); ?></td>
-                    <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?><?php echo $menu['html']; ?><i class="iconfont icon" style="">&#xe60f;</i><?php echo $this->escaper->escapeHtml($menu['name']); ?></td>
+                    <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?><?php echo $menu['html']; ?><i class="iconfont icon" style=""><?php echo $this->escaper->escapeHtml($menu['icon']); ?></i><?php echo $this->escaper->escapeHtml($menu['name']); ?></td>
                     <td align="center"><?php echo $this->escaper->escapeHtml($menu['controller']); ?></td>
                     <td align="center"><?php echo $this->escaper->escapeHtml($menu['action']); ?></td>
                     <!-- <td></td>
                     <td align="center"><span class="greens">显示</span></td> -->
                     <td align="center"><span class="greens"><?php if ($menu['isshow'] == 1) { ?>显示<?php } else { ?>不显示<?php } ?></span></td>
-                    <td align="center"><a class="ajax-add" href="/admin/site/addMenu/?pid=<?php echo $this->escaper->escapeHtml($menu['id']); ?>" data="0">添加子菜单</a> | <a class="ajax-edit" href="/admin/site/editMenu/?id=<?php echo $this->escaper->escapeHtml($menu['id']); ?>">修改</a> | <a class="ajax-del" datatitle="用户中心" href="/admin/site/delMenu" data-id="<?php echo $this->escaper->escapeHtml($menu['id']); ?>">删除</a> </td>
+                    <td align="center"><a class="ajax-add" href="/admin/site/addEditMenu/?pid=<?php echo $this->escaper->escapeHtml($menu['id']); ?>" data-level="<?php echo $this->escaper->escapeHtml($menu['level']); ?>">添加子菜单</a> | <a class="ajax-edit" href="/admin/site/addEditMenu/?id=<?php echo $this->escaper->escapeHtml($menu['id']); ?>">修改</a> | <a class="ajax-del" datatitle="用户中心" href="/admin/site/delMenu" data-id="<?php echo $this->escaper->escapeHtml($menu['id']); ?>">删除</a> </td>
                 </tr>
                 <?php } ?>
             </tbody>
@@ -66,5 +66,14 @@
 </body>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
 <script src="/static/common/js/layer/layer.js"></script>
+<script src="/static/admin/js/admin.common.js"></script>
 <script src="/static/admin/js/common.ajax.js"></script>
+<script>
+    $(function(){
+        $('.ajax-add').on('click', function (e) {
+            var data = $(this).attr('data-level');
+            if(data >= 3){e.preventDefault();admin.alert('提示信息','对不起，菜单最多4级！',2,'3000');}
+        });
+    });
+</script>
 </html>
