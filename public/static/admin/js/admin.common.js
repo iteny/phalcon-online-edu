@@ -34,6 +34,9 @@ $(function(){
                 shade: 0,
                 btn: ['我明白了']
             });
+        },
+        reloadPage: function(){
+            document.getElementById('iframe_default').contentWindow.location.reload(true);
         }
     }
 });

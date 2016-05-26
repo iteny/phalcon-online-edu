@@ -11,8 +11,8 @@
 </div>
 <div id="frame-toolbar">
     <ul>
-        <li><a href="/admin/site/menu">菜单设置</a></li>
-        <li><a class="active" href="/admin/site/addEditMenu">添加菜单</a></li>
+        <li><a href="/admin/site/menu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;菜单设置</a></li>
+        <li><a class="active" href="/admin/site/addEditMenu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
@@ -76,8 +76,8 @@
 
 </body>
 <script>
-    var menumanage = '/admin/site/menu';
-    var iconPach = '/admin/site/iconsCls';
+    var menumanage = '/admin/Site/menu';
+    var iconPach = '/admin/SiteCom/iconsCls';
     var checkAddMname = '/admin/SiteCom/checkAddMname';
 </script>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>

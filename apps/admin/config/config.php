@@ -18,6 +18,10 @@ return new \Phalcon\Config(array(
         'baseUri'        => '/',
         'debug' => true,
     ),
+    'log' => array(
+        'loginlogtime' => true,
+        'operatelogtime' => true
+    ),
     'dblog' => array (
         'enabled' => true,
         'path' => APP_PATH . '/runtime/dblogs/',

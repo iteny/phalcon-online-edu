@@ -22,6 +22,8 @@ body{
     background: white;
 }
 #frame-top{
+    width: 100%;
+    position: fixed;top:0;
     text-indent: 10px;
     height: 30px;
     line-height:30px;
@@ -35,9 +37,11 @@ body{
 #frame-toolbar{
     height: 60px;
     line-height: 60px;
-    /*background: red;*/
-    /*text-align:center;*/
+    position: fixed;top:30px;
+    width: 100%;
     border-bottom: 1px solid #ededed;
+    z-index: 9999;
+    background: white;
 }
 #frame-toolbar ul{
     padding-left: 15px;
@@ -69,8 +73,10 @@ body{
 form{
     display: block;
 }
+
 #frame-content{
     padding:15px 15px 70px 15px;
+    margin-top: 92px;
 }
 #frame-content .input-title{
     padding: 10px 9px;
@@ -196,11 +202,41 @@ td, th, div {
     background-color:#fffbde;
 }
 .frame-table-list a{
-    color: #4169E1;
+    color: white;
     font-weight: bold;
 }
 .frame-table-list a:hover{
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+}
+.frame-table-list a.blue{
+    height: 32px;
+    line-height: 32px;
+    padding: 4px 8px;
+    background: #09c;
+    border: 1px solid #09c;
+    border-radius: 2px;
+}
+.frame-table-list a.blue:hover{
+    background: #337ab7;
+    border-color: #2e6da4;
+}
+.frame-table-list a.red{
+    height: 32px;
+    line-height: 32px;
+    padding: 4px 8px;
+    background: #d9534f;
+    border: 1px solid #d43f3a;
+    border-radius: 2px;
+}
+.frame-table-list a.red:hover{
+    background: #c9302c;
+    border-color: #ac2925;
+}
+.frame-table-list span.green{
+    color:green;
+}
+.frame-table-list span.red{
+    color:red;
 }
 .frame-table-list tbody tr:hover td
 {
@@ -246,6 +282,7 @@ a.btn:hover{
     background: #337ab7;
     border-color: #2e6da4;
 }
+
 button.btn{
     height: 33px;
     line-height: 33px;

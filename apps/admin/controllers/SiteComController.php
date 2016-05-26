@@ -9,6 +9,22 @@ use Phalcon\Mvc\Controller;
 use Hemacms\Admin\Models\AclResource;
 class SiteComController extends Controller
 {
+    //读取图标
+    public function iconsClsAction()
+    {
+        $this->view->disable();
+        if($this->request->isPost()){
+            $iconsCls = file_get_contents("./static/admin/font/icons.css");
+            $iconsCls = explode('}', $iconsCls);
+            $tmp_iconsCls = array();
+            foreach($iconsCls as $k => $v){
+                if(preg_match("/\.(.+?){/", $v,$m)){
+                    $tmp_iconsCls[] = $m[1];
+                }
+            }
+            exit(json_encode($tmp_iconsCls));
+        }
+    }
     //添加菜单时验证菜单规则名称
     public function checkAddMnameAction()
     {

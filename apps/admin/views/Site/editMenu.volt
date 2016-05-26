@@ -7,16 +7,16 @@
 </head>
 <body>
 <div id="frame-top">
-    当前位置&nbsp;<i class="iconfont" style="color:#666;font-size: 12px;">&#xe60e;</i>&nbsp;&nbsp;设置&nbsp;&nbsp;<i class="iconfont" style="color:#666;font-size: 12px;">&#xe60f;</i>&nbsp;&nbsp;站长设置&nbsp;&nbsp;<i class="iconfont" style="color:#666;font-size: 12px;">&#xe60f;</i>&nbsp;&nbsp;添加菜单
+    当前位置&nbsp;<i class="iconfont" style="color:#666;font-size: 12px;">&#xe60e;</i>&nbsp;&nbsp;设置&nbsp;&nbsp;<i class="iconfont" style="color:#666;font-size: 12px;">&#xe60f;</i>&nbsp;&nbsp;站长设置&nbsp;&nbsp;<i class="iconfont" style="color:#666;font-size: 12px;">&#xe60f;</i>&nbsp;&nbsp;修改菜单
 </div>
 <div id="frame-toolbar">
     <ul>
-        <li><a href="/admin/site/menu">菜单设置</a></li>
-        <li><a href="/admin/site/addEditMenu">添加菜单</a></li>
+        <li><a href="/admin/site/menu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;菜单设置</a></li>
+        <li><a href="/admin/site/addEditMenu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
-    <form name="editMenu" method="post" class="J_ajaxForm" action="/admin/site/addEditMenu" novalidate="novalidate">
+    <form name="editMenu" method="post" class="ajax-form" action="/admin/site/addEditMenu" novalidate="novalidate">
         <input type="hidden" name="addEditMenu" value="addEditMenu">
         <input type="hidden" name="id" value="{{thismenu['id']}}">
         <div class="frame-table-list">
@@ -76,8 +76,8 @@
 
 </body>
 <script>
-    var menumanage = '/admin/site/menu';
-    var iconPach = '/admin/site/iconsCls';
+    var menumanage = '/admin/Site/menu';
+    var iconPach = '/admin/SiteCom/iconsCls';
     var checkEditMname = '/admin/SiteCom/checkEditMname/?id='+{{thismenu['id']}};
 </script>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
@@ -210,6 +210,10 @@
                             $('button.btn').text('修改').removeProp('disabled').removeClass('disabled');
                             $('button.btn').attr("disabledSubmit",'');
                         }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown){
+                        admin.error('网络连接异常！','#loginsubmit');
+                        return false;
                     }
                 });
             }

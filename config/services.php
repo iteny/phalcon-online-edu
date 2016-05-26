@@ -165,6 +165,12 @@ $di->set('viewCache', function() use($config){
 $di->set('modelsCache', function () use($config) {
 
 });
+$di->setShared('modelsManager',function(){
+    return new \Phalcon\Mvc\Model\Manager();
+});
+$di->setShared('request',function(){
+    return new \Phalcon\Http\Request();
+});
 //设置安全缓存
 $di->set('safeCache', function () use($config) {
 

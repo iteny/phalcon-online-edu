@@ -11,12 +11,12 @@
 </div>
 <div id="frame-toolbar">
     <ul>
-        <li><a class="active" href="/admin/site/menu">菜单设置</a></li>
-        <li><a href="/admin/site/addEditMenu">添加菜单</a></li>
+        <li><a class="active" href="/admin/site/menu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;菜单设置</a></li>
+        <li><a href="/admin/site/addEditMenu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
-<form class="J_ajaxForm" action="/Intendant/Site/sortMenu" method="post">
+<form name="commonSort" class="ajax-form" action="/admin/Site/sortMenu" method="post">
     <div class="frame-table-list">
         <table width="100%">
             <colgroup>
@@ -47,10 +47,8 @@
                     <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?>{{menu['html']}}<i class="iconfont icon" style="">{{menu['icon']|e}}</i>{{menu['name']|e}}</td>
                     <td align="center">{{menu['controller']|e}}</td>
                     <td align="center">{{menu['action']|e}}</td>
-                    <!-- <td></td>
-                    <td align="center"><span class="greens">显示</span></td> -->
-                    <td align="center"><span class="greens">{% if menu['isshow'] == 1 %}显示{% else %}不显示{% endif %}</span></td>
-                    <td align="center"><a class="ajax-add" href="/admin/site/addEditMenu/?pid={{menu['id']|e}}" data-level="{{menu['level']|e}}">添加子菜单</a> | <a class="ajax-edit" href="/admin/site/addEditMenu/?id={{menu['id']|e}}">修改</a> | <a class="ajax-del" datatitle="用户中心" href="/admin/site/delMenu" data-id="{{menu['id']|e}}">删除</a> </td>
+                    <td align="center"><span class="{% if menu['isshow'] == 1 %}green{% else %}red{% endif %}">{% if menu['isshow'] == 1 %}显示{% else %}不显示{% endif %}</span></td>
+                    <td align="center"><a class="ajax-add blue" href="/admin/site/addEditMenu/?pid={{menu['id']|e}}" data-level="{{menu['level']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加子菜单</a>&nbsp;&nbsp;&nbsp;<a class="ajax-edit blue" href="/admin/site/addEditMenu/?id={{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" datatitle="用户中心" href="/admin/site/delMenu" data-id="{{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a> </td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -59,7 +57,7 @@
 
     </div>
     <div class="frame-table-btn">
-        <a class="btn ajax-sort" type="submit">排序</a>
+        <button class="btn ajax-sort" type="submit">排序</button>
     </div>
 </form>
 </div>

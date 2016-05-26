@@ -10,10 +10,11 @@ use Phalcon\Validation;
 use Phalcon\Validation\Validator\Regex;
 use Phalcon\Validation\Validator\PresenceOf;
 use Hemacms\Admin\Models\AclResource;
+use Phalcon\Mvc\Model\Transaction\Manager as SwManager;
 class SiteController extends Controller
 {
-    public function menuAction()
-    {
+    //读取菜单
+    public function menuAction(){
         $cacheKey = 'admin-menu.cache';
         $adminMenu   = $this->safeCache->get($cacheKey);
         if($adminMenu === null){
@@ -27,8 +28,8 @@ class SiteController extends Controller
         }
         $this->view->adminMenu = $adminMenu;
     }
-    public function addEditMenuAction()
-    {
+    //添加&&修改菜单
+    public function addEditMenuAction(){
         if($this->request->isPost() && $this->request->getPost('addEditMenu')){
             $this->view->disable();
             $validation = new Validation();
@@ -58,7 +59,7 @@ class SiteController extends Controller
                         )))
                         ->add('pid', new Regex(array(
                             'message' => '父ID必须是整数',
-                            'pattern' => '/^[1-9]\d*$/'
+                            'pattern' => '/^[0-9]\d*$/'
                         )))
                         ->add('sort',new PresenceOf(array(
                             'message' => '排序数不能为空'
@@ -88,7 +89,7 @@ class SiteController extends Controller
                 $menu->icon = $this->request->getPost('icon','string');
                 if ($menu->save() == false) {
                     $str = "您好，你在执行添加菜单操作时出现以下问题: ".'<br>';;
-                    foreach ($robot->getMessages() as $message) {
+                    foreach ($menu->getMessages() as $message) {
                         $str .= $message.'!<br>';
                     }
                     exit(json_encode(array('info'=>$str)));
@@ -129,21 +130,61 @@ class SiteController extends Controller
             }
         }
     }
-    public function iconsClsAction()
-    {
+    //菜单排序
+    public function sortMenuAction(){
         $this->view->disable();
-        if($this->request->isPost()){
-            $iconsCls = file_get_contents("./static/admin/font/icons.css");
-            $iconsCls = explode('}', $iconsCls);
-//            var_dump($iconsCls);
-            $tmp_iconsCls = array();
-            foreach($iconsCls as $k => $v){
-                if(preg_match("/\.(.+?){/", $v,$m)){
-                    $tmp_iconsCls[] = $m[1];
-                }
-            }
-//            var_dump($tmp_iconsCls);
-            exit(json_encode($tmp_iconsCls));
+//        $errorId = '';
+//        $status = true;
+        $sortMenu = $this->request->getPost('sort');
+        $ids = implode(',', array_keys($sortMenu));
+        $sql = "UPDATE Hemacms\Admin\Models\AclResource SET sort = CASE id ";
+        foreach ($sortMenu as $id => $sort) {
+            $sql .= sprintf("WHEN %d THEN %d ", $id, $sort);
         }
+        $sql .= "END WHERE id IN ($ids)";
+        $status = $this->modelsManager->executeQuery($sql);
+//        echo ;
+        $msg = $this->function->returnMsg("菜单排序成功","菜单排序失败",$status->success());
+        exit(json_encode($msg));
+////
+//        var_dump($status->toArray());
+
+//        $this->function->p($sortMenu);die;
+//        $this->function->p($ids);die;
+////        $menu = new AclResource();
+//        $transactionManager = new SwManager();
+//        $transaction = $transactionManager->get();
+//        $menu = new AclResource();
+//        $menu->setTransaction($transaction);
+////        for($i = 0; $i < 10000; $i++){
+////            $entity->setValue1(rand(1,50));
+////            $entity->setValue2(rand(1,50));
+////            $entity->setValue3(rand(1,50));
+////        }
+////        $entity->create();
+////        $transaction->commit();
+//        foreach($sortMenu as $k => $v){
+////            $menu->id = '12';
+////            $menu->sort = $v;
+//            $menu->save(array(
+//                'id' =>$k,
+//                'sort'=>$v
+//            ));
+//            if ($menu->save() == false) {
+//                $str = "您好，你在执行添加菜单操作时出现以下问题: ".'<br>';;
+//                foreach ($menu->getMessages() as $message) {
+//                    $str .= $message.'!<br>';
+//                }
+//                json_encode(array('info'=>$str));
+//            }
+//            if ($status === false){
+//                $errorId = $k;
+//                break;//当排序失败时，捕获错误ID，结束程序
+//            }
+//        }
+//        $transaction->commit();
+//        $msg = $this->function->returnMsg("菜单排序成功","<br />发生错误的排序ID：$errorId",$status);
+//        $this->ajaxReturn($msg);
+
     }
 }
