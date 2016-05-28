@@ -36,7 +36,7 @@ $(function(){
             });
         },
         reloadPage: function(){
-            document.getElementById('iframe_default').contentWindow.location.reload(true);
+            window.location.reload();
         }
     }
 });

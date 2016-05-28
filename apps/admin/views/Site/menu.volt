@@ -48,7 +48,7 @@
                     <td align="center">{{menu['controller']|e}}</td>
                     <td align="center">{{menu['action']|e}}</td>
                     <td align="center"><span class="{% if menu['isshow'] == 1 %}green{% else %}red{% endif %}">{% if menu['isshow'] == 1 %}显示{% else %}不显示{% endif %}</span></td>
-                    <td align="center"><a class="ajax-add blue" href="/admin/site/addEditMenu/?pid={{menu['id']|e}}" data-level="{{menu['level']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加子菜单</a>&nbsp;&nbsp;&nbsp;<a class="ajax-edit blue" href="/admin/site/addEditMenu/?id={{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" datatitle="用户中心" href="/admin/site/delMenu" data-id="{{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a> </td>
+                    <td align="center"><a class="ajax-add blue" href="/admin/site/addEditMenu/?pid={{menu['id']|e}}" data-level="{{menu['level']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加子菜单</a>&nbsp;&nbsp;&nbsp;<a class="ajax-edit blue" href="/admin/site/addEditMenu/?id={{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="{{menu['name']|e}}" data-type="菜单" href="/admin/site/delMenu" data-id="{{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a> </td>
                 </tr>
                 {% endfor %}
             </tbody>

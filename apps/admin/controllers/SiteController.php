@@ -18,11 +18,8 @@ class SiteController extends Controller
         $cacheKey = 'admin-menu.cache';
         $adminMenu   = $this->safeCache->get($cacheKey);
         if($adminMenu === null){
-            $adminMenu = AclResource::find(
-                array(
-                    'order' => 'sort',
-                )
-            );
+            $sql = "SELECT * FROM Hemacms\Admin\Models\AclResource ORDER BY sort ASC";
+            $adminMenu = $this->modelsManager->executeQuery($sql);
             $adminMenu = $this->function->recursive($adminMenu->toArray());
             $this->safeCache->save($cacheKey,$adminMenu,$this->config->admincache->adminmenu);
         }
@@ -76,28 +73,50 @@ class SiteController extends Controller
                 }
                 exit(json_encode(array('info'=>$str)));
             }else{
-                $menu       = new AclResource();
                 if($this->request->getPost('id')){
-                    $menu->id = $this->request->getPost('id','int');
+                    $menu['id'] = $this->request->getPost('id','int');
                 }
-                $menu->name = $this->request->getPost('name','string');
-                $menu->controller = $this->request->getPost('controller','string');
-                $menu->action = $this->request->getPost('action','string');
-                $menu->isshow = $this->request->getPost('isshow','int');
-                $menu->pid = $this->request->getPost('pid','int');
-                $menu->sort = $this->request->getPost('sort','int');
-                $menu->icon = $this->request->getPost('icon','string');
-                if ($menu->save() == false) {
-                    $str = "您好，你在执行添加菜单操作时出现以下问题: ".'<br>';;
-                    foreach ($menu->getMessages() as $message) {
-                        $str .= $message.'!<br>';
-                    }
-                    exit(json_encode(array('info'=>$str)));
-                } else {
+                $menu['name'] = $this->request->getPost('name','string');
+                $menu['controller'] = $this->request->getPost('controller','string');
+                $menu['action'] = $this->request->getPost('action','string');
+                $menu['isshow'] = $this->request->getPost('isshow','int');
+                $menu['pid'] = $this->request->getPost('pid','int');
+                $menu['sort'] = $this->request->getPost('sort','int');
+                $menu['icon'] = $this->request->getPost('icon','string');
+                if($this->request->getPost('id')){
+                    $sql = "UPDATE Hemacms\Admin\Models\AclResource SET name=?0,controller=?1,action=?2,isshow=?3,pid=?4,sort=?5,icon=?6 WHERE id={$menu['id']}";
+                    $status = $this->modelsManager->executeQuery($sql,array(
+                        0 => $menu['name'],
+                        1 => $menu['controller'],
+                        2 => $menu['action'],
+                        3 => $menu['isshow'],
+                        4 => $menu['pid'],
+                        5 => $menu['sort'],
+                        6 => $menu['icon']
+                    ));
+                    $msg = $this->function->returnMsg("菜单修改成功","菜单修改失败",$status->success());
+                }else{
+                    $sql = "INSERT INTO Hemacms\Admin\Models\AclResource (name,controller,action,isshow,pid,sort,icon) VALUES (:name:,:controller:,:action:,:isshow:,:pid:,:sort:,:icon:)";
+                    $status = $this->modelsManager->executeQuery($sql,$menu);
+                    $msg = $this->function->returnMsg("添加菜单成功","添加菜单失败",$status->success());
+                }
+                if($status->success()){
                     $this->safeCache->delete('admin-menu.cache');
                     $this->safeCache->delete('admin-select.cache');
-                    echo '1';
                 }
+                exit(json_encode($msg));
+
+//                if ($menu->save() == false) {
+//                    $str = "您好，你在执行添加菜单操作时出现以下问题: ".'<br>';;
+//                    foreach ($menu->getMessages() as $message) {
+//                        $str .= $message.'!<br>';
+//                    }
+//                    exit(json_encode(array('info'=>$str)));
+//                } else {
+//                    $this->safeCache->delete('admin-menu.cache');
+//                    $this->safeCache->delete('admin-select.cache');
+//                    echo '1';
+//                }
             }
         }else{
             $cacheKey = 'admin-select.cache';
@@ -133,8 +152,6 @@ class SiteController extends Controller
     //菜单排序
     public function sortMenuAction(){
         $this->view->disable();
-//        $errorId = '';
-//        $status = true;
         $sortMenu = $this->request->getPost('sort');
         $ids = implode(',', array_keys($sortMenu));
         $sql = "UPDATE Hemacms\Admin\Models\AclResource SET sort = CASE id ";
@@ -143,48 +160,27 @@ class SiteController extends Controller
         }
         $sql .= "END WHERE id IN ($ids)";
         $status = $this->modelsManager->executeQuery($sql);
-//        echo ;
         $msg = $this->function->returnMsg("菜单排序成功","菜单排序失败",$status->success());
+        $this->safeCache->delete('admin-menu.cache');
+        $this->safeCache->delete('admin-select.cache');
         exit(json_encode($msg));
-////
-//        var_dump($status->toArray());
-
-//        $this->function->p($sortMenu);die;
-//        $this->function->p($ids);die;
-////        $menu = new AclResource();
-//        $transactionManager = new SwManager();
-//        $transaction = $transactionManager->get();
-//        $menu = new AclResource();
-//        $menu->setTransaction($transaction);
-////        for($i = 0; $i < 10000; $i++){
-////            $entity->setValue1(rand(1,50));
-////            $entity->setValue2(rand(1,50));
-////            $entity->setValue3(rand(1,50));
-////        }
-////        $entity->create();
-////        $transaction->commit();
-//        foreach($sortMenu as $k => $v){
-////            $menu->id = '12';
-////            $menu->sort = $v;
-//            $menu->save(array(
-//                'id' =>$k,
-//                'sort'=>$v
-//            ));
-//            if ($menu->save() == false) {
-//                $str = "您好，你在执行添加菜单操作时出现以下问题: ".'<br>';;
-//                foreach ($menu->getMessages() as $message) {
-//                    $str .= $message.'!<br>';
-//                }
-//                json_encode(array('info'=>$str));
-//            }
-//            if ($status === false){
-//                $errorId = $k;
-//                break;//当排序失败时，捕获错误ID，结束程序
-//            }
-//        }
-//        $transaction->commit();
-//        $msg = $this->function->returnMsg("菜单排序成功","<br />发生错误的排序ID：$errorId",$status);
-//        $this->ajaxReturn($msg);
-
+    }
+    // 删除菜单
+    public function delMenuAction(){
+        $this->view->disable();
+        $id = $this->request->getPost('id','int');
+        if($this->request->isPost() && $id){
+            $sql = "SELECT id,pid FROM Hemacms\Admin\Models\AclResource";
+            $menuid = $this->modelsManager->executeQuery($sql);
+            $delid = $this->function->getAllChild($menuid->toArray(),$id);
+            $delid[] = $id;
+            $delid = implode(',',$delid);
+            $sql = "DELETE FROM Hemacms\Admin\Models\AclResource WHERE id IN($delid) ";
+            $status = $this->modelsManager->executeQuery($sql);
+            $msg = $this->function->returnMsg("菜单删除成功","菜单删除失败",$status->success());
+            $this->safeCache->delete('admin-menu.cache');
+            $this->safeCache->delete('admin-select.cache');
+            exit(json_encode($msg));
+        }
     }
 }

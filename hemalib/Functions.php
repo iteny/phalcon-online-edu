@@ -71,6 +71,20 @@ class Functions implements InjectionAwareInterface{
         print_r($arr);
         echo '</pre>';
     }
+    //得到该分类下所有分类的ID
+    public function getAllChild($array,$id)
+    {
+        $arr = array();
+        foreach($array as $v)
+        {
+            if($v['pid'] == $id)
+            {
+                $arr[] =$v['id'];
+                $arr = array_merge($arr,$this->getAllChild($array,$v['id']));
+            }
+        }
+        return $arr;
+    }
     /**
      * [doReturn 返回前端ajax处理数据结果]
      * @param  string $success [成功信息]

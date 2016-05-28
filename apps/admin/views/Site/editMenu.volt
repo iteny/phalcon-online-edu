@@ -199,21 +199,24 @@
                     dataType:'json',
                     type:'POST',
                     data:param,
+                    beforeSend: function(){
+                        myload = layer.load(0,{time:3*1000});
+                    },
                     success: function(data) {
-                        if (data=='1') {
+                        if (!data.status) {
+                            admin.alert('操作提示',''+data.info,2,'8000');
+                            $('button.btn').text('修改').removeProp('disabled').removeClass('disabled');
+                            $('button.btn').attr("disabledSubmit",'');
+                        }else{
                             admin.alert('操作提示', '修改菜单成功,3秒后为你跳转!', 1, '3000');
                             setTimeout(function () {
                                 window.location.href = menumanage;
                             }, 3000);
-                        }else{
-                            admin.alert('操作提示',''+data.info,2,'8000');
-                            $('button.btn').text('修改').removeProp('disabled').removeClass('disabled');
-                            $('button.btn').attr("disabledSubmit",'');
                         }
                     },
-                    error: function(XMLHttpRequest, textStatus, errorThrown){
-                        admin.error('网络连接异常！','#loginsubmit');
-                        return false;
+                    error: function(data){
+                        layer.close(layer.load(1));
+                        admin.alert('提示信息',data.responseText,1,'3000');
                     }
                 });
             }

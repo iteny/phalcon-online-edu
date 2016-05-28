@@ -32,10 +32,47 @@ $(function(){
                     },3000);
                 }
             },
-            //error: function(data){
-            //    layer.close(layer.load(1));
-            //    admin.alert('提示信息',data.responseText,1,'3000');
-            //}
+            error: function(data){
+                layer.close(layer.load(1));
+                admin.alert('提示信息',data.responseText,1,'3000');
+            }
+        });
+    });
+    $('.ajax-del').on('click', function (e) {
+        e.preventDefault();
+        var btn = $(this),
+            title = btn.attr('data-title'),
+            type = btn.attr('data-type'),
+            href = btn.attr('href'),
+            id = btn.attr('data-id');
+        layer.confirm('是否删除'+type+'<span style="color:red;">['+title+']</span>', {icon: 3,offset:'200px', title:'删除'+type+'提示'}, function(index){
+            layer.close(index);
+            $.ajax({
+                type: 'post',
+                url: href,
+                data : {id : id},
+                dataType:"json",
+                beforeSend: function(){
+                    myload = layer.load(0,{time:3*1000});
+                },
+                success: function(data){
+                    layer.close(layer.load(1));
+                    if(!data.status){
+                        admin.alert('提示信息',data.info,2,'3000');
+
+                    } else {
+                        admin.alert('提示信息',data.info,1,'3000');
+                        setTimeout(function(){
+                            admin.reloadPage();
+                        },3000);
+
+                    }
+                },
+                error: function(data){
+                    layer.close(layer.load(1));
+                    admin.alert('提示信息',data.responseText,1,'3000');
+                }
+            });
         });
     });
 });
