@@ -25,61 +25,49 @@ class IndexController extends Controller
 //            ->setTargetUri('static/admin/js/login.mini.js')
 //            ->join(true)
 //            ->addFilter(new \Phalcon\Assets\Filters\Jsmin());
-        $conditions = "pid = :pid: AND isshow = :isshow:";
-        $parameters = array(
-            'pid' => 0,
-            'isshow' => 1
-        );
-        $where = array(
-            $conditions,
-            'bind' => $parameters,
-            'columns' => 'id,name',
-            'order' => 'sort',
-            'cache' => ['lifetime' => 10, 'key' => "admin-oneresource"],
-        );
-        $oneResource = AclResource::find($where);
-        $this->view->topNav = $oneResource;
-//        var_dump($oneResource->toArray());
-//        $this->view->disable();
-
+        $cacheKey = 'admin-onemenu.cache';
+        $oneMenu   = $this->safeCache->get($cacheKey);
+        if($oneMenu === null){
+            $sql = "SELECT id,name FROM Hemacms\Admin\Models\AclResource WHERE pid = :pid: AND isshow = :isshow: ORDER BY sort ASC";
+            $oneMenu = $this->modelsManager->executeQuery($sql,array(
+                'pid' => 0,
+                'isshow' => 1
+            ));
+            $this->safeCache->save($cacheKey,$oneMenu,$this->config->admincache->adminmenu);
+        }
+        $this->view->topNav = $oneMenu;
     }
     public function getLeftMenuAction()
     {
         if ($this->request->isPost()) {
             $twopid = $this->request->getPost('pid', 'int');
-            $twobind = array(
-                'pid' => $twopid,
-                'isshow' => 1
-            );
-            $twoResource = AclResource::find(
-                array(
-                    "pid = :pid: AND isshow = :isshow:",
-                    "bind" => $twobind,
-                    "columns" => 'id,name,controller,action,sort,icon',
-                    'order' => 'sort',
-                    'cache' => ['lifetime' => 10, 'key' => "admin-tworesource".$twopid],
-                )
-            );
-            $twoResource = $twoResource->toArray();
-            foreach ($twoResource as $k => $v)
-            {
-                $threebind = array(
-                    'pid' => $v['id'],
+            $cacheTwoKey = 'admin-twomenu.cache.'.$twopid;
+            $twoMenu   = $this->safeCache->get($cacheTwoKey);
+            if($twoMenu === null){
+                $sql = "SELECT id,name,controller,action,sort,icon FROM Hemacms\Admin\Models\AclResource WHERE pid = :pid: AND isshow = :isshow: ORDER BY sort ASC";
+                $twoMenu = $this->modelsManager->executeQuery($sql,array(
+                    'pid' => $twopid,
                     'isshow' => 1
-                );
-                $threeResource = AclResource::find(
-                    array(
-                        "pid = :pid: AND isshow = :isshow:",
-                        "bind" => $threebind,
-                        "columns" => 'id,name,controller,action,sort,icon',
-                        'order' => 'sort',
-                        'cache' => ['lifetime' => 10, 'key' => "admin-threeresource".$v['id']],
-                    )
-                );
-                $threeResource = $threeResource->toArray();
-                $twoResource[$k]['children'] = $threeResource;
+                ));
+                $this->safeCache->save($cacheTwoKey,$twoMenu,$this->config->admincache->adminmenu);
             }
-            exit(json_encode($twoResource));
+            $twoMenu = $twoMenu->toArray();
+            foreach ($twoMenu as $k => $v)
+            {
+                $cacheThreeKey = 'admin-threemenu.cache.'.$v['id'];
+                $threeMenu   = $this->safeCache->get($cacheThreeKey);
+                if($threeMenu === null){
+                    $sql = "SELECT id,name,controller,action,sort,icon FROM Hemacms\Admin\Models\AclResource WHERE pid = :pid: AND isshow = :isshow: ORDER BY sort ASC";
+                    $threeMenu = $this->modelsManager->executeQuery($sql,array(
+                        'pid' => $v['id'],
+                        'isshow' => 1
+                    ));
+                    $this->safeCache->save($cacheThreeKey,$threeMenu,$this->config->admincache->adminmenu);
+                }
+                $threeMenu = $threeMenu->toArray();
+                $twoMenu[$k]['children'] = $threeMenu;
+            }
+            exit(json_encode($twoMenu));
         }
         $this->view->disable();
     }

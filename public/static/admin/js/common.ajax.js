@@ -26,6 +26,7 @@ $(function(){
                 if(!data.status){
                     admin.alert('提示信息',data.info,2,'3000');
                 } else {
+                    admin.countdown(3);
                     admin.alert('提示信息',data.info,1,'3000');
                     setTimeout(function(){
                         admin.reloadPage();
@@ -61,6 +62,7 @@ $(function(){
                         admin.alert('提示信息',data.info,2,'3000');
 
                     } else {
+                        admin.countdown(3);
                         admin.alert('提示信息',data.info,1,'3000');
                         setTimeout(function(){
                             admin.reloadPage();

@@ -9,8 +9,6 @@ use Phalcon\Mvc\Controller;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\Regex;
 use Phalcon\Validation\Validator\PresenceOf;
-use Hemacms\Admin\Models\AclResource;
-use Phalcon\Mvc\Model\Transaction\Manager as SwManager;
 class SiteController extends Controller
 {
     //读取菜单
@@ -101,44 +99,30 @@ class SiteController extends Controller
                     $msg = $this->function->returnMsg("添加菜单成功","添加菜单失败",$status->success());
                 }
                 if($status->success()){
-                    $this->safeCache->delete('admin-menu.cache');
-                    $this->safeCache->delete('admin-select.cache');
+                    $keys = $this->safeCache->queryKeys();
+                    foreach ($keys as $key) {
+                        $this->safeCache->delete($key);
+                    }
                 }
                 exit(json_encode($msg));
-
-//                if ($menu->save() == false) {
-//                    $str = "您好，你在执行添加菜单操作时出现以下问题: ".'<br>';;
-//                    foreach ($menu->getMessages() as $message) {
-//                        $str .= $message.'!<br>';
-//                    }
-//                    exit(json_encode(array('info'=>$str)));
-//                } else {
-//                    $this->safeCache->delete('admin-menu.cache');
-//                    $this->safeCache->delete('admin-select.cache');
-//                    echo '1';
-//                }
             }
         }else{
             $cacheKey = 'admin-select.cache';
             $adminSelect   = $this->safeCache->get($cacheKey);
+
             if($adminSelect === null){
-                $adminSelect = AclResource::find(
-                    array(
-                        'order' => 'sort',
-                    )
-                );
+                $sql = "SELECT * FROM Hemacms\Admin\Models\AclResource ORDER BY sort ASC";
+                $adminSelect = $this->modelsManager->executeQuery($sql);
                 $adminSelect = $this->function->recursiveTwo($adminSelect->toArray());
                 $this->safeCache->save($cacheKey,$adminSelect,$this->config->admincache->adminmenu);
             }
             $this->view->adminSelect = $adminSelect;
             if($this->request->getQuery('id')){
                 $id = $this->request->getQuery('id','int');
-                $thisMenu = AclResource::findFirst(
-                    array(
-                        'id = :id:',
-                        'bind' => array('id'=>$this->request->getQuery('id')),
-                    )
-                );
+                $sql = "SELECT * FROM Hemacms\Admin\Models\AclResource WHERE id = :id:";
+                $thisMenu = $this->modelsManager->executeQuery($sql,array(
+                    'id' => $id
+                ))->getFirst();
                 $this->view->thismenu = $thisMenu->toArray();
                 $this->view->pick("Site/editMenu");
             }else{
@@ -178,8 +162,12 @@ class SiteController extends Controller
             $sql = "DELETE FROM Hemacms\Admin\Models\AclResource WHERE id IN($delid) ";
             $status = $this->modelsManager->executeQuery($sql);
             $msg = $this->function->returnMsg("菜单删除成功","菜单删除失败",$status->success());
-            $this->safeCache->delete('admin-menu.cache');
-            $this->safeCache->delete('admin-select.cache');
+            if($status->success()){
+                $keys = $this->safeCache->queryKeys();
+                foreach ($keys as $key) {
+                    $this->safeCache->delete($key);
+                }
+            }
             exit(json_encode($msg));
         }
     }

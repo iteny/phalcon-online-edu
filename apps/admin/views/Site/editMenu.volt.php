@@ -208,7 +208,8 @@
                             $('button.btn').text('修改').removeProp('disabled').removeClass('disabled');
                             $('button.btn').attr("disabledSubmit",'');
                         }else{
-                            admin.alert('操作提示', '修改菜单成功,3秒后为你跳转!', 1, '3000');
+                            admin.countdown(3);
+                            admin.alert('操作提示', '修改菜单成功!', 1, '3000');
                             setTimeout(function () {
                                 window.location.href = menumanage;
                             }, 3000);
