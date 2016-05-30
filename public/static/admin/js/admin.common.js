@@ -24,7 +24,7 @@ $(function(){
             });
         },
         alert: function(title,msg,icon,timeout,showType){//右下角提示框
-            layer.alert(msg+'<div>程序将在<b style="color:red;" id="second_show">03秒</b>后为你跳转！</div>', {
+            layer.alert(msg, {
                 icon: icon,
                 title: title,
                 time: timeout,

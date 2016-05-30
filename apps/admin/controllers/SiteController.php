@@ -9,7 +9,7 @@ use Phalcon\Mvc\Controller;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\Regex;
 use Phalcon\Validation\Validator\PresenceOf;
-class SiteController extends Controller
+class SiteController extends AdminBaseController
 {
     //读取菜单
     public function menuAction(){
@@ -170,5 +170,8 @@ class SiteController extends Controller
             }
             exit(json_encode($msg));
         }
+    }
+    public function backupAction(){
+
     }
 }

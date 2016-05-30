@@ -11,8 +11,8 @@
 </div>
 <div id="frame-toolbar">
     <ul>
-        <li><a class="active" href="/admin/site/menu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;菜单设置</a></li>
-        <li><a href="/admin/site/addEditMenu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加菜单</a></li>
+        <li><a class="active" href="/admin/Site/menu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;菜单设置</a></li>
+        <li><a href="/admin/Site/addEditMenu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
@@ -48,7 +48,7 @@
                     <td align="center">{{menu['controller']|e}}</td>
                     <td align="center">{{menu['action']|e}}</td>
                     <td align="center"><span class="{% if menu['isshow'] == 1 %}green{% else %}red{% endif %}">{% if menu['isshow'] == 1 %}显示{% else %}不显示{% endif %}</span></td>
-                    <td align="center"><a class="ajax-add blue" href="/admin/site/addEditMenu/?pid={{menu['id']|e}}" data-level="{{menu['level']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加子菜单</a>&nbsp;&nbsp;&nbsp;<a class="ajax-edit blue" href="/admin/site/addEditMenu/?id={{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="{{menu['name']|e}}" data-type="菜单" href="/admin/site/delMenu" data-id="{{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a> </td>
+                    <td align="center"><a class="ajax-add blue" href="/admin/Site/addEditMenu/?pid={{menu['id']|e}}" data-level="{{menu['level']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加子菜单</a>&nbsp;&nbsp;&nbsp;<a class="ajax-edit blue" href="/admin/Site/addEditMenu/?id={{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="{{menu['name']|e}}" data-type="菜单" href="/admin/Site/delMenu" data-id="{{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a> </td>
                 </tr>
                 {% endfor %}
             </tbody>

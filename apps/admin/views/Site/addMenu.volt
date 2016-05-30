@@ -11,12 +11,12 @@
 </div>
 <div id="frame-toolbar">
     <ul>
-        <li><a href="/admin/site/menu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;菜单设置</a></li>
-        <li><a class="active" href="/admin/site/addEditMenu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加菜单</a></li>
+        <li><a href="/admin/Site/menu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;菜单设置</a></li>
+        <li><a class="active" href="/admin/Site/addEditMenu"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加菜单</a></li>
     </ul>
 </div>
 <div id="frame-content">
-    <form name="addMenu" method="post" class="J_ajaxForm" action="/admin/site/addEditMenu" novalidate="novalidate">
+    <form name="addMenu" method="post" class="J_ajaxForm" action="/admin/Site/addEditMenu" novalidate="novalidate">
         <input type="hidden" name="addEditMenu" value="addEditMenu">
 
         <div class="frame-table-list">
@@ -210,7 +210,7 @@
                             $('button.btn').attr("disabledSubmit",'');
                         }else{
                             admin.countdown(3);
-                            admin.alert('操作提示', '添加菜单成功!', 1, '3000');
+                            admin.alert('操作提示', '添加菜单成功!'+'<div>程序将在<b style="color:red;" id="second_show">03秒</b>后为你跳转！</div>', 1, '3000');
                             setTimeout(function () {
                                 window.location.href = menumanage;
                             }, 3000);

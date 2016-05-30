@@ -11,8 +11,9 @@ use Phalcon\Acl\Resource;
 class AdminBaseController extends Controller
 {
 //    protected function initialize()
-    public function aclAction()
+    public function initialize()
     {
+
         $safeCache = $this->di->get('safeCache',3600);
 //        $safeCache->save('acl',111);
         if(!$safeCache->exists('acl')) {
@@ -37,9 +38,36 @@ class AdminBaseController extends Controller
                     $acl->allow(new Resource($role->role),$res->controller,$res->action);
                 }
             }
-//            var_dump($resource);
+            $safeCache->save('acl',serialize($acl),3600);
+        }else{
+            $acl = unserialize($safeCache->get('acl'));
         }
-        $safeCache->save('acl',serialize($acl),3600);
+        $meController = $this->dispatcher->getControllerName();
+        $meAction = $this->dispatcher->getActionName();
+//        $objRole = $this->dispatcher->getParam('user');
+        if($acl->isAllowed('superadmin',$meController,$meAction))
+        {
+            return true;
+        }
+        else
+        {
+            if($this->request->isAjax()){
+                exit(json_encode(array(
+                    'status' => false,
+                    'info' => '对不起，你没有权限执行这个操作'
+                )));
+            }else if($this->request->isPost()){
+                exit(json_encode(array(
+                    'status' => false,
+                    'info' => '对不起，你没有权限执行这个操作'
+                )));
+            }else{
+                echo '您没有访问权限';
+                $this->view->disable();
+                exit;
+            }
+        }
+
 
 //            $roleGuest = new \Phalcon\Acl\Role('guest','for anonymous visitors');
 //            $roleMembers = new \Phalcon\Acl\Role('member','for members');
@@ -69,9 +97,9 @@ class AdminBaseController extends Controller
 //        }
 
     }
-    public function indexAction()
-    {
-        echo '111';
-        $this->view->disable();
-    }
+//    public function indexAction()
+//    {
+//        echo '111';
+//        $this->view->disable();
+//    }
 }
