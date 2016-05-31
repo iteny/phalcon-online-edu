@@ -62,7 +62,12 @@ class AdminBaseController extends Controller
                     'info' => '对不起，你没有权限执行这个操作'
                 )));
             }else{
-                echo '您没有访问权限';
+                $str = '<body style="background: white;padding:0;margin:0;">';
+                $str .= '<div style="width: 100%;">';
+                $str .= '<div style="text-align: center;height: 42px;line-height: 42px;color:white;font-size: 18px;font-weight: bold;background: #ff6347;font-family:Microsoft YaHei">对不起，您没有相关的操作权限！。。。</div>';
+                $src .= '</div>';
+                $str .= '</body>';
+                echo $str;
                 $this->view->disable();
                 exit;
             }

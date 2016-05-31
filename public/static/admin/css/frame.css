@@ -167,10 +167,10 @@ td, th, div {
     border-top: 1px solid #ebebeb;
     margin-bottom: 10px;
     background: #09C;
-    border: 1px solid #25333c;
+    /*border: 1px solid #25333c;*/
     border-radius: 3px;
     padding: 6px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);*/
     margin-bottom: 15px;
 }
 .frame-table-list thead tr td {
@@ -253,6 +253,18 @@ td, th, div {
 .frame-table-list tbody tr:hover .icon{
     color:white;
 }
+.frame-table-list div.title{
+    height: 36px;
+    line-height: 36px;
+    background: #d6dadf;
+    border-top: 1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    width: 100%;
+    text-indent: 10px;
+    color:#666;
+    font-weight: bold;
+}
+td.home{padding-right: 10px;}
 .frame-table-btn {
     position: fixed;
     bottom: 0;

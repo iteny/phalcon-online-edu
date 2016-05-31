@@ -9,6 +9,7 @@ use Phalcon\Mvc\Controller;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\Regex;
 use Phalcon\Validation\Validator\PresenceOf;
+use Hemacms\Admin\Models\User;
 class SiteController extends AdminBaseController
 {
     //读取菜单
@@ -172,6 +173,19 @@ class SiteController extends AdminBaseController
         }
     }
     public function backupAction(){
-
+        $this->view->disable();
+//        $user = User::findFirst();
+////        var_dump($user->toArray());die;
+//        $group = $user->getAclUserGroup();
+//        foreach($group as $rp){
+//            echo '<br>rp:</br>';
+//            var_dump($rp->toArray());
+//        }
+        $t = $this->db->fetchAll('SELECT u.*,ug.*,g.* FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id');
+        var_dump($t);
+//        $sql = 'SELECT u.*,ug.* FROM Hemacms\Admin\Models\User u JOIN Hemacms\Admin\Models\AclUserGroup ug ' .
+//            'WHERE ug.uid = u.id';
+//        $tags = $this->modelsManager->executeQuery($sql)->getFirst();
+//        echo $tags->u->username;
     }
 }

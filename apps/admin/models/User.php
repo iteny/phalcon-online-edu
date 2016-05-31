@@ -221,5 +221,6 @@ class User extends Model
     public function initialize()
     {
         $this->useDynamicUpdate(true);
+        $this->hasMany('id','Hemacms\Admin\Models\AclUserGroup','uid',array('alias'=>'aclusergroup'));
     }
 }

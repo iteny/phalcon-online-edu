@@ -53,7 +53,7 @@
             <a href="" id="J_refresh" class="bsn refresh" title="刷新" style="border-right: 1px solid #ccc;"><i class="iconfont" style="color:white;font-size: 18px;">&#xe608;</i></a>
             <a href="" id="J_fullScreen" class="bsn full_screen active" title="最大化/最小化"><i class="iconfont" style="color:white;font-size: 18px;">&#xe609;</i></a>
         </div>
-        <iframe name="rightFrame" id="iframe_default" src="/admin/login/index" style="height: 100%; width: 100%;display:block;" data-id="default" frameborder="0" scrolling="auto"></iframe>
+        <iframe name="rightFrame" id="iframe_default" src="/admin/Index/home" style="height: 100%; width: 100%;display:block;" data-id="default" frameborder="0" scrolling="auto"></iframe>
     </div>
     <!--<div id="hmFooter"></div>-->
 </div>

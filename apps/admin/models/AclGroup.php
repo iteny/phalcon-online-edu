@@ -129,5 +129,6 @@ class AclGroup extends Model
     public function initialize()
     {
         $this->useDynamicUpdate(true);
+//        $this->hasMany('id','Hemacms\Admin\Models\AclUserGroup','group_id',array('alias'=>'aclusergroup');
     }
 }
