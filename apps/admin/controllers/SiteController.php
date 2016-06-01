@@ -181,8 +181,17 @@ class SiteController extends AdminBaseController
 //            echo '<br>rp:</br>';
 //            var_dump($rp->toArray());
 //        }
-        $t = $this->db->fetchAll('SELECT u.*,ug.*,g.* FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id');
-        var_dump($t);
+        $id = array(
+            'id' => 1
+        );
+//        $id = 1;
+        $t = $this->db->fetchOne("SELECT u.id,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id AND u.id = {$id['id']} LIMIT 1");
+//        $t = array_coarrlumn($t);
+//        var_dump($t);
+//        echo $t['role'];
+        $ss = $this->session->get('userInfo');
+        var_dump($ss);
+//        echo $t['role'];
 //        $sql = 'SELECT u.*,ug.* FROM Hemacms\Admin\Models\User u JOIN Hemacms\Admin\Models\AclUserGroup ug ' .
 //            'WHERE ug.uid = u.id';
 //        $tags = $this->modelsManager->executeQuery($sql)->getFirst();

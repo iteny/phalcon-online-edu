@@ -10,12 +10,14 @@ use Phalcon\Acl\Role;
 use Phalcon\Acl\Resource;
 class AdminBaseController extends Controller
 {
-//    protected function initialize()
-    public function initialize()
+    protected function initialize()
     {
-
+        $sess = $this->session->get('userInfo');
+        if($sess['session_verfiy'] != trim(trim(trim($_SERVER['HTTP_USER_AGENT'])) . trim(md5($_SERVER['SERVER_ADDR']))))
+        {
+            return $this->response->redirect('admin/login/index');
+        }
         $safeCache = $this->di->get('safeCache',3600);
-//        $safeCache->save('acl',111);
         if(!$safeCache->exists('acl')) {
             $acl = new \Phalcon\Acl\Adapter\Memory();
             $acl->setDefaultAction(\Phalcon\Acl::DENY);
@@ -30,7 +32,6 @@ class AdminBaseController extends Controller
             }
             foreach($group as $role){
                 $acl->addRole(new Role($role->role));
-//                echo $role['role'].'</br>';
                 $sql = "SELECT * FROM Hemacms\Admin\Models\AclResource WHERE id IN ($role->resource)";
                 $resource = $this->modelsManager->executeQuery($sql);
 
@@ -44,7 +45,6 @@ class AdminBaseController extends Controller
         }
         $meController = $this->dispatcher->getControllerName();
         $meAction = $this->dispatcher->getActionName();
-//        $objRole = $this->dispatcher->getParam('user');
         if($acl->isAllowed('superadmin',$meController,$meAction))
         {
             return true;
@@ -72,39 +72,5 @@ class AdminBaseController extends Controller
                 exit;
             }
         }
-
-
-//            $roleGuest = new \Phalcon\Acl\Role('guest','for anonymous visitors');
-//            $roleMembers = new \Phalcon\Acl\Role('member','for members');
-//            $acl->addRole($roleGuest);
-//            $acl->addRole($roleMembers,$roleGuest);
-//            $aclResource = new \Phalcon\Acl\Resource('acl');
-//            $acl->addResource($aclResource,array('index','another','mem','all'));
-//            $acl->allow('guest','acl','index');
-//            $acl->allow('guest','acl','all');
-//            $acl->allow('member','acl','mem');
-//            $safeCache->save('acl',serialize($acl),3600);
-//        }
-//        else
-//        {
-//            $acl = unserialize($safeCache->get('acl'));
-//        }
-//        $meController = $this->dispatcher->getControllerName();
-//        $meAction = $this->dispatcher->getActionName();
-//        $objRole = $this->dispatcher->getParam('user');
-//        if($acl->isAllowed('guest',$meController,$meAction))
-//        {
-//            echo '允许访问';
-//        }
-//        else
-//        {
-//            echo '您没有访问权限';
-//        }
-
     }
-//    public function indexAction()
-//    {
-//        echo '111';
-//        $this->view->disable();
-//    }
 }

@@ -6,6 +6,13 @@ use Hemacms\Admin\Models\AclResource;
 
 class IndexController extends Controller
 {
+    protected function initialize()
+    {
+        $sess = $this->session->get('userInfo');
+        if ($sess['session_verfiy'] != trim(trim(trim($_SERVER['HTTP_USER_AGENT'])) . trim(md5($_SERVER['SERVER_ADDR'])))) {
+            return $this->response->redirect('admin/login/index');
+        }
+    }
     //后台主页
     public function indexAction()
     {
@@ -113,6 +120,9 @@ class IndexController extends Controller
             ));
             $this->safeCache->save($loginLogKey,$loginLog,300);
         }
+        $sess = $this->session->get('userInfo');
+        $this->view->username = $sess['admin_username'];
+        $this->view->rolename = $sess['admin_rolename'];
         $this->view->systeminfo = $info;
         $this->view->loginlog = $loginLog;
     }

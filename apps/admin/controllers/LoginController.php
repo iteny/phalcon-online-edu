@@ -53,29 +53,26 @@ class LoginController extends Controller
                         echo json_encode($msg);
                         return false;
                     }
-                    $conditions = "username = :username: AND password = :password:";
-                    $parameters = array(
+                    $sql = "SELECT id,username,nickname,status FROM Hemacms\Admin\Models\User WHERE username = :username: AND password = :password:";
+                    $user = $this->modelsManager->executeQuery($sql,array(
                         'username' => $username,
                         'password' => $password
-                    );
-                    $where = array(
-                        $conditions,
-                        'bind' => $parameters,
-                        'columns' => 'id,username,nickname,status'
-                    );
-                    $user = User::findFirst($where);
+                    ))->getFirst();
                     $enableCnt = 6;
                     if($user){
                         $user = $user->toArray();
                         if($user['status']){
                             $this->recordLogin(1,'密码保密');
                             $this->logout();
+                            $role = $this->db->fetchOne("SELECT u.id,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id AND u.id = {$user['id']} LIMIT 1");
                             $strVerfiy = trim(trim(trim($_SERVER['HTTP_USER_AGENT'])) . trim(md5($_SERVER['SERVER_ADDR'])));
                             $userInfo['session_verfiy'] = $strVerfiy;
                             $userInfo['admin_login_time'] = $_SERVER['REQUEST_TIME'];
                             $userInfo['admin_uid'] = $user['id'];
                             $userInfo['admin_username'] = $user['username'];
                             $userInfo['admin_nickname'] = $user['nickname'];
+                            $userInfo['admin_rolename'] = $role['title'];
+                            $userInfo['admin_role'] = $role['role'];
                             $this->session->set('userInfo',$userInfo);
                             $msg['status'] = 1;
                             $msg['info'] = '登录成功，3秒后为你跳转';
@@ -130,18 +127,20 @@ class LoginController extends Controller
     }
     //登录日志
      function recordLogin($status = '0',$message = '未知'){
-        $Ip = new IpLocation('UTFWry.dat'); // 实例化类 参数表示IP地址库文件
-        $area = $Ip->getlocation(); // 获取某个IP地址所在的位置
-        $loginlog = new LoginLog();
-        $loginlog->username = $this->request->getPost( 'username', 'trim' );
-        $loginlog->status = $status;
-        $loginlog->info = $message;
-        $loginlog->logintime = $_SERVER['REQUEST_TIME'];
-        $loginlog->loginip = $area['ip'];
-        $loginlog->area = $area['area'] == '' ? '对方在服务器本地登录' : $area['area'];
-        $loginlog->country = $area['country'];
-        $loginlog->useragent = $_SERVER['HTTP_USER_AGENT'];
-        $loginlog->create();
+         $Ip = new IpLocation('UTFWry.dat'); // 实例化类 参数表示IP地址库文件
+         $area = $Ip->getlocation(); // 获取某个IP地址所在的位置
+         $data = array(
+            'username' => $this->request->getPost( 'username', 'trim' ),
+            'status' => $status,
+            'info' => $message,
+            'logintime' => $_SERVER['REQUEST_TIME'],
+            'loginip' => $area['ip'],
+            'area' => $area['area'] == '' ? '对方在服务器本地登录' : $area['area'],
+            'country' => $area['country'],
+            'useragent' => $_SERVER['HTTP_USER_AGENT']
+         );
+         $sql = "INSERT INTO Hemacms\Admin\Models\LoginLog (username,status,info,logintime,loginip,area,country,useragent) VALUES (:username:,:status:,:info:,:logintime:,:loginip:,:area:,:country:,:useragent:)";
+         $this->modelsManager->executeQuery($sql,$data);
     }
     //输出验证码
     public function verifyAction()

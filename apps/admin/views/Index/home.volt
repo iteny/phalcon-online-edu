@@ -26,11 +26,11 @@
                             <tbody>
                             <tr>
                                 <td width="120" align="right">您好&nbsp;：</td>
-                                <td>iteny</td>
+                                <td>{{username}}</td>
                             </tr>
                             <tr>
                                 <td width="120" align="right">所属角色&nbsp;：</td>
-                                <td>超级管理员</td>
+                                <td>{{rolename}}</td>
                             </tr>
                             <!--{% for key,val in loginlog if key < 1 %}-->
                             <tr>
@@ -76,7 +76,7 @@
                                        <?php echo "<tr>";?>
                                     {% endif %}
 
-                                    <td width="180" align="right">{{key}}&nbsp;：</td>
+                                    <td width="170" align="right">{{key}}&nbsp;：</td>
                                     <td>{{val}}</td>
                                     {% if i%2==0 %}
                                         <?php echo "</tr>";?>

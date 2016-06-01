@@ -26,11 +26,11 @@
                             <tbody>
                             <tr>
                                 <td width="120" align="right">您好&nbsp;：</td>
-                                <td>iteny</td>
+                                <td><?php echo $username; ?></td>
                             </tr>
                             <tr>
                                 <td width="120" align="right">所属角色&nbsp;：</td>
-                                <td>超级管理员</td>
+                                <td><?php echo $rolename; ?></td>
                             </tr>
                             <!--<?php foreach ($loginlog as $key => $val) { if ($key < 1) { ?>-->
                             <tr>
@@ -76,7 +76,7 @@
                                        <?php echo "<tr>";?>
                                     <?php } ?>
 
-                                    <td width="180" align="right"><?php echo $key; ?>&nbsp;：</td>
+                                    <td width="170" align="right"><?php echo $key; ?>&nbsp;：</td>
                                     <td><?php echo $val; ?></td>
                                     <?php if ($i % 2 == 0) { ?>
                                         <?php echo "</tr>";?>

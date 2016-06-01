@@ -158,16 +158,18 @@ class Functions implements InjectionAwareInterface{
             $uname = $this->getDI()->get('session')->get('userInfo');
             $Ip = new IpLocation('UTFWry.dat'); // 实例化类 参数表示IP地址库文件
             $area = $Ip->getlocation(); // 获取某个IP地址所在的位置
-            $operateLog = new OperateLog();
-            $operateLog->username = $uname['admin_username'];
-            $operateLog->ip = $area['ip'];
-            $operateLog->time = $_SERVER['REQUEST_TIME'];
-            $operateLog->country = $area['country'];
-            $operateLog->useragent = $_SERVER['HTTP_USER_AGENT'];
-            $operateLog->info = "提示语：{$message}<br/>模块：" . $this->getDI()->get('dispatcher')->getModuleName() . ",控制器：" . $this->getDI()->get('dispatcher')->getControllerName() . ",方法：" . $this->getDI()->get('dispatcher')->getActionName() . "<br/>请求方式：{$fangs}";
-            $operateLog->get = $_SERVER['HTTP_REFERER'];
-            $operateLog->status = $status;
-            $operateLog->save();
+            $data = array(
+                'username' => $uname['admin_username'],
+                'ip' => $area['ip'],
+                'time' => $_SERVER['REQUEST_TIME'],
+                'country' => $area['country'],
+                'useragent' => $_SERVER['HTTP_USER_AGENT'],
+                'info' => "提示语：{$message}<br/>模块：" . $this->getDI()->get('dispatcher')->getModuleName() . ",控制器：" . $this->getDI()->get('dispatcher')->getControllerName() . ",方法：" . $this->getDI()->get('dispatcher')->getActionName() . "<br/>请求方式：{$fangs}",
+                'get' => $_SERVER['HTTP_REFERER'],
+                'status' => $status,
+            );
+            $sql = "INSERT INTO Hemacms\Admin\Models\OperateLog (username,ip,time,country,useragent,info,get,status) VALUES (:username:,:ip:,:time:,:country:,:useragent:,:info:,:get:,:status:)";
+            $this->getDI()->get('modelsManager')->executeQuery($sql,$data);
         }
     }
 
