@@ -172,5 +172,49 @@ class Functions implements InjectionAwareInterface{
             $this->getDI()->get('modelsManager')->executeQuery($sql,$data);
         }
     }
+    /**
+     * [treeRule 菜单无限极]
+     * @param  [type] $data    [菜单数据]
+     * @param  string $rule_id [菜单rule_id]
+     * @return [type]          [description]
+     */
+    public function treeRule($data,$pid = '0'){
+        $tree = array();
+        foreach($data as $v){
+            if($v['pid'] == $pid){
+                $v['children'] = $this->treeRule($data,$v['id']);
+                $tree[] = $v;
+            }
+        }
+        return $tree;
+    }
+    /**
+     * [treeState 树形数据状态收缩]
+     * @param  [type] $data  [description]
+     * @param  [type] $rules [description]
+     * @return [type]        [description]
+     */
+    public function treeState($data,$rules){//其实主要用与菜单数据，其他的树形数据也可以通用
+        foreach($data as $k=>$v){
+
+            if(is_array($v['children']) && count($v['children']) != 0){
+                if(isset($rules) && in_array($v['id'],$rules)){//判断是否让数据具有选中效果
+                    $data[$k]["checked"] = true;
+                }
+                $data[$k]["open"] = "true";
+                if(isset($rules)){//判断是否让数据具有选中效果
+                    $data[$k]["children"] = $this->treeState($data[$k]["children"],$rules);
+                } else {
+                    $data[$k]["children"] = $this->treeState($data[$k]["children"]);
+                }
+
+            } else {
+                if(isset($rules) && in_array($v['id'],$rules)){//判断是否让数据具有选中效果
+                    $data[$k]["checked"] = true;
+                }
+            }
+        }
+        return $data;
+    }
 
 }

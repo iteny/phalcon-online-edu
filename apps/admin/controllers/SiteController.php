@@ -172,6 +172,235 @@ class SiteController extends AdminBaseController
             exit(json_encode($msg));
         }
     }
+    //用户组管理
+    public function groupAction(){
+        $sql = "SELECT * FROM Hemacms\Admin\Models\AclGroup ORDER BY sort ASC";
+        $group = $this->modelsManager->executeQuery($sql);
+        $this->view->group = $group->toArray();
+    }
+    //用户组权限设置
+    public function setGroupAction(){
+        if($this->request->getQuery('id') == '1'){
+            echo "不允许对超级管理员授权";
+            exit;
+        }
+        if($this->request->isPost() && $this->request->getPost('setGroup')){
+            $this->view->disable();
+            $resIds = $this->request->getPost('resid');
+            $id = $this->request->getPost('id','int');
+            $sql = "UPDATE Hemacms\Admin\Models\AclGroup SET resource = ?0 WHERE id = $id";
+            $status = $this->modelsManager->executeQuery($sql,array(
+                0 => $resIds
+            ));
+            $msg = $this->function->returnMsg("授权成功","授权失败",$status->success());
+            $this->safeCache->delete('acl');
+            exit(json_encode($msg));
+        }else{
+            $id = $this->request->getQuery('id','int');
+            $sql = "SELECT id,name,pid FROM Hemacms\Admin\Models\AclResource";
+            $resource = $this->modelsManager->executeQuery($sql);
+            $resource = $resource->toArray();
+            $groupSql = "SELECT id,title,resource FROM Hemacms\Admin\Models\AclGroup WHERE id = :id:";
+            $group = $this->modelsManager->executeQuery($groupSql,array(
+                'id' => $id
+            ))->getFirst();
+            $resourceIds = explode(",",$group->resource);
+            $data = $this->function->treeRule($resource);
+            $data = $this->function->treeState($data,$resourceIds);
+            $this->view->resource = json_encode($data);
+            $this->view->id = $id;
+            $this->view->rolename = $group->title;
+        }
+    }
+    //添加或修改用户组
+    public function addEditGroupAction(){
+        if($this->request->getQuery('id') == '1'){
+            echo "不允许对超级管理员修改";
+            exit;
+        }
+        if($this->request->isPost() && $this->request->getPost('addEditGroup')){
+            $this->view->disable();
+            $validation = new Validation();
+            $validation->add('title',new PresenceOf(array(
+                'message' => '用户组名称不能为空'
+                )))
+                ->add('title', new Regex(array(
+                    'message' => '用户组名称必须是中文',
+                    'pattern' => '/^[\x{4e00}-\x{9fa5}]+$/u'
+                )))
+                ->add('role',new PresenceOf(array(
+                    'message' => '用户组英文名称不能为空'
+                )))
+                ->add('role', new Regex(array(
+                    'message' => '用户组英文名称必须是英文字符串',
+                    'pattern' => '/^[A-Za-z]+$/'
+                )))
+                ->add('sort',new PresenceOf(array(
+                    'message' => '排序数不能为空'
+                )))
+                ->add('sort', new Regex(array(
+                    'message' => '排序数必须是整数',
+                    'pattern' => '/^[1-9]\d*$/'
+                )));
+            $messages = $validation->validate($this->request->getPost());
+            if (count($messages)) {
+                $str = '';
+                foreach ($messages as $message) {
+                    $str .= $message.'!<br>';
+                }
+                exit(json_encode(array('info'=>$str)));
+            }else{
+                if($this->request->getPost('id')){
+                    $group['id'] = $this->request->getPost('id','int');
+                }
+                $group['title'] = $this->request->getPost('title','string');
+                $group['role'] = $this->request->getPost('role','string');
+                $group['status'] = $this->request->getPost('status','int');
+                $group['sort'] = $this->request->getPost('sort','int');
+                if($this->request->getPost('id')){
+                    $sql = "UPDATE Hemacms\Admin\Models\AclGroup SET title=?0,role=?1,status=?2,sort=?3 WHERE id={$group['id']}";
+                    $status = $this->modelsManager->executeQuery($sql,array(
+                        0 => $group['title'],
+                        1 => $group['role'],
+                        2 => $group['status'],
+                        3 => $group['sort']
+                    ));
+                    $msg = $this->function->returnMsg("修改用户组成功","修改用户组失败",$status->success());
+                }else{
+                    $sql = "INSERT INTO Hemacms\Admin\Models\AclGroup (title,role,status,sort) VALUES (:title:,:role:,:status:,:sort:)";
+                    $status = $this->modelsManager->executeQuery($sql,$group);
+                    $msg = $this->function->returnMsg("添加用户组成功","添加用户组失败",$status->success());
+                }
+                if($status->success()){
+                    $this->safeCache->delete('acl');
+                }
+                exit(json_encode($msg));
+            }
+        }else{
+            if($this->request->getQuery('id')){
+                $id = $this->request->getQuery('id','int');
+                $sql = "SELECT * FROM Hemacms\Admin\Models\AclGroup WHERE id = :id:";
+                $thisGroup = $this->modelsManager->executeQuery($sql,array(
+                    'id' => $id
+                ))->getFirst();
+                $this->view->thisgroup = $thisGroup->toArray();
+                $this->view->pick("Site/editGroup");
+            }else{
+                $this->view->pick("Site/addGroup");
+            }
+        }
+    }
+    //删除用户组
+    public function delGroupAction(){
+        if($this->request->getQuery('id') == '1'){
+            echo "不允许删除超级管理员";
+            exit;
+        }
+        $this->view->disable();
+        $id = $this->request->getPost('id','int');
+        if($this->request->isPost() && $id){
+            $sql = "DELETE FROM Hemacms\Admin\Models\AclGroup WHERE id = :id:";
+            $status = $this->modelsManager->executeQuery($sql,array(
+                'id' => $id
+            ));
+            $msg = $this->function->returnMsg("用户组删除成功","用户组删除失败",$status->success());
+            if($status->success()){
+                $this->safeCache->delete('acl');
+            }
+            exit(json_encode($msg));
+        }
+    }
+    //用户管理
+    public function userAction(){
+        $user = $this->db->fetchAll("SELECT u.id,u.username,u.create_time,u.create_ip,u.email,u.remark,u.status,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id");
+        $this->view->user = $user;
+    }
+    //添加或修改用户
+    public function addEditUserAction(){
+        if($this->request->getQuery('id') == '1'){
+            echo "不允许对超级管理员修改";
+            exit;
+        }
+        if($this->request->isPost() && $this->request->getPost('addEditUser')){
+            $this->view->disable();
+            $validation = new Validation();
+            $validation->add('title',new PresenceOf(array(
+                'message' => '用户组名称不能为空'
+            )))
+                ->add('title', new Regex(array(
+                    'message' => '用户组名称必须是中文',
+                    'pattern' => '/^[\x{4e00}-\x{9fa5}]+$/u'
+                )))
+                ->add('role',new PresenceOf(array(
+                    'message' => '用户组英文名称不能为空'
+                )))
+                ->add('role', new Regex(array(
+                    'message' => '用户组英文名称必须是英文字符串',
+                    'pattern' => '/^[A-Za-z]+$/'
+                )))
+                ->add('sort',new PresenceOf(array(
+                    'message' => '排序数不能为空'
+                )))
+                ->add('sort', new Regex(array(
+                    'message' => '排序数必须是整数',
+                    'pattern' => '/^[1-9]\d*$/'
+                )));
+            $messages = $validation->validate($this->request->getPost());
+            if (count($messages)) {
+                $str = '';
+                foreach ($messages as $message) {
+                    $str .= $message.'!<br>';
+                }
+                exit(json_encode(array('info'=>$str)));
+            }else{
+                if($this->request->getPost('id')){
+                    $group['id'] = $this->request->getPost('id','int');
+                }
+                $group['title'] = $this->request->getPost('title','string');
+                $group['role'] = $this->request->getPost('role','string');
+                $group['status'] = $this->request->getPost('status','int');
+                $group['sort'] = $this->request->getPost('sort','int');
+                if($this->request->getPost('id')){
+                    $sql = "UPDATE Hemacms\Admin\Models\AclGroup SET title=?0,role=?1,status=?2,sort=?3 WHERE id={$group['id']}";
+                    $status = $this->modelsManager->executeQuery($sql,array(
+                        0 => $group['title'],
+                        1 => $group['role'],
+                        2 => $group['status'],
+                        3 => $group['sort']
+                    ));
+                    $msg = $this->function->returnMsg("修改用户组成功","修改用户组失败",$status->success());
+                }else{
+                    $sql = "INSERT INTO Hemacms\Admin\Models\AclGroup (title,role,status,sort) VALUES (:title:,:role:,:status:,:sort:)";
+                    $status = $this->modelsManager->executeQuery($sql,$group);
+                    $msg = $this->function->returnMsg("添加用户组成功","添加用户组失败",$status->success());
+                }
+                if($status->success()){
+                    $this->safeCache->delete('acl');
+                }
+                exit(json_encode($msg));
+            }
+        }else{
+            $cacheKey = 'admin-group.cache';
+            $adminGroup   = $this->safeCache->get($cacheKey);
+            if($adminGroup === null){
+                $sql = "SELECT * FROM Hemacms\Admin\Models\AclGroup ORDER BY sort ASC";
+                $adminGroup = $this->modelsManager->executeQuery($sql);
+                $this->safeCache->save($cacheKey,$adminGroup,$this->config->admincache->adminmenu);
+            }
+            $this->view->adminGroup = $adminGroup;
+            if($this->request->getQuery('id')){
+                $id = $this->request->getQuery('id','int');
+                $sql = "SELECT * FROM Hemacms\Admin\Models\AclGroup WHERE id = :id:";
+                $thisGroup = $this->modelsManager->executeQuery($sql,array(
+                    'id' => $id
+                ))->getFirst();
+                $this->view->thisgroup = $thisGroup->toArray();
+                $this->view->pick("Site/editUser");
+            }else{
+                $this->view->pick("Site/addUser");
+            }
+        }
+    }
     public function backupAction(){
         $this->view->disable();
 //        $user = User::findFirst();
@@ -184,6 +413,7 @@ class SiteController extends AdminBaseController
         $id = array(
             'id' => 1
         );
+
 //        $id = 1;
         $t = $this->db->fetchOne("SELECT u.id,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id AND u.id = {$id['id']} LIMIT 1");
 //        $t = array_coarrlumn($t);

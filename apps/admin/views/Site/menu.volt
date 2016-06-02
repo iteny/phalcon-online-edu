@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>菜单管理</title>
     <link href="/static/admin/css/frame.css" rel="stylesheet">
 </head>
 <body>
@@ -47,7 +47,7 @@
                     <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?>{{menu['html']}}<i class="iconfont icon" style="">{{menu['icon']|e}}</i>{{menu['name']|e}}</td>
                     <td align="center">{{menu['controller']|e}}</td>
                     <td align="center">{{menu['action']|e}}</td>
-                    <td align="center"><span class="{% if menu['isshow'] == 1 %}green{% else %}red{% endif %}">{% if menu['isshow'] == 1 %}显示{% else %}不显示{% endif %}</span></td>
+                    <td align="center">{% if menu['isshow'] == 1 %}<i class="iconfont" style="color:green;font-size: 16px;">&#xe60c;</i>{% else %}<i class="iconfont" style="color:red;font-size: 16px;">&#xe60a;</i>{% endif %}</td>
                     <td align="center"><a class="ajax-add blue" href="/admin/Site/addEditMenu/?pid={{menu['id']|e}}" data-level="{{menu['level']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加子菜单</a>&nbsp;&nbsp;&nbsp;<a class="ajax-edit blue" href="/admin/Site/addEditMenu/?id={{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="{{menu['name']|e}}" data-type="菜单" href="/admin/Site/delMenu" data-id="{{menu['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a> </td>
                 </tr>
                 {% endfor %}

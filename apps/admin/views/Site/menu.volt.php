@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>菜单管理</title>
     <link href="/static/admin/css/frame.css" rel="stylesheet">
 </head>
 <body>
@@ -47,7 +47,7 @@
                     <td><span class="tree-icon tree-file icons-calendar-calculator_edit"></span><!-- <i class="org-2">1</i> --><?php echo str_repeat('&nbsp;&nbsp;&nbsp;',$menu['level']); ?><?php echo $menu['html']; ?><i class="iconfont icon" style=""><?php echo $this->escaper->escapeHtml($menu['icon']); ?></i><?php echo $this->escaper->escapeHtml($menu['name']); ?></td>
                     <td align="center"><?php echo $this->escaper->escapeHtml($menu['controller']); ?></td>
                     <td align="center"><?php echo $this->escaper->escapeHtml($menu['action']); ?></td>
-                    <td align="center"><span class="<?php if ($menu['isshow'] == 1) { ?>green<?php } else { ?>red<?php } ?>"><?php if ($menu['isshow'] == 1) { ?>显示<?php } else { ?>不显示<?php } ?></span></td>
+                    <td align="center"><?php if ($menu['isshow'] == 1) { ?><i class="iconfont" style="color:green;font-size: 16px;">&#xe60c;</i><?php } else { ?><i class="iconfont" style="color:red;font-size: 16px;">&#xe60a;</i><?php } ?></td>
                     <td align="center"><a class="ajax-add blue" href="/admin/Site/addEditMenu/?pid=<?php echo $this->escaper->escapeHtml($menu['id']); ?>" data-level="<?php echo $this->escaper->escapeHtml($menu['level']); ?>"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加子菜单</a>&nbsp;&nbsp;&nbsp;<a class="ajax-edit blue" href="/admin/Site/addEditMenu/?id=<?php echo $this->escaper->escapeHtml($menu['id']); ?>"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="<?php echo $this->escaper->escapeHtml($menu['name']); ?>" data-type="菜单" href="/admin/Site/delMenu" data-id="<?php echo $this->escaper->escapeHtml($menu['id']); ?>"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a> </td>
                 </tr>
                 <?php } ?>

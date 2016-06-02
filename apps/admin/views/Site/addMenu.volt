@@ -60,7 +60,7 @@
                 <tr>
                     <td>是否显示:</td>
                     <td><select name="isshow">
-                        <option value="1">显示</option>
+                        <option value="1" selected>显示</option>
                         <option value="0">不显示</option>
                     </select>&nbsp;&nbsp;&nbsp;是否显示菜单在后台管理页面上</td>
                 </tr>
@@ -73,7 +73,6 @@
         </div>
     </form>
 </div>
-
 </body>
 <script>
     var menumanage = '/admin/Site/menu';
@@ -84,7 +83,6 @@
 <script src="/static/common/js/jquery.validate.min.js"></script>
 <script src="/static/common/js/layer/layer.js"></script>
 <script src="/static/admin/js/admin.common.js"></script>
-
 <script>
     function Select_System_Menu_icons(icon){
         $("#System_Menu_icons").html('<i class="iconfont">'+icon+'</i>');
