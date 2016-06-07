@@ -60,7 +60,7 @@
                         <a class="ajax-edit blue" style="background: #666;border-color:#666"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;
                         <a class="ajax-edit red" style="background: #666;border-color:#666"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a>
                         {% else %}
-                        <a class="ajax-edit blue" href="/admin/Site/addEditGroup/?id={{group['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="{{group['title']|e}}" data-type="用户组" href="/admin/Site/delGroup" data-id="{{group['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a>
+                        <a class="ajax-edit blue" href="/admin/Site/addEditUser/?id={{user['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="{{user['username']|e}}" data-type="用户" href="/admin/Site/delUser" data-id="{{user['id']|e}}"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a>
                         {% endif %}
                     </td>
                 </tr>

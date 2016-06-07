@@ -45,5 +45,6 @@ return new \Phalcon\Config(array(
     ),
     'admincache' => array(
         'adminmenu' => 100,
+        'adminlog' =>100
     ),
 ));

@@ -60,7 +60,7 @@
                         <a class="ajax-edit blue" style="background: #666;border-color:#666"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;
                         <a class="ajax-edit red" style="background: #666;border-color:#666"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a>
                         <?php } else { ?>
-                        <a class="ajax-edit blue" href="/admin/Site/addEditGroup/?id=<?php echo $this->escaper->escapeHtml($group['id']); ?>"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="<?php echo $this->escaper->escapeHtml($group['title']); ?>" data-type="用户组" href="/admin/Site/delGroup" data-id="<?php echo $this->escaper->escapeHtml($group['id']); ?>"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a>
+                        <a class="ajax-edit blue" href="/admin/Site/addEditUser/?id=<?php echo $this->escaper->escapeHtml($user['id']); ?>"><i class="iconfont" style="color:white;font-size: 16px;">&#xe615;</i>&nbsp;&nbsp;修改</a>&nbsp;&nbsp;&nbsp;<a class="ajax-del red" data-title="<?php echo $this->escaper->escapeHtml($user['username']); ?>" data-type="用户" href="/admin/Site/delUser" data-id="<?php echo $this->escaper->escapeHtml($user['id']); ?>"><i class="iconfont" style="color:white;font-size: 16px;">&#xe614;</i>&nbsp;&nbsp;删除</a>
                         <?php } ?>
                     </td>
                 </tr>

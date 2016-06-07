@@ -28,11 +28,11 @@
                 </tr>
                 <tr>
                     <td>密码:</td>
-                    <td><input type="text" class="input length_5" name="password" id="password" value=""></td>
+                    <td><input type="password" class="input length_5" name="password" id="password" value=""></td>
                 </tr>
                 <tr>
                     <td>确认密码:</td>
-                    <td><input type="text" class="input length_5" name="passworded" id="passworded" value=""></td>
+                    <td><input type="password" class="input length_5" name="passworded" id="passworded" value=""></td>
                 </tr>
                 <tr>
                     <td width="140">昵称:</td>
@@ -70,9 +70,10 @@
 </div>
 </body>
 <script>
-    var groupmanage = '/admin/Site/group';
-    var checkAddGtitle = '/admin/SiteCom/checkAddGtitle';
-    var checkAddGrole = '/admin/SiteCom/checkAddGrole';
+    var usermanage = '/admin/Site/user';
+    var checkAddUsername = '/admin/SiteCom/checkAddUsername';
+    var checkAddNickname = '/admin/SiteCom/checkAddNickname';
+    var checkAddEmail = '/admin/SiteCom/checkAddEmail';
 </script>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
 <script src="/static/common/js/jquery.validate.min.js"></script>
@@ -88,59 +89,97 @@
             var english = /^[A-Za-z]+$/;
             return this.optional(element) || (english.test(value));
         }, "请输入英文字符串");
-        $('form[name=addGroup]').validate({
+        jQuery.validator.addMethod("username", function(value, element) {
+            var tel = /^[a-zA-Z][\w]{4,16}$/;
+            return this.optional(element) || (tel.test(value));
+        }, "以字母开头,5-17 字母、数字、下划线'_'");
+        jQuery.validator.addMethod("password", function(value, element) {
+            var tel = /^[a-zA-Z][\w]{7,16}$/;
+            return this.optional(element) || (tel.test(value));
+        }, "以字母开头,8-17 字母、数字、下划线'_'");
+        $('form[name=addUser]').validate({
             errorElement : 'span',
             validClass: "success",	//非常重要
             success : function (label) {
                 label.addClass('success');
             },
             rules : {
-                title : {
+                username : {
                     required : true,
+                    username : true,
+                    remote : {
+                        url : checkAddUsername,
+                        type : 'post',
+                        dataType : 'json',
+                        data : {
+                            username : function(){
+                                return $('#username').val();
+                            }
+                        }
+                    }
+                },
+                nickname : {
+                    required : true,
+                    rangelength : [2,6],
                     chinaese : true,
                     remote : {
-                        url : checkAddGtitle,
+                        url : checkAddNickname,
                         type : 'post',
                         dataType : 'json',
                         data : {
-                            name : function(){
-                                return $('#title').val();
+                            nickname : function(){
+                                return $('#nickname').val();
                             }
                         }
                     }
                 },
-                role : {
+                password : {
                     required : true,
-                    english : true,
+                    password : true
+                },
+                passworded : {
+                    required : true,
+                    equalTo : "#password"
+                },
+                email : {
+                    required : true,
+                    email : true,
                     remote : {
-                        url : checkAddGrole,
+                        url : checkAddEmail,
                         type : 'post',
                         dataType : 'json',
                         data : {
-                            name : function(){
-                                return $('#role').val();
+                            email : function(){
+                                return $('#email').val();
                             }
                         }
                     }
                 },
-                sort : {
-                    required : true,
-                    digits : true
-                }
+
             },
             messages : {
-                title : {
-                    required : "请输入用户组名称",
-                    remote : '用户组名称已存在'
+                username : {
+                    required : "请输入用户名",
+                    remote : '用户名已存在'
                 },
-                role : {
-                    required : "请输入用户组英文名称",
-                    remote : '用户组英文名称已存在'
+
+                nickname : {
+                    required : '请填写您的昵称',
+                    rangelength : '昵称在2-12个字之间',
+                    remote : '昵称已存在'
                 },
-                sort : {
-                    required : "请输入排序号",
-                    digits : '请输入整数'
-                }
+                password : {
+                    required : "请输入密码"
+                },
+                passworded : {
+                    required : '请确认密码',
+                    equalTo : '两次密码不一致'
+                },
+                email : {
+                    required : "请输入email",
+                    email: "email格式错误",
+                    remote : '邮箱已存在'
+                },
             },
             submitHandler: function(form)
             {
@@ -149,9 +188,9 @@
                     return false;
                 }
                 $('button.btn').attr("disabledSubmit",true);
-                var param = $('form[name=addGroup]').serialize();
+                var param = $('form[name=addUser]').serialize();
                 $.ajax({
-                    url: $('form[name=addGroup]').attr('action'),
+                    url: $('form[name=addUser]').attr('action'),
                     dataType:'json',
                     type:'POST',
                     data:param,
@@ -166,9 +205,9 @@
                             $('button.btn').attr("disabledSubmit",'');
                         }else{
                             admin.countdown(3);
-                            admin.alert('操作提示', '添加用户组成功!'+'<div>程序将在<b style="color:red;" id="second_show">03秒</b>后为你跳转！</div>', 1, '3000');
+                            admin.alert('操作提示', '添加用户成功!'+'<div>程序将在<b style="color:red;" id="second_show">03秒</b>后为你跳转！</div>', 1, '3000');
                             setTimeout(function () {
-                                window.location.href = groupmanage;
+                                window.location.href = usermanage;
                             }, 3000);
                         }
                     },

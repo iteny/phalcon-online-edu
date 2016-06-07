@@ -9,7 +9,13 @@ use Phalcon\Mvc\Controller;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\Regex;
 use Phalcon\Validation\Validator\PresenceOf;
+use Phalcon\Validation\Validator\StringLength;
+use Phalcon\Validation\Validator\Confirmation;
+use Phalcon\Validation\Validator\Email;
+use Phalcon\Mvc\Model\Transaction\Failed as TxFailed;
+use Phalcon\Mvc\Model\Transaction\Manager as TxManager;
 use Hemacms\Admin\Models\User;
+use Hemacms\Admin\Models\AclUserGroup;
 class SiteController extends AdminBaseController
 {
     //读取菜单
@@ -312,7 +318,7 @@ class SiteController extends AdminBaseController
     }
     //用户管理
     public function userAction(){
-        $user = $this->db->fetchAll("SELECT u.id,u.username,u.create_time,u.create_ip,u.email,u.remark,u.status,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id");
+        $user = $this->db->fetchAll("SELECT u.id,u.username,u.create_time,u.create_ip,u.email,u.remark,u.status,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id ORDER BY u.id ASC");
         $this->view->user = $user;
     }
     //添加或修改用户
@@ -324,26 +330,32 @@ class SiteController extends AdminBaseController
         if($this->request->isPost() && $this->request->getPost('addEditUser')){
             $this->view->disable();
             $validation = new Validation();
-            $validation->add('title',new PresenceOf(array(
-                'message' => '用户组名称不能为空'
-            )))
-                ->add('title', new Regex(array(
-                    'message' => '用户组名称必须是中文',
+            $validation->add('username',new PresenceOf(array(
+                'message' => '用户名不能为空'
+                )))
+                ->add('username', new Regex(array(
+                'message' => '账号以字母开头,5-17 字母、数字、下划线',
+                'pattern' => '/^[a-zA-Z][\w]{4,16}$/'
+                )))
+                ->add('nickname',new PresenceOf(array(
+                    'message' => '昵称不能为空'
+                )))
+                ->add('nickname', new StringLength(array(
+                    'max' => 6,
+                    'min' => 2,
+                    'messageMaximum' => '昵称最长6个中文',
+                    'messageMinimum' => '昵称最短2个中文'
+                )))
+                ->add('nickname', new Regex(array(
+                    'message' => '昵称必须是中文',
                     'pattern' => '/^[\x{4e00}-\x{9fa5}]+$/u'
                 )))
-                ->add('role',new PresenceOf(array(
-                    'message' => '用户组英文名称不能为空'
+                ->add('password',new Confirmation(array(
+                    'message' => '两次密码不一致',
+                    'with' => 'passworded'
                 )))
-                ->add('role', new Regex(array(
-                    'message' => '用户组英文名称必须是英文字符串',
-                    'pattern' => '/^[A-Za-z]+$/'
-                )))
-                ->add('sort',new PresenceOf(array(
-                    'message' => '排序数不能为空'
-                )))
-                ->add('sort', new Regex(array(
-                    'message' => '排序数必须是整数',
-                    'pattern' => '/^[1-9]\d*$/'
+                ->add('email',new Email(array(
+                    'message' => 'email格式错误'
                 )));
             $messages = $validation->validate($this->request->getPost());
             if (count($messages)) {
@@ -354,28 +366,65 @@ class SiteController extends AdminBaseController
                 exit(json_encode(array('info'=>$str)));
             }else{
                 if($this->request->getPost('id')){
-                    $group['id'] = $this->request->getPost('id','int');
+                    $id = $this->request->getPost('id','int');
                 }
-                $group['title'] = $this->request->getPost('title','string');
-                $group['role'] = $this->request->getPost('role','string');
-                $group['status'] = $this->request->getPost('status','int');
-                $group['sort'] = $this->request->getPost('sort','int');
+                $username = $this->request->getPost('username','string');
+                if($this->request->getPost('password','string') == '' || $this->request->getPost('passworded','string') == ''){//当没有修改密码时
+                    unset($password);
+                }
+                else
+                {
+                    $password = sha1(md5($this->request->getPost('password','string')));
+                }
+                $nickname = $this->request->getPost('nickname','string');
+                $email = $this->request->getPost('email','string');
+                $remark = $this->request->getPost('remark','string');
+                $group_id = $this->request->getPost('group_id','int');
+                $status = $this->request->getPost('status','int');
                 if($this->request->getPost('id')){
-                    $sql = "UPDATE Hemacms\Admin\Models\AclGroup SET title=?0,role=?1,status=?2,sort=?3 WHERE id={$group['id']}";
-                    $status = $this->modelsManager->executeQuery($sql,array(
-                        0 => $group['title'],
-                        1 => $group['role'],
-                        2 => $group['status'],
-                        3 => $group['sort']
-                    ));
-                    $msg = $this->function->returnMsg("修改用户组成功","修改用户组失败",$status->success());
+                    if($this->request->getPost('password','string') == '' || $this->request->getPost('passworded','string') == ''){//当没有修改密码时
+                        $sql = "UPDATE hm_user AS a INNER JOIN hm_acl_user_group AS b ON a.id=b.uid Set a.username=?,a.nickname=?,a.email=?,a.remark=?,a.status=?,b.group_id=? where a.id={$id};";
+                        $status = $this->db->execute($sql,array($username,$nickname,$email,$remark,$status,$group_id));
+                    }
+                    else
+                    {
+                        $sql = "UPDATE hm_user AS a INNER JOIN hm_acl_user_group AS b ON a.id=b.uid Set a.username=?,a.nickname=?,a.email=?,a.remark=?,a.status=?,a.password=?,b.group_id=? where a.id={$id};";
+                        $status = $this->db->execute($sql,array($username,$nickname,$email,$remark,$status,$password,$group_id));
+                    }
+                    if($status){
+                        $this->safeCache->delete('acl');
+                    }
+                    $msg = $this->function->returnMsg("修改用户成功","修改用户失败",$status);
                 }else{
-                    $sql = "INSERT INTO Hemacms\Admin\Models\AclGroup (title,role,status,sort) VALUES (:title:,:role:,:status:,:sort:)";
-                    $status = $this->modelsManager->executeQuery($sql,$group);
-                    $msg = $this->function->returnMsg("添加用户组成功","添加用户组失败",$status->success());
-                }
-                if($status->success()){
-                    $this->safeCache->delete('acl');
+                    try {
+                        $manager     = new TxManager();
+                        $transaction = $manager->get();
+                        $user              = new User();
+                        $user->setTransaction($transaction);
+                        $user->username    = $username;
+                        $user->password    = $password;
+                        $user->nickname    = $nickname;
+                        $user->email       = $email;
+                        $user->remark      = $remark;
+                        $user->status      = $status;
+                        $user->create_time = $_SERVER['REQUEST_TIME'];
+                        $user->create_ip   = $this->function->getClientIp();
+                        if ($user->save() == false) {
+                            $transaction->rollback('插入用户失败');
+                        }
+                        $usergroup           = new AclUserGroup();
+                        $usergroup->setTransaction($transaction);
+                        $usergroup->uid      = $user->id;
+                        $usergroup->group_id = $group_id;
+                        if ($usergroup->save() == false) {
+                            $transaction->rollback('插入用户组失败');
+                        }
+                        $transaction->commit();
+                        $this->safeCache->delete('acl');
+                        $msg = $this->function->returnMsg("添加用户成功","添加用户失败",true);
+                    } catch (TxFailed $e) {
+                        $msg = $this->function->returnMsg("添加用户成功",$e->getMessage(),false);
+                    }
                 }
                 exit(json_encode($msg));
             }
@@ -390,19 +439,57 @@ class SiteController extends AdminBaseController
             $this->view->adminGroup = $adminGroup;
             if($this->request->getQuery('id')){
                 $id = $this->request->getQuery('id','int');
-                $sql = "SELECT * FROM Hemacms\Admin\Models\AclGroup WHERE id = :id:";
-                $thisGroup = $this->modelsManager->executeQuery($sql,array(
-                    'id' => $id
-                ))->getFirst();
-                $this->view->thisgroup = $thisGroup->toArray();
+                $meuser = $this->db->fetchOne("SELECT u.id,u.username,u.nickname,u.email,u.remark,u.status,ug.uid,ug.group_id,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id AND u.id = {$id} LIMIT 1");
+                $this->view->user = $meuser;
                 $this->view->pick("Site/editUser");
             }else{
                 $this->view->pick("Site/addUser");
             }
         }
     }
+    //删除用户
+    public function delUserAction(){
+        $id = $this->request->getPost('id','int');
+        if($id == '1'){
+            echo "不允许删除超级管理员";
+            exit;
+        }
+        $this->view->disable();
+        if($this->request->isPost() && $id){
+            try {
+                $manager     = new TxManager();
+                $transaction = $manager->get();
+                $user              = new User();
+                $user->setTransaction($transaction);
+                $user->id = $id;
+                if ($user->delete() == false) {
+                    $transaction->rollback('删除用户失败');
+                }
+                $transaction->commit();
+                $this->safeCache->delete('acl');
+                $msg = $this->function->returnMsg("删除用户成功","删除用户失败",true);
+            } catch (TxFailed $e) {
+                $msg = $this->function->returnMsg("删除用户成功",$e->getMessage(),false);
+            }
+            exit(json_encode($msg));
+        }
+    }
+    //登录日志
+    public function loginLogAction(){
+        $cacheKey = 'admin-login-log.cache';
+        $loginLog   = $this->safeCache->get($cacheKey);
+        if($loginLog === null){
+            $sql = "SELECT * FROM Hemacms\Admin\Models\LoginLog ORDER BY id DESC";
+            $loginLog = $this->modelsManager->executeQuery($sql);
+            $loginLog = $loginLog->toArray();
+            $this->safeCache->save($cacheKey,$loginLog,$this->config->admincache->adminlog);
+        }
+        $this->view->loginLog = $loginLog;
+    }
     public function backupAction(){
         $this->view->disable();
+        echo 6|2>>1;
+
 //        $user = User::findFirst();
 ////        var_dump($user->toArray());die;
 //        $group = $user->getAclUserGroup();
@@ -410,17 +497,17 @@ class SiteController extends AdminBaseController
 //            echo '<br>rp:</br>';
 //            var_dump($rp->toArray());
 //        }
-        $id = array(
-            'id' => 1
-        );
-
-//        $id = 1;
+//        $id = array(
+//            'id' => 1
+//        );
+//
+////        $id = 1;
         $t = $this->db->fetchOne("SELECT u.id,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id AND u.id = {$id['id']} LIMIT 1");
-//        $t = array_coarrlumn($t);
-//        var_dump($t);
-//        echo $t['role'];
-        $ss = $this->session->get('userInfo');
-        var_dump($ss);
+        $t = array_coarrlumn($t);
+        var_dump($t);
+////        echo $t['role'];
+//        $ss = $this->session->get('userInfo');
+//        var_dump($ss);
 //        echo $t['role'];
 //        $sql = 'SELECT u.*,ug.* FROM Hemacms\Admin\Models\User u JOIN Hemacms\Admin\Models\AclUserGroup ug ' .
 //            'WHERE ug.uid = u.id';

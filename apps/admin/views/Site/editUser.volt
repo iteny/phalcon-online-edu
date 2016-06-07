@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>添加用户</title>
+    <title>修改用户</title>
     <link href="/static/admin/css/frame.css" rel="stylesheet">
 </head>
 <body>
@@ -12,19 +12,20 @@
 <div id="frame-toolbar">
     <ul>
         <li><a href="/admin/Site/user"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;用户管理</a></li>
-        <li><a class="active" href="/admin/Site/addEditUser"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加用户</a></li>
+        <li><a href="/admin/Site/addEditUser"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;添加用户</a></li>
     </ul>
 </div>
 <div id="frame-content">
-    <form name="addUser" method="post" class="J_ajaxForm" action="/admin/Site/addEditUser" novalidate="novalidate">
+    <form name="editUser" method="post" class="J_ajaxForm" action="/admin/Site/addEditUser" novalidate="novalidate">
         <input type="hidden" name="addEditUser" value="addEditUser">
+        <input type="hidden" name="id" value="{{user['id']}}">
         <div class="frame-table-list">
             <div class="input-title">用户信息</div>
             <table cellpadding="0" cellspacing="0" class="table_form" width="100%">
                 <tbody>
                 <tr>
                     <td width="140">用户名:</td>
-                    <td><input type="text" class="input length_5" name="username" value="" id="username"></td>
+                    <td><input type="text" class="input length_5" name="username" value="{{user['username']}}" id="username"></td>
                 </tr>
                 <tr>
                     <td>密码:</td>
@@ -36,44 +37,46 @@
                 </tr>
                 <tr>
                     <td width="140">昵称:</td>
-                    <td><input type="text" class="input length_5" name="nickname" value="" id="nickname"></td>
+                    <td><input type="text" class="input length_5" name="nickname" value="{{user['nickname']}}" id="nickname"></td>
                 </tr>
                 <tr>
                     <td width="140">E-Mail:</td>
-                    <td><input type="text" class="input length_5" name="email" value="" id="email"></td>
+                    <td><input type="text" class="input length_5" name="email" value="{{user['email']}}" id="email"></td>
                 </tr>
                 <tr>
                     <td>备注:</td>
-                    <td><textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height:100px;width:300px;"></textarea></td>
+                    <td><textarea name="remark" rows="2" cols="20" id="remark" class="inputtext" style="height:100px;width:300px;">{{user['remark']}}</textarea></td>
                 </tr>
                 <tr>
                     <td>所属用户组</td>
                     <td>
                         <select name="group_id">
                             {% for group in adminGroup %}
-                                <option value="{{group.id}}" {% if group.id == 2 %}selected{% endif %}>{{group.title}}</option>
+                            <option value="{{group.id}}" {% if group.id == user['group_id'] %}selected{% endif %}>{{group.title}}</option>
                             {% endfor %}
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>是否启用:</td>
-                    <td><input type="radio" name="status" value="1" checked>启用<label>  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="status" value="0">禁止</label></td>
+                    <td>
+                        <input type="radio" name="status" value="1" {% if user['status'] == 1 %}checked{% endif %}>启用<label>  &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="status" value="0" {% if user['status'] == 0 %}checked{% endif %}>禁止</label></td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <div class="frame-table-btn">
-            <button class="btn ajax-add" type="submit">添加</button>
+            <button class="btn ajax-add" type="submit">修改</button>
         </div>
     </form>
 </div>
 </body>
 <script>
     var usermanage = '/admin/Site/user';
-    var checkAddUsername = '/admin/SiteCom/checkAddUsername';
-    var checkAddNickname = '/admin/SiteCom/checkAddNickname';
-    var checkAddEmail = '/admin/SiteCom/checkAddEmail';
+    var checkEditUsername = '/admin/SiteCom/checkEditUsername';
+    var checkEditNickname = '/admin/SiteCom/checkEditNickname';
+    var checkEditEmail = '/admin/SiteCom/checkEditEmail';
 </script>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
 <script src="/static/common/js/jquery.validate.min.js"></script>
@@ -97,7 +100,7 @@
             var tel = /^[a-zA-Z][\w]{7,16}$/;
             return this.optional(element) || (tel.test(value));
         }, "以字母开头,8-17 字母、数字、下划线'_'");
-        $('form[name=addUser]').validate({
+        $('form[name=editUser]').validate({
             errorElement : 'span',
             validClass: "success",	//非常重要
             success : function (label) {
@@ -108,7 +111,7 @@
                     required : true,
                     username : true,
                     remote : {
-                        url : checkAddUsername,
+                        url : checkEditUsername,
                         type : 'post',
                         dataType : 'json',
                         data : {
@@ -123,7 +126,7 @@
                     rangelength : [2,6],
                     chinaese : true,
                     remote : {
-                        url : checkAddNickname,
+                        url : checkEditNickname,
                         type : 'post',
                         dataType : 'json',
                         data : {
@@ -134,18 +137,16 @@
                     }
                 },
                 password : {
-                    required : true,
                     password : true
                 },
                 passworded : {
-                    required : true,
                     equalTo : "#password"
                 },
                 email : {
                     required : true,
                     email : true,
                     remote : {
-                        url : checkAddEmail,
+                        url : checkEditEmail,
                         type : 'post',
                         dataType : 'json',
                         data : {
@@ -169,10 +170,8 @@
                     remote : '昵称已存在'
                 },
                 password : {
-                    required : "请输入密码"
                 },
                 passworded : {
-                    required : '请确认密码',
                     equalTo : '两次密码不一致'
                 },
                 email : {
@@ -188,9 +187,9 @@
                     return false;
                 }
                 $('button.btn').attr("disabledSubmit",true);
-                var param = $('form[name=addUser]').serialize();
+                var param = $('form[name=editUser]').serialize();
                 $.ajax({
-                    url: $('form[name=addUser]').attr('action'),
+                    url: $('form[name=editUser]').attr('action'),
                     dataType:'json',
                     type:'POST',
                     data:param,
@@ -201,11 +200,11 @@
                         layer.close(layer.load(1));
                         if (!data.status) {
                             admin.alert('操作提示',''+data.info,2,'8000');
-                            $('button.btn').text('添加').removeProp('disabled').removeClass('disabled');
+                            $('button.btn').text('修改').removeProp('disabled').removeClass('disabled');
                             $('button.btn').attr("disabledSubmit",'');
                         }else{
                             admin.countdown(3);
-                            admin.alert('操作提示', '添加用户成功!'+'<div>程序将在<b style="color:red;" id="second_show">03秒</b>后为你跳转！</div>', 1, '3000');
+                            admin.alert('操作提示', '修改用户成功!'+'<div>程序将在<b style="color:red;" id="second_show">03秒</b>后为你跳转！</div>', 1, '3000');
                             setTimeout(function () {
                                 window.location.href = usermanage;
                             }, 3000);

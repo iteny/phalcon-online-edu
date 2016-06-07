@@ -269,6 +269,16 @@ td, th, div {
     margin-bottom: 0;
     padding: 10px;
 }
+.frame-table-list .search-content{
+    background: #fafafa;
+    padding: 5px 5px 5px 10px;
+    font-size: 14px;
+    font-weight:bold;
+    color:#666;
+}
+.frame-table-list .search-content input{
+    padding: 6px 4px;
+}
 .ztree * {
     padding: 0;
     margin: 0;

@@ -139,4 +139,118 @@ class SiteComController extends Controller
             exit;
         }
     }
+    //添加用户时验证用户名
+    public function checkAddUsernameAction()
+    {
+        $this->view->disable();
+        $username = $this->request->getPost('username');
+        if($this->request->isPost() && $username){
+            $sql = "SELECT * FROM Hemacms\Admin\Models\User WHERE username = :username:";
+            $count = $this->modelsManager->executeQuery($sql,array(
+                'username' => $username
+            ));
+            if(!$count->count()){
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+            exit;
+        }
+    }
+    //添加用户时验证昵称
+    public function checkAddNicknameAction()
+    {
+        $this->view->disable();
+        $nickname = $this->request->getPost('nickname');
+        if($this->request->isPost() && $nickname){
+            $sql = "SELECT * FROM Hemacms\Admin\Models\User WHERE nickname = :nickname:";
+            $count = $this->modelsManager->executeQuery($sql,array(
+                'nickname' => $nickname
+            ));
+            if(!$count->count()){
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+            exit;
+        }
+    }
+    //添加用户时验证email
+    public function checkAddEmailAction()
+    {
+        $this->view->disable();
+        $email = $this->request->getPost('email');
+        if($this->request->isPost() && $email){
+            $sql = "SELECT * FROM Hemacms\Admin\Models\User WHERE email = :email:";
+            $count = $this->modelsManager->executeQuery($sql,array(
+                'email' => $email
+            ));
+            if(!$count->count()){
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+            exit;
+        }
+    }
+    //修改用户时验证用户名
+    public function checkEditUsernameAction()
+    {
+        $this->view->disable();
+        $username = $this->request->getPost('username');
+        $id = $this->request->getQuery('id');
+        if($this->request->isPost() && $username){
+            $sql = "SELECT * FROM Hemacms\Admin\Models\User WHERE username = :username: AND id != :id:";
+            $count = $this->modelsManager->executeQuery($sql,array(
+                'username' => $username,
+                'id' => $id
+            ));
+            if(!$count->count()){
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+            exit;
+        }
+    }
+    //修改用户时验证昵称
+    public function checkEditNicknameAction()
+    {
+        $this->view->disable();
+        $nickname = $this->request->getPost('nickname');
+        $id = $this->request->getQuery('id');
+        if($this->request->isPost() && $nickname){
+            $sql = "SELECT * FROM Hemacms\Admin\Models\User WHERE nickname = :nickname: AND id != :id:";
+            $count = $this->modelsManager->executeQuery($sql,array(
+                'nickname' => $nickname,
+                'id' => $id
+            ));
+            if(!$count->count()){
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+            exit;
+        }
+    }
+    //修改用户时验证邮箱
+    public function checkEditEmailAction()
+    {
+        $this->view->disable();
+        $email = $this->request->getPost('email');
+        $id = $this->request->getQuery('id');
+        if($this->request->isPost() && $email){
+            $sql = "SELECT * FROM Hemacms\Admin\Models\User WHERE email = :email: AND id != :id:";
+            $count = $this->modelsManager->executeQuery($sql,array(
+                'email' => $email,
+                'id' => $id
+            ));
+            if(!$count->count()){
+                echo 'true';
+            } else {
+                echo 'false';
+            }
+            exit;
+        }
+    }
 }

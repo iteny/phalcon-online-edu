@@ -29,44 +29,96 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SiteController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/admin/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5843829">
-              <caret line="415" column="0" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
+            <state vertical-scroll-proportion="15.904762">
+              <caret line="481" column="80" selection-start-line="481" selection-start-column="80" selection-end-line="481" selection-end-column="80" />
               <folding>
                 <element signature="e#149#176#0#PHP" expanded="true" />
-                <marker date="1464878969122" expanded="true" signature="563:627" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="3908:4026" placeholder="UPDATE Cars " />
-                <marker date="1464878969122" expanded="true" signature="3908:4028" placeholder="UPDATE Cars " />
-                <marker date="1464878969122" expanded="true" signature="4603:4760" placeholder="INSERT INTO Hemacms... " />
-                <marker date="1464878969122" expanded="true" signature="4603:4763" placeholder="INSERT INTO Hemacms... " />
-                <marker date="1464878969122" expanded="true" signature="5436:5500" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="5963:6025" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="6732:6790" placeholder="UPDATE Hemac... " />
-                <marker date="1464878969122" expanded="true" signature="7440:7454" placeholder="SELECT id,pi... " />
-                <marker date="1464878969122" expanded="true" signature="7440:7491" placeholder="SELECT id,pi... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="7723:7787" placeholder="DELETE FROM " />
-                <marker date="1464878969122" expanded="true" signature="8273:8334" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="8857:8908" placeholder="UPDATE Hemac... " />
-                <marker date="1464878969122" expanded="true" signature="8857:8923" placeholder="UPDATE Hemac... " />
-                <marker date="1464878969122" expanded="true" signature="8857:8924" placeholder="UPDATE Hemac... " />
-                <marker date="1464878969122" expanded="true" signature="9297:9353" placeholder="SELECT id,na... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="9493:9568" placeholder="SELECT id,re... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="12074:12159" placeholder="UPDATE Hemac... " />
-                <marker date="1464878969122" expanded="true" signature="12605:12711" placeholder="INSERT INTO Hemacms... " />
-                <marker date="1464878969122" expanded="true" signature="13219:13278" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="13947:13998" placeholder="DELETE FROM " />
-                <marker date="1464878969122" expanded="true" signature="13947:14004" placeholder="DELETE FROM " />
-                <marker date="1464878969122" expanded="true" signature="14441:14641" placeholder="SELECT u.id,... hm_user" />
-                <marker date="1464878969122" expanded="true" signature="16711:16796" placeholder="UPDATE Hemac... " />
-                <marker date="1464878969122" expanded="true" signature="17242:17348" placeholder="INSERT INTO Hemacms... " />
-                <marker date="1464878969122" expanded="true" signature="17893:17954" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="18326:18385" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464878969122" expanded="true" signature="19167:19304" placeholder="SELECT u.*,u... hm_user" />
-                <marker date="1464878969122" expanded="true" signature="19167:19316" placeholder="SELECT u.*,u... hm_user" />
-                <marker date="1464878969122" expanded="true" signature="19167:19335" placeholder="SELECT u.id,... hm_user" />
+                <marker date="1465304189314" expanded="true" signature="846:910" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="4191:4309" placeholder="UPDATE Cars " />
+                <marker date="1465304189314" expanded="true" signature="4191:4311" placeholder="UPDATE Cars " />
+                <marker date="1465304189314" expanded="true" signature="4886:5043" placeholder="INSERT INTO Hemacms... " />
+                <marker date="1465304189314" expanded="true" signature="4886:5046" placeholder="INSERT INTO Hemacms... " />
+                <marker date="1465304189314" expanded="true" signature="5719:5783" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="6246:6308" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="7015:7073" placeholder="UPDATE Hemac... " />
+                <marker date="1465304189314" expanded="true" signature="7723:7737" placeholder="SELECT id,pi... " />
+                <marker date="1465304189314" expanded="true" signature="7723:7774" placeholder="SELECT id,pi... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="8006:8070" placeholder="DELETE FROM " />
+                <marker date="1465304189314" expanded="true" signature="8556:8617" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="9140:9191" placeholder="UPDATE Hemac... " />
+                <marker date="1465304189314" expanded="true" signature="9140:9206" placeholder="UPDATE Hemac... " />
+                <marker date="1465304189314" expanded="true" signature="9140:9207" placeholder="UPDATE Hemac... " />
+                <marker date="1465304189314" expanded="true" signature="9580:9636" placeholder="SELECT id,na... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="9776:9851" placeholder="SELECT id,re... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="12357:12442" placeholder="UPDATE Hemac... " />
+                <marker date="1465304189314" expanded="true" signature="12888:12994" placeholder="INSERT INTO Hemacms... " />
+                <marker date="1465304189314" expanded="true" signature="13502:13561" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="14230:14281" placeholder="DELETE FROM " />
+                <marker date="1465304189314" expanded="true" signature="14230:14287" placeholder="DELETE FROM " />
+                <marker date="1465304189314" expanded="true" signature="14724:14924" placeholder="SELECT u.id,... hm_user" />
+                <marker date="1465304189314" expanded="true" signature="14724:14942" placeholder="SELECT u.id,... hm_user" />
+                <marker date="1465304189314" expanded="true" signature="17876:17883" placeholder="UPDATE UPDAT... " />
+                <marker date="1465304189314" expanded="true" signature="17876:18030" placeholder="UPDATE hm_us... " />
+                <marker date="1465304189314" expanded="true" signature="17876:18035" placeholder="UPDATE hm_us... " />
+                <marker date="1465304189314" expanded="true" signature="18260:18267" placeholder="UPDATE hm_us... " />
+                <marker date="1465304189314" expanded="true" signature="18260:18427" placeholder="UPDATE hm_us... " />
+                <marker date="1465304189314" expanded="true" signature="20680:20741" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="21136:21358" placeholder="SELECT u.id,... hm_user" />
+                <marker date="1465304189314" expanded="true" signature="22740:22800" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465304189314" expanded="true" signature="23522:23659" placeholder="SELECT u.*,u... hm_user" />
+                <marker date="1465304189314" expanded="true" signature="23522:23671" placeholder="SELECT u.*,u... hm_user" />
+                <marker date="1465304189314" expanded="true" signature="23522:23690" placeholder="SELECT u.id,... hm_user" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/admin/config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.404762">
+              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loginLog.volt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/loginLog.volt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3765743">
+              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#option#1;n#select#0;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#option#2;n#select#0;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#2;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#3;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frame.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/static/admin/css/frame.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.047619">
+              <caret line="271" column="34" selection-start-line="271" selection-start-column="34" selection-end-line="271" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/admin/models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.619047">
+              <caret line="223" column="99" selection-start-line="223" selection-start-column="70" selection-end-line="223" selection-end-column="99" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,11 +126,11 @@
       <file leaf-file-name="addUser.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/addUser.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.6666665">
-              <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+            <state vertical-scroll-proportion="7.8095236">
+              <caret line="195" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="222" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1464873932442" expanded="true" signature="7235:7245" placeholder="..." />
+                <marker date="1465285165335" expanded="true" signature="8752:8762" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -87,8 +139,8 @@
       <file leaf-file-name="editGroup.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/editGroup.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-89.833336">
-              <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
+            <state vertical-scroll-proportion="3.142857">
+              <caret line="40" column="119" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="119" />
               <folding>
                 <marker date="1464873522447" expanded="true" signature="6517:6527" placeholder="..." />
               </folding>
@@ -96,33 +148,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/user.volt">
+      <file leaf-file-name="editUser.volt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/editUser.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-40.857143">
-              <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="group.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/group.volt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.047619">
-              <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addGroup.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/addGroup.volt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78571427">
-              <caret line="17" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="161" selection-end-column="7" />
+            <state vertical-scroll-proportion="118.59524">
+              <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
               <folding>
-                <marker date="1464869247449" expanded="true" signature="6194:6204" placeholder="..." />
+                <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1465295723105" expanded="true" signature="8882:8892" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -131,17 +164,23 @@
       <file leaf-file-name="SiteComController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/admin/controllers/SiteComController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.547619">
-              <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+            <state vertical-scroll-proportion="-7.1190476">
+              <caret line="202" column="86" selection-start-line="202" selection-start-column="86" selection-end-line="202" selection-end-column="86" />
               <folding>
-                <marker date="1464870059266" expanded="true" signature="998:1064" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464870059266" expanded="true" signature="1608:1684" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464870059266" expanded="true" signature="1608:1689" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464870059266" expanded="true" signature="1608:1835" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464870059266" expanded="true" signature="2219:2284" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464870059266" expanded="true" signature="2785:2848" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464870059266" expanded="true" signature="3396:3476" placeholder="SELECT * FRO... Hemacms" />
-                <marker date="1464870059266" expanded="true" signature="4053:4131" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="998:1064" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="1608:1684" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="1608:1689" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="1608:1835" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="2219:2284" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="2785:2848" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="3396:3476" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="4053:4131" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="4669:4736" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="5252:5319" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="5826:5887" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="6445:6527" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="7119:7201" placeholder="SELECT * FRO... Hemacms" />
+                <marker date="1465293296513" expanded="true" signature="7781:7857" placeholder="SELECT * FRO... Hemacms" />
               </folding>
             </state>
           </provider>
@@ -150,36 +189,12 @@
       <file leaf-file-name="Functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hemalib/Functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.97619">
-              <caret line="207" column="51" selection-start-line="207" selection-start-column="51" selection-end-line="207" selection-end-column="51" />
+            <state vertical-scroll-proportion="-0.04761905">
+              <caret line="180" column="31" selection-start-line="180" selection-start-column="20" selection-end-line="180" selection-end-column="31" />
               <folding>
                 <element signature="e#131#154#0#PHP" expanded="true" />
-                <marker date="1464861102368" expanded="true" signature="4952:5124" placeholder="INSERT INTO Hemacms... " />
+                <marker date="1465283428400" expanded="true" signature="4952:5124" placeholder="INSERT INTO Hemacms... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.ajax.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/admin/js/common.ajax.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-              <folding>
-                <marker date="1464848391521" expanded="true" signature="1026:1036" placeholder="..." />
-                <marker date="1464848391521" expanded="true" signature="1723:1733" placeholder="..." />
-                <marker date="1464848391521" expanded="true" signature="2453:2463" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/static/admin/js/admin.common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -204,10 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apps/admin/Module.php" />
-        <option value="$PROJECT_DIR$/runtime/dblogs/2016-04-30db.log" />
-        <option value="$PROJECT_DIR$/hemalib/IpLocation.class.php" />
-        <option value="$PROJECT_DIR$/apps/admin/models/LoginLog.php" />
         <option value="$PROJECT_DIR$/runtime/dblogs/2016-05-01db.log" />
         <option value="$PROJECT_DIR$/apps/admin/views/Login/index.volt" />
         <option value="$PROJECT_DIR$/public/static/common/js/layer/layer.js" />
@@ -222,7 +233,6 @@
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/public/static/admin/font/icons.css" />
         <option value="$PROJECT_DIR$/public/static/admin/font/iconfont.css" />
-        <option value="$PROJECT_DIR$/apps/admin/config/config.php" />
         <option value="$PROJECT_DIR$/apps/admin/models/OperateLog.php" />
         <option value="$PROJECT_DIR$/runtime/dblogs/2016-05-26db.log" />
         <option value="$PROJECT_DIR$/apps/admin/models/AclResource.php" />
@@ -242,19 +252,24 @@
         <option value="$PROJECT_DIR$/apps/admin/views/Index/home.volt" />
         <option value="$PROJECT_DIR$/public/static/admin/js/common.ajax.js" />
         <option value="$PROJECT_DIR$/apps/admin/views/Site/menu.volt" />
-        <option value="$PROJECT_DIR$/public/static/admin/css/frame.css" />
-        <option value="$PROJECT_DIR$/hemalib/Functions.php" />
         <option value="$PROJECT_DIR$/apps/admin/views/Site/setGroup.volt" />
         <option value="$PROJECT_DIR$/apps/admin/views/Site/addMenu.volt" />
         <option value="$PROJECT_DIR$/apps/admin/views/Site/addEditGroup.volt" />
         <option value="$PROJECT_DIR$/apps/admin/controllers/AdminBaseController.php" />
         <option value="$PROJECT_DIR$/apps/admin/views/Site/addGroup.volt" />
-        <option value="$PROJECT_DIR$/apps/admin/controllers/SiteComController.php" />
         <option value="$PROJECT_DIR$/apps/admin/views/Site/group.volt" />
-        <option value="$PROJECT_DIR$/apps/admin/views/Site/user.volt" />
         <option value="$PROJECT_DIR$/apps/admin/views/Site/editGroup.volt" />
+        <option value="$PROJECT_DIR$/hemalib/Functions.php" />
         <option value="$PROJECT_DIR$/apps/admin/views/Site/addUser.volt" />
+        <option value="$PROJECT_DIR$/apps/admin/views/Site/user.volt" />
+        <option value="$PROJECT_DIR$/apps/admin/views/Site/editUser.php" />
+        <option value="$PROJECT_DIR$/apps/admin/controllers/SiteComController.php" />
+        <option value="$PROJECT_DIR$/runtime/dblogs/2016-06-07db.log" />
+        <option value="$PROJECT_DIR$/apps/admin/views/Site/editUser.volt" />
+        <option value="$PROJECT_DIR$/apps/admin/config/config.php" />
         <option value="$PROJECT_DIR$/apps/admin/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/public/static/admin/css/frame.css" />
+        <option value="$PROJECT_DIR$/apps/admin/views/Site/loginLog.volt" />
       </list>
     </option>
   </component>
@@ -308,7 +323,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -387,36 +401,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hemacms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hemacms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hemacms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -651,9 +635,36 @@
               <option name="myItemId" value="hemacms" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hemacms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apps" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hemacms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hemacms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -726,7 +737,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21436228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21972133" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -781,27 +792,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://F:/xampp/htdocs/hmcms/Public/intendant/js/iteny.intendant.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="175" column="8" selection-start-line="175" selection-start-column="8" selection-end-line="186" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/admin/js/login.mini.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34706616">
-          <caret line="1" column="97730" selection-start-line="1" selection-start-column="97721" selection-end-line="1" selection-end-column="97730" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/admin/js/admin.login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="17" selection-start-line="69" selection-start-column="16" selection-end-line="72" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/Module.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2027707">
@@ -841,13 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="829" column="0" selection-start-line="829" selection-start-column="0" selection-end-line="829" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hemalib/IpLocation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -900,13 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admin/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.08060453">
@@ -942,14 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admin/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="223" column="99" selection-start-line="223" selection-start-column="70" selection-end-line="223" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../phalcon-devtools-master/ide/2.0.5/Phalcon/db/AdapterInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.72418135">
@@ -957,30 +925,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admin/controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04156171">
-          <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="142" selection-end-column="56" />
-          <folding>
-            <element signature="e#150#177#0#PHP" expanded="true" />
-            <marker date="1464789336428" expanded="true" signature="2488:2607" placeholder="SELECT id,us... Hemacms" />
-            <marker date="1464789336428" expanded="true" signature="3140:3310" placeholder="SELECT u.id,... hm_user" />
-            <marker date="1464789336428" expanded="true" signature="6893:7085" placeholder="INSERT INTO Hemacms... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54282117">
           <caret line="124" column="45" selection-start-line="124" selection-start-column="45" selection-end-line="124" selection-end-column="45" />
-          <folding>
-            <marker date="1464790073721" expanded="true" signature="1555:1665" placeholder="SELECT id,na... Hemacms" />
-            <marker date="1464790073721" expanded="true" signature="2301:2439" placeholder="SELECT id,na... " />
-            <marker date="1464790073721" expanded="true" signature="3030:3168" placeholder="SELECT id,na... " />
-            <marker date="1464790073721" expanded="true" signature="5435:5499" placeholder="SELECT id,re... Hemacms" />
-            <marker date="1464790073721" expanded="true" signature="5435:5557" placeholder="SELECT login... Hemacms" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -988,9 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7506297">
           <caret line="62" column="1" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#111#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -998,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,15 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.04156171">
           <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admin/models/AclGroup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.404762">
-          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,15 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0">
           <caret line="23" column="57" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/static/admin/css/frame.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.261905">
-          <caret line="282" column="68" selection-start-line="282" selection-start-column="68" selection-end-line="282" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.976191">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,10 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.214286">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1057,7 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.5">
           <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,9 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.0365238">
           <caret line="45" column="55" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
-          <folding>
-            <marker date="1464864808088" expanded="true" signature="5092:5102" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1095,26 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.7418137">
           <caret line="84" column="56" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
-          <folding>
-            <marker date="1464865840212" expanded="true" signature="4718:4761" placeholder="..." />
-            <marker date="1464865840212" expanded="true" signature="4839:4854" placeholder="..." />
-            <marker date="1464865840212" expanded="true" signature="4930:4942" placeholder="..." />
-            <marker date="1464865840212" expanded="true" signature="5070:5083" placeholder="..." />
-            <marker date="1464865840212" expanded="true" signature="5197:5225" placeholder="..." />
-            <marker date="1464865840212" expanded="true" signature="5357:5385" placeholder="..." />
-            <marker date="1464865840212" expanded="true" signature="8936:8946" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hemalib/Functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.97619">
-          <caret line="207" column="51" selection-start-line="207" selection-start-column="51" selection-end-line="207" selection-end-column="51" />
-          <folding>
-            <element signature="e#131#154#0#PHP" expanded="true" />
-            <marker date="1464861102368" expanded="true" signature="4952:5124" placeholder="INSERT INTO Hemacms... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1122,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.76196474">
           <caret line="167" column="5" selection-start-line="167" selection-start-column="5" selection-end-line="167" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,32 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.285714">
           <caret line="80" column="80" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="80" />
-          <folding>
-            <marker date="1464617938046" expanded="true" signature="5043:5086" placeholder="..." />
-            <marker date="1464617938046" expanded="true" signature="5164:5179" placeholder="..." />
-            <marker date="1464617938046" expanded="true" signature="5255:5267" placeholder="..." />
-            <marker date="1464617938046" expanded="true" signature="5395:5408" placeholder="..." />
-            <marker date="1464617938046" expanded="true" signature="5522:5550" placeholder="..." />
-            <marker date="1464617938046" expanded="true" signature="5682:5710" placeholder="..." />
-            <marker date="1464617938046" expanded="true" signature="9213:9223" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admin/controllers/SiteComController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.547619">
-          <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
-          <folding>
-            <marker date="1464870059266" expanded="true" signature="998:1064" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464870059266" expanded="true" signature="1608:1684" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464870059266" expanded="true" signature="1608:1689" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464870059266" expanded="true" signature="1608:1835" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464870059266" expanded="true" signature="2219:2284" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464870059266" expanded="true" signature="2785:2848" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464870059266" expanded="true" signature="3396:3476" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464870059266" expanded="true" signature="4053:4131" placeholder="SELECT * FRO... Hemacms" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1163,24 +1033,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.3095238">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <marker date="1464868049408" expanded="true" signature="798:898" placeholder="SELECT id,re... Hemacms" />
-            <marker date="1464868049408" expanded="true" signature="1044:1106" placeholder="SELECT contr... " />
-            <marker date="1464868049408" expanded="true" signature="1439:1499" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464868049408" expanded="true" signature="1439:1506" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464868049408" expanded="true" signature="1439:1515" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464868049408" expanded="true" signature="2590:2627" placeholder="..." />
-            <marker date="1464868049408" expanded="true" signature="2669:2681" placeholder="..." />
-            <marker date="1464868049408" expanded="true" signature="2723:2741" placeholder="..." />
-            <marker date="1464868049408" expanded="true" signature="2723:2839" placeholder="..." />
-            <marker date="1464868049408" expanded="true" signature="2723:2866" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/addGroup.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78571427">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="161" selection-end-column="7" />
           <folding>
             <marker date="1464869247449" expanded="true" signature="6194:6204" placeholder="..." />
@@ -1188,79 +1046,200 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/user.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-40.857143">
-          <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/group.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.047619">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/editGroup.volt">
+    <entry file="file://$PROJECT_DIR$/apps/admin/controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-89.833336">
-          <caret line="145" column="52" selection-start-line="145" selection-start-column="52" selection-end-line="145" selection-end-column="52" />
+        <state vertical-scroll-proportion="3.5352645">
+          <caret line="141" column="9" selection-start-line="141" selection-start-column="9" selection-end-line="142" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hemalib/IpLocation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.04761905">
+          <caret line="231" column="4" selection-start-line="231" selection-start-column="4" selection-end-line="259" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hemalib/Functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.04761905">
+          <caret line="180" column="31" selection-start-line="180" selection-start-column="20" selection-end-line="180" selection-end-column="31" />
           <folding>
-            <marker date="1464873522447" expanded="true" signature="6517:6527" placeholder="..." />
+            <element signature="e#131#154#0#PHP" expanded="true" />
+            <marker date="1465283428400" expanded="true" signature="4952:5124" placeholder="INSERT INTO Hemacms... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/addUser.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.6666665">
-          <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+        <state vertical-scroll-proportion="7.8095236">
+          <caret line="195" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="222" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1464873932442" expanded="true" signature="7235:7245" placeholder="..." />
+            <marker date="1465285165335" expanded="true" signature="8752:8762" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/controllers/SiteComController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1190476">
+          <caret line="202" column="86" selection-start-line="202" selection-start-column="86" selection-end-line="202" selection-end-column="86" />
+          <folding>
+            <marker date="1465293296513" expanded="true" signature="998:1064" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="1608:1684" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="1608:1689" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="1608:1835" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="2219:2284" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="2785:2848" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="3396:3476" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="4053:4131" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="4669:4736" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="5252:5319" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="5826:5887" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="6445:6527" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="7119:7201" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465293296513" expanded="true" signature="7781:7857" placeholder="SELECT * FRO... Hemacms" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/models/AclGroup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76196474">
+          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime/dblogs/2016-06-07db.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-401.54053">
+          <caret line="579" column="56" selection-start-line="0" selection-start-column="170" selection-end-line="0" selection-end-column="172" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/editUser.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="118.59524">
+          <caret line="69" column="57" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#5;n#tbody#0;n#table#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1465295723105" expanded="true" signature="8882:8892" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/editGroup.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.142857">
+          <caret line="40" column="119" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="119" />
+          <folding>
+            <marker date="1464873522447" expanded="true" signature="6517:6527" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/user.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3047859">
+          <caret line="67" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="79" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.619047">
+          <caret line="223" column="99" selection-start-line="223" selection-start-column="70" selection-end-line="223" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.404762">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/admin/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5843829">
-          <caret line="415" column="0" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
+        <state vertical-scroll-proportion="15.904762">
+          <caret line="481" column="80" selection-start-line="481" selection-start-column="80" selection-end-line="481" selection-end-column="80" />
           <folding>
             <element signature="e#149#176#0#PHP" expanded="true" />
-            <marker date="1464878969122" expanded="true" signature="563:627" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="3908:4026" placeholder="UPDATE Cars " />
-            <marker date="1464878969122" expanded="true" signature="3908:4028" placeholder="UPDATE Cars " />
-            <marker date="1464878969122" expanded="true" signature="4603:4760" placeholder="INSERT INTO Hemacms... " />
-            <marker date="1464878969122" expanded="true" signature="4603:4763" placeholder="INSERT INTO Hemacms... " />
-            <marker date="1464878969122" expanded="true" signature="5436:5500" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="5963:6025" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="6732:6790" placeholder="UPDATE Hemac... " />
-            <marker date="1464878969122" expanded="true" signature="7440:7454" placeholder="SELECT id,pi... " />
-            <marker date="1464878969122" expanded="true" signature="7440:7491" placeholder="SELECT id,pi... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="7723:7787" placeholder="DELETE FROM " />
-            <marker date="1464878969122" expanded="true" signature="8273:8334" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="8857:8908" placeholder="UPDATE Hemac... " />
-            <marker date="1464878969122" expanded="true" signature="8857:8923" placeholder="UPDATE Hemac... " />
-            <marker date="1464878969122" expanded="true" signature="8857:8924" placeholder="UPDATE Hemac... " />
-            <marker date="1464878969122" expanded="true" signature="9297:9353" placeholder="SELECT id,na... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="9493:9568" placeholder="SELECT id,re... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="12074:12159" placeholder="UPDATE Hemac... " />
-            <marker date="1464878969122" expanded="true" signature="12605:12711" placeholder="INSERT INTO Hemacms... " />
-            <marker date="1464878969122" expanded="true" signature="13219:13278" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="13947:13998" placeholder="DELETE FROM " />
-            <marker date="1464878969122" expanded="true" signature="13947:14004" placeholder="DELETE FROM " />
-            <marker date="1464878969122" expanded="true" signature="14441:14641" placeholder="SELECT u.id,... hm_user" />
-            <marker date="1464878969122" expanded="true" signature="16711:16796" placeholder="UPDATE Hemac... " />
-            <marker date="1464878969122" expanded="true" signature="17242:17348" placeholder="INSERT INTO Hemacms... " />
-            <marker date="1464878969122" expanded="true" signature="17893:17954" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="18326:18385" placeholder="SELECT * FRO... Hemacms" />
-            <marker date="1464878969122" expanded="true" signature="19167:19304" placeholder="SELECT u.*,u... hm_user" />
-            <marker date="1464878969122" expanded="true" signature="19167:19316" placeholder="SELECT u.*,u... hm_user" />
-            <marker date="1464878969122" expanded="true" signature="19167:19335" placeholder="SELECT u.id,... hm_user" />
+            <marker date="1465304189314" expanded="true" signature="846:910" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="4191:4309" placeholder="UPDATE Cars " />
+            <marker date="1465304189314" expanded="true" signature="4191:4311" placeholder="UPDATE Cars " />
+            <marker date="1465304189314" expanded="true" signature="4886:5043" placeholder="INSERT INTO Hemacms... " />
+            <marker date="1465304189314" expanded="true" signature="4886:5046" placeholder="INSERT INTO Hemacms... " />
+            <marker date="1465304189314" expanded="true" signature="5719:5783" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="6246:6308" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="7015:7073" placeholder="UPDATE Hemac... " />
+            <marker date="1465304189314" expanded="true" signature="7723:7737" placeholder="SELECT id,pi... " />
+            <marker date="1465304189314" expanded="true" signature="7723:7774" placeholder="SELECT id,pi... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="8006:8070" placeholder="DELETE FROM " />
+            <marker date="1465304189314" expanded="true" signature="8556:8617" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="9140:9191" placeholder="UPDATE Hemac... " />
+            <marker date="1465304189314" expanded="true" signature="9140:9206" placeholder="UPDATE Hemac... " />
+            <marker date="1465304189314" expanded="true" signature="9140:9207" placeholder="UPDATE Hemac... " />
+            <marker date="1465304189314" expanded="true" signature="9580:9636" placeholder="SELECT id,na... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="9776:9851" placeholder="SELECT id,re... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="12357:12442" placeholder="UPDATE Hemac... " />
+            <marker date="1465304189314" expanded="true" signature="12888:12994" placeholder="INSERT INTO Hemacms... " />
+            <marker date="1465304189314" expanded="true" signature="13502:13561" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="14230:14281" placeholder="DELETE FROM " />
+            <marker date="1465304189314" expanded="true" signature="14230:14287" placeholder="DELETE FROM " />
+            <marker date="1465304189314" expanded="true" signature="14724:14924" placeholder="SELECT u.id,... hm_user" />
+            <marker date="1465304189314" expanded="true" signature="14724:14942" placeholder="SELECT u.id,... hm_user" />
+            <marker date="1465304189314" expanded="true" signature="17876:17883" placeholder="UPDATE UPDAT... " />
+            <marker date="1465304189314" expanded="true" signature="17876:18030" placeholder="UPDATE hm_us... " />
+            <marker date="1465304189314" expanded="true" signature="17876:18035" placeholder="UPDATE hm_us... " />
+            <marker date="1465304189314" expanded="true" signature="18260:18267" placeholder="UPDATE hm_us... " />
+            <marker date="1465304189314" expanded="true" signature="18260:18427" placeholder="UPDATE hm_us... " />
+            <marker date="1465304189314" expanded="true" signature="20680:20741" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="21136:21358" placeholder="SELECT u.id,... hm_user" />
+            <marker date="1465304189314" expanded="true" signature="22740:22800" placeholder="SELECT * FRO... Hemacms" />
+            <marker date="1465304189314" expanded="true" signature="23522:23659" placeholder="SELECT u.*,u... hm_user" />
+            <marker date="1465304189314" expanded="true" signature="23522:23671" placeholder="SELECT u.*,u... hm_user" />
+            <marker date="1465304189314" expanded="true" signature="23522:23690" placeholder="SELECT u.id,... hm_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/admin/css/frame.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.047619">
+          <caret line="271" column="34" selection-start-line="271" selection-start-column="34" selection-end-line="271" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/admin/views/Site/loginLog.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3765743">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#option#1;n#select#0;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#option#2;n#select#0;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#3;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#form#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
