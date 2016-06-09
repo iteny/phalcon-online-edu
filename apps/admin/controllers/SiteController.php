@@ -14,6 +14,7 @@ use Phalcon\Validation\Validator\Confirmation;
 use Phalcon\Validation\Validator\Email;
 use Phalcon\Mvc\Model\Transaction\Failed as TxFailed;
 use Phalcon\Mvc\Model\Transaction\Manager as TxManager;
+use Phalcon\Paginator\Adapter\Model as PaginatorModel;
 use Hemacms\Admin\Models\User;
 use Hemacms\Admin\Models\AclUserGroup;
 class SiteController extends AdminBaseController
@@ -476,42 +477,148 @@ class SiteController extends AdminBaseController
     }
     //登录日志
     public function loginLogAction(){
-        $cacheKey = 'admin-login-log.cache';
+        $pageNum     = $this->request->getQuery( 'page', 'int' );
+        $currentPage = $pageNum ?: 1;
+        $username = $this->request->getQuery('username','string');
+        $start_time = strtotime($this->request->getQuery('start_time','string'));
+        $end_time = strtotime($this->request->getQuery('end_time','string'));
+        $loginip = $this->request->getQuery('loginip','string');
+        $status = $this->request->getQuery('status','int');
+        $where = '';
+        if (!empty($username) || (!empty($start_time) && !empty($end_time)) || !empty($loginip) || $status != ''){
+            $where .= "WHERE ";
+        }
+        if (!empty($username)) {
+            $where .= "username like '%".$username."%' AND ";
+        }
+        if (!empty($start_time) && !empty($end_time)) {
+            $where .= "logintime > ".$start_time." AND logintime < ".$end_time." AND ";
+        }
+        if (!empty($loginip)) {
+            $where .= "loginip LIKE '%".$loginip."%' AND ";
+        }
+        if ($status != '') {
+            $where .= "status = $status AND ";
+        }
+        $where = rtrim($where,'AND ');
+        $cacheKey = 'admin-login-log.cache'.$username.$start_time.$end_time.$loginLog.$status;
         $loginLog   = $this->safeCache->get($cacheKey);
         if($loginLog === null){
-            $sql = "SELECT * FROM Hemacms\Admin\Models\LoginLog ORDER BY id DESC";
+            $sql = "SELECT * FROM Hemacms\Admin\Models\LoginLog {$where} ORDER BY id DESC ";
             $loginLog = $this->modelsManager->executeQuery($sql);
-            $loginLog = $loginLog->toArray();
             $this->safeCache->save($cacheKey,$loginLog,$this->config->admincache->adminlog);
         }
-        $this->view->loginLog = $loginLog;
+        $pagination = new PaginatorModel(array(
+            'data'  => $loginLog,
+            'limit' => 15,
+            'page'  => $currentPage
+        ));
+        $page = $pagination->getPaginate();
+        $this->view->page = $page;
+        $this->view->username = $username;
+        $this->view->start_time = $start_time;
+        $this->view->end_time = $end_time;
+        $this->view->loginip = $loginip;
+        $this->view->status = $status;
+    }
+    // 删除上月登录日志
+    public function delLoginLogAction()
+    {
+        $where = "WHERE logintime < ".(time() - (86400 * 30))."";
+        $sql = "DELETE FROM Hemacms\Admin\Models\LoginLog {$where}";
+        $status = $this->modelsManager->executeQuery($sql);
+        $msg = $this->function->returnMsg("删除登录日志成功！","删除登录日志失败！",$status->success());
+        exit(json_encode($msg));
+    }
+    //操作日志
+    public function operateLogAction(){
+        $pageNum     = $this->request->getQuery( 'page', 'int' );
+        $currentPage = $pageNum ?: 1;
+        $username = $this->request->getQuery('username','string');
+        $start_time = strtotime($this->request->getQuery('start_time','string'));
+        $end_time = strtotime($this->request->getQuery('end_time','string'));
+        $loginip = $this->request->getQuery('loginip','string');
+        $status = $this->request->getQuery('status','int');
+        $where = '';
+        if (!empty($username) || (!empty($start_time) && !empty($end_time)) || !empty($loginip) || $status != ''){
+            $where .= "WHERE ";
+        }
+        if (!empty($username)) {
+            $where .= "username like '%".$username."%' AND ";
+        }
+        if (!empty($start_time) && !empty($end_time)) {
+            $where .= "time > ".$start_time." AND time < ".$end_time." AND ";
+        }
+        if (!empty($loginip)) {
+            $where .= "ip LIKE '%".$loginip."%' AND ";
+        }
+        if ($status != '') {
+            $where .= "status = $status AND ";
+        }
+        $where = rtrim($where,'AND ');
+        $cacheKey = 'admin-operate-log.cache'.$username.$start_time.$end_time.$loginLog.$status;
+        $operateLog   = $this->safeCache->get($cacheKey);
+        if($operateLog === null){
+            $sql = "SELECT * FROM Hemacms\Admin\Models\OperateLog {$where} ORDER BY id DESC ";
+            $operateLog = $this->modelsManager->executeQuery($sql);
+            $this->safeCache->save($cacheKey,$operateLog,$this->config->admincache->adminlog);
+        }
+        $pagination = new PaginatorModel(array(
+            'data'  => $operateLog,
+            'limit' => 15,
+            'page'  => $currentPage
+        ));
+        $page = $pagination->getPaginate();
+        $this->view->page = $page;
+        $this->view->username = $username;
+        $this->view->start_time = $start_time;
+        $this->view->end_time = $end_time;
+        $this->view->loginip = $loginip;
+        $this->view->status = $status;
+    }
+    // 删除上月操作日志
+    public function delOperateLogAction()
+    {
+        $where = "WHERE time < ".(time() - (86400 * 30))."";
+        $sql = "DELETE FROM Hemacms\Admin\Models\OperateLog {$where}";
+        $status = $this->modelsManager->executeQuery($sql);
+        $msg = $this->function->returnMsg("删除操作日志成功！","删除操作日志失败！",$status->success());
+        exit(json_encode($msg));
+    }
+    //系统设置
+    public function setAction(){
+        if($this->request->isPost()){
+            $file = APP_PATH . '/apps/admin/config/set.config.php';
+            require $file;
+            $settings['application']['debug'] = $this->request->getPost('debug');
+            $settings['safecache']['lifetime'] = $this->request->getPost('safecachetime');
+            $settings['admincache']['adminmenu'] = $this->request->getPost('adminmenu');;
+            $settings['admincache']['adminlog'] = $this->request->getPost('adminlog');;
+            $str = "<?php\r\n".'$settings=' . var_export($settings, true) . ";\r\n?>";
+            if(file_put_contents($file, $str)){
+                $status = true;
+                $msg = $this->function->returnMsg("修改系统设置成功","修改系统设置失败",$status);
+            }else{
+                $status = false;
+                $msg = $this->function->returnMsg("修改系统设置成功","修改系统设置失败",$status);
+            }
+            $this->view->disable();
+            exit(json_encode($msg));
+        }else{
+            $file = APP_PATH . '/apps/admin/config/set.config.php';
+            require $file;
+            $this->view->debug = $settings['application']['debug'];
+            $this->view->safecache = $settings['safecache']['lifetime'];
+            $this->view->adminmenu = $settings['admincache']['adminmenu'];
+            $this->view->adminlog = $settings['admincache']['adminlog'];
+        }
+
     }
     public function backupAction(){
         $this->view->disable();
-        echo 6|2>>1;
+//        $t = $this->db->fetchOne("SELECT u.id,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id AND u.id = {$id['id']} LIMIT 1");
+//        $t = array_coarrlumn($t);
+//        var_dump($t);
 
-//        $user = User::findFirst();
-////        var_dump($user->toArray());die;
-//        $group = $user->getAclUserGroup();
-//        foreach($group as $rp){
-//            echo '<br>rp:</br>';
-//            var_dump($rp->toArray());
-//        }
-//        $id = array(
-//            'id' => 1
-//        );
-//
-////        $id = 1;
-        $t = $this->db->fetchOne("SELECT u.id,ug.uid,g.role,g.title FROM hm_user u JOIN hm_acl_user_group ug JOIN hm_acl_group g WHERE ug.uid = u.id AND ug.group_id = g.id AND u.id = {$id['id']} LIMIT 1");
-        $t = array_coarrlumn($t);
-        var_dump($t);
-////        echo $t['role'];
-//        $ss = $this->session->get('userInfo');
-//        var_dump($ss);
-//        echo $t['role'];
-//        $sql = 'SELECT u.*,ug.* FROM Hemacms\Admin\Models\User u JOIN Hemacms\Admin\Models\AclUserGroup ug ' .
-//            'WHERE ug.uid = u.id';
-//        $tags = $this->modelsManager->executeQuery($sql)->getFirst();
-//        echo $tags->u->username;
     }
 }

@@ -385,3 +385,69 @@ span.success
     color: #3db39e;
     content: '输入正确';
 }
+/*
+===================
+分页
+>>	pages_pre		上一页
+>>	pages_next	下一页
+>>	strong			激活状态
+>>	a:hover			鼠标悬停状态
+===================
+*/
+#page{
+    /*margin-top: 10px;*/
+    padding: 8px 6px 8px 10px;
+    background: #fafafa;
+    color:#666;
+}
+.pages a,
+.pages strong{
+    display:inline-block;
+    line-height:28px;
+    padding:0 10px;
+    border:1px solid #ddd;
+    background-color:#ffffff;
+    text-decoration:none;
+    color:#999;
+    font-family:Simsun;
+    -webkit-transition: all 0.2s ease-out;transition: all 0.2s ease-out;
+    margin-right:3px;
+}
+.pages  .current{
+    display:inline-block;
+    line-height:28px;
+    padding:0 20px;
+    border:1px solid #ddd;
+    background-color:#ffffff;
+    text-decoration:none;
+    font-family:Simsun;
+    -webkit-transition: all 0.2s ease-out;transition: all 0.2s ease-out;
+    margin-right:3px;
+
+    color:#fff;
+    background-color:#09C;
+    border-color:#09C;
+}
+.pages a:hover{
+    color:#fff;
+    background-color:#09C;
+    border-color:#09C;
+    text-decoration:none;
+}
+.pages strong{
+    color:#fff;
+    background-color:#24557d;
+    border-color:#fff;
+}
+.pages span{
+    display:inline-block;
+    line-height:28px;
+    padding:0 10px;
+    border:1px solid #ddd;
+    background-color:#ddd;
+    text-decoration:none;
+    color:#999;
+    font-family:Simsun;
+    -webkit-transition: all 0.2s ease-out;transition: all 0.2s ease-out;
+    margin-right:3px;
+}

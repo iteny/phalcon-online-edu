@@ -12,26 +12,27 @@
 <div id="frame-toolbar">
     <ul>
         <li><a class="active" href="/admin/Site/loginLog"><i class="iconfont" style="color:white;font-size: 16px;">&#xe611;</i>&nbsp;&nbsp;登录日志</a></li>
-        <li><a class="ajax-del" href="/admin/Site/delLoginLog"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;删除一个月前的登录日志</a></li>
+        <li><a class="ajax-del" data-type="登录日志" data-title="一个月前" href="/admin/Site/delLoginLog"><i class="iconfont" style="color:white;font-size: 16px;">&#xe610;</i>&nbsp;&nbsp;删除一个月前的登录日志</a></li>
     </ul>
 </div>
 <div id="frame-content">
     <div class="frame-table-list">
-        <div class="input-title">用户信息</div>
-        <form method="get" action="/Intendant/Site/loginLog">
+        <div class="input-title">搜索</div>
+        <form method="get" action="/admin/Site/loginLog">
+            <!--<input type="hidden" name="search" value="ok">-->
             <div class="search-content">
                      搜索类型：
                   <select class="select_2" name="status" style="width:70px;">
-                      <option value="" selected="">不限</option>
-                      <option style="color:green" value="1">登陆成功</option>
-                      <option style="color:red" value="0">登陆失败</option>
+                      <option value='' <?php if($status == ''){ ?>selected<?php } ?>>不限</option>
+                      <option style="color:green" value="1" <?php if($status == '1'){ ?>selected<?php } ?>>登陆成功</option>
+                      <option style="color:red" value="0" <?php if($status == '0'){ ?>selected<?php } ?>>登陆失败</option>
                   </select>
-                    用户名：<input type="text" class="input length_2" name="username" size="10" value="" placeholder="用户名">
-                    IP：<input type="text" class="input length_2" name="loginip" size="20" value="" placeholder="IP">
+                    用户名：<input type="text" class="input length_2" name="username" size="10" value="<?php echo $username; ?>" placeholder="用户名">
+                    IP：<input type="text" class="input length_2" name="loginip" size="20" value="<?php echo $loginip; ?>" placeholder="IP">
                     时间：
-                    <input type="text" name="start_time" class="input length_2 J_date date" value="" style="width:80px;">
+                    <input type="text" name="start_time" class="input length_2 my-date" value="" style="width:140px;">
                     -
-                    <input type="text" class="input length_2 J_date date" name="end_time" value="" style="width:80px;">
+                    <input type="text" class="input length_2 my-date" name="end_time" value="" style="width:140px;">
                     <button class="btn" style="height: 30px;line-height: 30px;padding-bottom: 31px;">搜索</button>
             </div>
         </form>
@@ -62,16 +63,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($loginLog as $log) { ?>
+                <?php foreach ($page->items as $i => $log) { ?>
                 <tr>
-                    <td align="center"><?php echo $this->escaper->escapeHtml($log['id']); ?></td>
-                    <td align="center"><?php echo $log['username']; ?></td>
-                    <td align="center"><?php echo $this->escaper->escapeHtml($log['info']); ?></td>
-                    <td align="center"><?php if ($log['status'] == 1) { ?><i class="iconfont" style="color:green;font-size: 16px;">&#xe60c;</i><?php } else { ?><i class="iconfont" style="color:red;font-size: 16px;">&#xe60a;</i><?php } ?></td>
-                    <td align="center"><?php echo $log['useragent']; ?></td>
-                    <td align="center"><?php echo date('Y年m月d日 H:i:s', $this->escaper->escapeHtml($log['logintime'])); ?></td>
-                    <td align="center"><?php echo $this->escaper->escapeHtml($log['loginip']); ?></td>
-                    <td align="center"><?php echo $log['country']; ?></td>
+                    <td align="center"><?php echo $this->escaper->escapeHtml($log->id); ?></td>
+                    <td align="center"><?php echo $log->username; ?></td>
+                    <td align="center"><?php echo $this->escaper->escapeHtml($log->info); ?></td>
+                    <td align="center"><?php if ($log->status == 1) { ?><i class="iconfont" style="color:green;font-size: 16px;">&#xe60c;</i><?php } else { ?><i class="iconfont" style="color:red;font-size: 16px;">&#xe60a;</i><?php } ?></td>
+                    <td align="center"><?php echo $log->useragent; ?></td>
+                    <td align="center"><?php echo date('Y年m月d日 H:i:s', $this->escaper->escapeHtml($log->logintime)); ?></td>
+                    <td align="center"><?php echo $this->escaper->escapeHtml($log->loginip); ?></td>
+                    <td align="center"><?php echo $log->country; ?></td>
                     <!--<td align="center">-->
                         <!--<?php if ($user['id'] == 1) { ?>-->
 
@@ -85,14 +86,44 @@
                 <?php } ?>
                 </tbody>
             </table>
-            <!-- <div class="p10"><div class="pages">  </div> </div> -->
+             <div id="page">
+                 <div class="pages">
+                     <?php if($page->current == 1){ ?>
+                     <span>首页</span>
+                     <?php }else{ ?>
+                     <a href="/admin/Site/loginLog?status=<?= $status; ?>&username=<?= $username; ?>&loginip=<?= $loginip; ?>&start_time=<?= $start_time; ?>&end_time=<?= $end_time; ?>&">首页</a>
+                     <?php } ?>
+                     <?php if($page->current == $page->before){ ?>
+                     <span>上一页</span>
+                     <?php }else{ ?>
+                     <a href="/admin/Site/loginLog?status=<?= $status; ?>&username=<?= $username; ?>&loginip=<?= $loginip; ?>&start_time=<?= $start_time; ?>&end_time=<?= $end_time; ?>&page=<?= $page->before; ?>">上一页</a>
+                     <?php } ?>
+                     <?php if($page->current == $page->next){ ?>
+                     <span>下一页</span>
+                     <?php }else{ ?>
+                     <a href="/admin/Site/loginLog?status=<?= $status; ?>&username=<?= $username; ?>&loginip=<?= $loginip; ?>&start_time=<?= $start_time; ?>&end_time=<?= $end_time; ?>&page=<?= $page->next; ?>">下一页</a>
+                     <?php } ?>
+                     <?php if($page->current == $page->last){ ?>
+                     <span>末页</span>
+                     <?php }else{ ?>
+                     <a href="/admin/Site/loginLog?status=<?= $status; ?>&username=<?= $username; ?>&loginip=<?= $loginip; ?>&start_time=<?= $start_time; ?>&end_time=<?= $end_time; ?>&page=<?= $page->last; ?>">末页</a>
+                     <?php } ?>
+                     <?php echo "页码：", $page->current, "/", $page->total_pages; ?>
+                 </div>
+             </div>
 
         </div>
     </form>
 </div>
 </body>
 <script src="/static/common/js/jquery/jquery-1.12.3.min.js"></script>
+<script src="/static/common/js/datetimepicker/build/jquery.datetimepicker.full.min.js"></script><!--时间插件-->
+<link href="/static/common/js/datetimepicker/jquery.datetimepicker.css" rel="stylesheet" /> <!--时间插件CSS-->
 <script src="/static/common/js/layer/layer.js"></script>
 <script src="/static/admin/js/admin.common.js"></script>
 <script src="/static/admin/js/common.ajax.js"></script>
+<script>
+    $.datetimepicker.setLocale('ch');
+    $('.my-date').datetimepicker({lang:'ch'});
+</script>
 </html>
